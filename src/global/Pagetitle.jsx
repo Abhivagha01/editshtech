@@ -1,0 +1,108 @@
+import { useTheme } from "@emotion/react";
+import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
+import React from "react";
+import title_image from "../../src/assets/common_background.png";
+import { Link } from "react-router-dom";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import HomeIcon from "@mui/icons-material/Home";
+
+function Pagetitle({ title, description }) {
+  const theme = useTheme();
+
+  return (
+    <Box
+      sx={{
+        background: theme.palette.black,
+        zIndex: -1,
+        position: "relative",
+      }}
+    >
+      <Box
+        sx={{
+          background: theme.palette.black,
+          backgroundImage: `url(${title_image})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          zIndex: -1,
+          position: "relative",
+          py: 15,
+          px: 8,
+        }}
+      >
+        <Grid container row spacing={2}>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Typography
+              sx={{
+                color: theme.palette.white,
+                fontSize: {
+                  xs: 20,
+                },
+                py:2,
+                fontWeight: "600",
+                textTransform: "uppercase",
+              }}
+            >
+              {title}
+            </Typography>
+
+            <Box>
+              <Breadcrumbs
+                sx={{
+                  border: "2px dotted #404040",
+                  display: "inline-block",
+                  p: 1,
+                  borderRadius: 8,
+                  position: "relative",
+                  zIndex: 4,
+                }}
+                separator={
+                  <NavigateNextIcon
+                    fontSize="small"
+                    sx={{
+                      color: theme.palette.white,
+                    }}
+                  />
+                }
+                aria-label="breadcrumb"
+              >
+                <Link
+                  underline="hover"
+                  to="/"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: theme.palette.white,
+                  }}
+                >
+                  <HomeIcon
+                    sx={{ mr: 0.5, color: theme.palette.primary.main }}
+                  />
+                  Home
+                </Link>
+                <Link
+                  style={{
+                    color: theme.palette.secondary.main,
+                  }}
+                >
+                  {title}
+                </Link>
+              </Breadcrumbs>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Typography
+              sx={{
+                color: theme.palette.white,
+                fontSize: "16px",
+              }}
+            >
+              {description}
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
+}
+
+export default Pagetitle;

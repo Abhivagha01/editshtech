@@ -5,27 +5,18 @@ const theme = createTheme({
     fontFamily: "Poppins, Arial, sans-serif",
   },
   palette: {
-    black: {
-      main: "#000",
-    },
+    black: "#000",
     primary: {
-      main: "#cbab67", 
-      gradient: "linear-gradient(90deg, rgba(203, 171, 103, 1) 0%, rgba(181, 126, 10, 1) 100%)",
+      main: "#f1f1f1",
+      shadow: "#f8f8f8",
     },
     secondary: {
-      main: "#b9871d",
+      main: "#8c8c8c",
     },
-    newsletter: {
-     gradient: "linear-gradient(180deg, rgba(203, 171, 103, 1) 0%, rgba(181, 126, 10, 1) 100%)",
-    },
-    gray: "rgba(0, 0, 0, 0.50)",
     white: "#fff",
-    litePrimary: "rgba(0,134,255,0.5)",
-    footerGray: "#575757",
-    darkGray: "#616161",
-    backgroundLiteGrey: "#FAFAFA",
-    footertext: "rgba(171, 171, 171, 1)",
-
+    lightwhite: "#404040",
+    offwhite: "#ddd",
+    lightBlack:"#1a1a1a"
   },
 });
 
