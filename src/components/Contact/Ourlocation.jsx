@@ -73,16 +73,37 @@ function Ourlocation() {
     <Box
       sx={{
         backgroundColor: theme.palette.black,
-        py: { sx: 4, lg: 8 },
+        py: {xs: 4, sm: 4, lg: 8 },
       }}
     >
       <Container>
         <Grid container spacing={2}>
           {[
-            { icon: CallIcon, title: "Phone", link: "tel:+91 98790 27562", linkText: "+91 98790 27562" },
-            { icon: MarkEmailUnreadIcon, title: "Mail Address", link: "mailto:edithtech01@gmail.com", linkText: "edithtech01@gmail.com" },
-            { icon: AddLocationAltIcon, title: "Our Location", link: "#", linkText: "414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya Circle, Surat, Gujarat 395010" },
-            { icon: QueryBuilderIcon, title: "Office Hour", link: "#", linkText: "Mon - Fri 09:30 AM - 06:30 PM" }
+            {
+              icon: CallIcon,
+              title: "Phone",
+              link: "tel:+91 98790 27562",
+              linkText: "+91 98790 27562",
+            },
+            {
+              icon: MarkEmailUnreadIcon,
+              title: "Mail Address",
+              link: "mailto:edithtech01@gmail.com",
+              linkText: "edithtech01@gmail.com",
+            },
+            {
+              icon: AddLocationAltIcon,
+              title: "Our Location",
+              link: "#",
+              linkText:
+                "414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya Circle, Surat, Gujarat 395010",
+            },
+            {
+              icon: QueryBuilderIcon,
+              title: "Office Hour",
+              link: "#",
+              linkText: "Mon - Fri 09:30 AM - 06:30 PM",
+            },
           ].map((item, index) => (
             <Grid item xs={12} md={6} lg={3} key={index}>
               <ContactBox {...item} />

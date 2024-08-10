@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Pagetitle from "../../global/Pagetitle";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
@@ -9,13 +9,13 @@ import ci4 from "../../assets/Career/ci4.svg";
 import ci5 from "../../assets/Career/ci5.svg";
 import ci6 from "../../assets/Career/ci6.svg";
 import careerImage from "../../assets/Career/careerImage.jpg";
-import reactjs from "../../assets/Career/reactjs.png";
 import jobApply from "../../assets/Career/jobapply.webp";
 import { Link } from "react-router-dom";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { Titleanimation } from "../../global/Titleanimation";
 import UploadCvForm from "../../global/UploadCvForm";
+import axios from "axios";
 
 const hiringSteps = [
   {
@@ -63,7 +63,24 @@ const hiringSteps = [
 ];
 
 function Career() {
+
+  const [technology, setTechnology] = useState([]);
   const theme = useTheme();
+
+  const fetchTechnology = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/technology/view"
+      );
+      setTechnology(response?.data?.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchTechnology();
+  }, []);
 
   return (
     <>
@@ -280,151 +297,157 @@ function Career() {
           }}
         >
           <Container>
-            <Grid container spacin={3} row>
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                md={6}
-                lg={4}
-                xl={4}
+          <Grid container spacing={3}>
+      {technology.map((tech) => (
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={4}
+          xl={4}
+          key={tech.id} 
+          sx={{
+            border: "1px solid #f1f1f1",
+            borderRadius: 2,
+            p: 4,
+            transition: "box-shadow 0.3s ease-in-out",
+            "&:hover": {
+              boxShadow: "rgba(0, 0, 0, 0.3) 0px 10px 20px",
+            },
+          }}
+        >
+          <Box>
+            <Box
+              sx={{
+                width: "100px",
+                height: "100px",
+                margin: "auto",
+                borderRadius: "50%",
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={tech.LanguagesLogo} 
+                alt="language_logo"
+                style={{
+                  width: "100%",
+                  height: "60px",
+                  margin: "14px",
+                }}
+              />
+            </Box>
+            <Box>
+              <Typography
                 sx={{
-                  border: "1px solid #f1f1f1",
-                  borderRadius: 2,
-                  p: 4,
-                  transition: "box-shadow 0.3s ease-in-out",
-                  "&:hover": {
-                    boxShadow: "rgba(0, 0, 0, 0.3) 0px 10px 20px",
-                  },
+                  fontSize: "20px",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  py: 2,
                 }}
               >
-                <Box>
-                  <Box
-                    sx={{
-                      width: "100px",
-                      height: "100px",
-                      margin: "auto",
-                      borderRadius: "50%",
-                      boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src={reactjs}
-                      alt="language_logo"
-                      style={{
-                        width: "100%",
-                        height: "60px",
-                        margin: "14px",
-                      }}
-                    />
-                  </Box>
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontSize: "20px",
-                        fontWeight: "600",
-                        textAlign: "center",
-                        py: 2,
-                      }}
-                    >
-                      React Js Developer
-                    </Typography>
-                  </Box>
+                {tech.LanguagesName} 
+              </Typography>
+            </Box>
 
-                  <Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontSize: "16px",
-                        color: theme.palette.lightwhite,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          fontWeight: "500",
-                          color: theme.palette.lightwhite,
-                        }}
-                      >
-                        Experience:
-                      </Box>
-
-                      <Box sx={{ color: theme.palette.secondary.main }}>
-                        1 Year
-                      </Box>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontSize: "16px",
-                        color: theme.palette.lightwhite,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          fontWeight: "500",
-                          color: theme.palette.lightwhite,
-                        }}
-                      >
-                        No. of Openings:
-                      </Box>
-                      <Box sx={{ color: theme.palette.secondary.main }}>1</Box>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontSize: "16px",
-                        color: theme.palette.lightwhite,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          fontWeight: "500",
-                          color: theme.palette.lightwhite,
-                        }}
-                      >
-                        Qualifications:
-                      </Box>
-                      <Box sx={{ color: theme.palette.secondary.main }}>
-                        Graduate
-                      </Box>
-                    </Box>
-                    <Box
-                      sx={{
-                        mt: 4,
-                        display: "flex",
-                        justifyItems: "center",
-                      }}
-                    >
-                      <Link
-                        style={{
-                          textDecoration: "none",
-                          color: theme.palette.secondary.main,
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          border: "1px solid #8c8c8c",
-                          textTransform: "uppercase",
-                          padding: "10px 20px",
-                          margin: "auto",
-                          textAlign: "center",
-                          maxWidth: "150px",
-                          width: "100%",
-                          dispaly: "inline-block",
-                          borderRadius: "4px",
-                        }}
-                      >
-                        Apply Now
-                      </Link>
-                    </Box>
-                  </Box>
+            <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: "16px",
+                  color: theme.palette.lightwhite,
+                }}
+              >
+                <Box
+                  sx={{
+                    fontWeight: "500",
+                    color: theme.palette.lightwhite,
+                  }}
+                >
+                  Experience:
                 </Box>
-              </Grid>
-            </Grid>
+                <Box sx={{ color: theme.palette.secondary.main }}>
+                  {tech.Experience}
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: "16px",
+                  color: theme.palette.lightwhite,
+                }}
+              >
+                <Box
+                  sx={{
+                    fontWeight: "500",
+                    color: theme.palette.lightwhite,
+                  }}
+                >
+                  No. of Openings:
+                </Box>
+                <Box sx={{ color: theme.palette.secondary.main }}>
+                  {tech.Openings} 
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: "16px",
+                  color: theme.palette.lightwhite,
+                }}
+              >
+                <Box
+                  sx={{
+                    fontWeight: "500",
+                    color: theme.palette.lightwhite,
+                  }}
+                >
+                  Qualifications:
+                </Box>
+                <Box sx={{ color: theme.palette.secondary.main }}>
+                  {tech.Qualification} 
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  mt: 4,
+                  display: "flex",
+                  justifyItems: "center",
+                }}
+              >
+                <Link
+                  href={tech.applyLink}
+                  style={{
+                    textDecoration: "none",
+                    color: theme.palette.secondary.main,
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    border: "1px solid #8c8c8c",
+                    textTransform: "uppercase",
+                    padding: "10px 20px",
+                    margin: "auto",
+                    textAlign: "center",
+                    maxWidth: "150px",
+                    width: "100%",
+                    display: "inline-block",
+                    borderRadius: "4px",
+                  }}
+                  to="#apply"
+                >
+                  Apply Now
+                </Link>
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
           </Container>
         </Box>
 
@@ -446,7 +469,13 @@ function Career() {
           }}
         >
           <Container>
-            <Grid container row>
+            <Grid
+              container
+              row
+              sx={{
+                borderRadius: "14px",
+              }}
+            >
               <Grid
                 item
                 xs={12}
@@ -541,7 +570,16 @@ function Career() {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={9}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={9}
+                sx={{
+                  backgroundColor: theme.palette.white,
+                }}
+              >
                 <UploadCvForm />
               </Grid>
             </Grid>

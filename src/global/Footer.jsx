@@ -8,9 +8,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import ShareLocationIcon from "@mui/icons-material/ShareLocation";
+import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import footerlogo from "../assets/footer/logo.png";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import SquareIcon from "@mui/icons-material/Square";
 import { Link } from "react-router-dom";
 import ScrollTotopbtn from "./ScrollTotopbtn";
 
@@ -25,32 +25,80 @@ const Footer = () => {
       Icon: TwitterIcon,
     },
     {
-      href: "https://www.instagram.com/jbs_technology/?hl=en",
+      href: "https://www.instagram.com/editsh_technology/",
       Icon: InstagramIcon,
     },
     {
-      href: "https://www.linkedin.com/company/jbs-coder-infotech/",
+      href: "https://www.linkedin.com/company/editsh/posts/?feedView=all",
       Icon: LinkedInIcon,
     },
     {
-      href: "https://wa.me/1234567890",
+      href: "https://wa.me/9601175985",
       Icon: WhatsAppIcon,
     },
   ];
-
-  const data = {
-    Services: [
-      {
-        text: "Home",
-        to: "/",
-        icon: <NavigateNextIcon />,
-      },
-      { text: "Career", to: "/career", icon: <NavigateNextIcon /> },
-      { text: "Blogs", to: "/blogs", icon: <NavigateNextIcon /> },
-      { text: "Terms", to: "/term", icon: <NavigateNextIcon /> },
-      { text: "Policy", to: "/policy", icon: <NavigateNextIcon /> },
-    ],
-  };
+  const data = [
+    {
+      title: "Useful Links",
+      links: [
+        {
+          text: "Home",
+          to: "/",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "About",
+          to: "/about",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Blogs",
+          to: "/blogs",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Technology",
+          to: "/technology",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Contact Us",
+          to: "/contact-us",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Terms",
+          to: "/term",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+      ],
+    },
+    {
+      title: "Our Services",
+      links: [
+        {
+          text: "iOS App Development",
+          to: "/mobile/iosAppDevelopment",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Node.js Development",
+          to: "/backend/nodejsDevelopment",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "React.js Development",
+          to: "/frontend/reactJsDevelopment",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+        {
+          text: "Policy",
+          to: "/policy",
+          icon: <SquareIcon sx={{ fontSize: "8px" }} />,
+        },
+      ],
+    },
+  ];
 
   const theme = useTheme();
 
@@ -58,8 +106,12 @@ const Footer = () => {
     <>
       <Box
         sx={{
-          backgroundColor: theme.palette.black,
-          py: 2,
+          background: theme.palette.black,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          zIndex: 1,
+          position: "relative",
+          py: 6,
         }}
         px={{ xs: "1rem", sm: "1rem", md: "2rem", xl: "12rem" }}
       >
@@ -68,13 +120,13 @@ const Footer = () => {
           color={theme.palette.common.white}
           sx={{ padding: "10px" }}
         >
-          <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+          <Grid item xs={12} sm={6} md={6} lg={3} xl={4}>
             <Box>
               <Link to={"/"}>
                 <img
                   src={footerlogo}
                   alt="footer-logo"
-                  style={{ width: "75%", height: "80px" }}
+                  style={{ width: "50%", height: "75px" }}
                 />
               </Link>
               <Typography
@@ -85,154 +137,9 @@ const Footer = () => {
                   pr: 4,
                 }}
               >
-                Thank you for visiting our Website. If you have not visited our
-                blogs, then it's a humble request to visit it once, maybe it
-                will be useful for you. You can also check the latest post and
-                our blog section.
+                Resources are the biggest strength of any organization, and it
+                requires lots of patience and effort to manage them properly.
               </Typography>
-            </Box>
-          </Grid>
-          {Object.keys(data).map((sectionTitle) => (
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={sectionTitle}>
-              <Box>
-                <Typography
-                  sx={{
-                    letterSpacing: "0.7px",
-                    mb: 2,
-                    fontWeight: "600",
-                    fontSize: "20px",
-                    color: theme.palette.primary.main,
-                  }}
-                >
-                  {sectionTitle}
-                </Typography>
-                <Box sx={{ my: 1.3 }}>
-                  {data[sectionTitle].map((item) => (
-                    <Link to={item.to || "#"} title={item.text} key={item.text}>
-                      <Box
-                        sx={{
-                          textDecoration: "none",
-                          color: theme.palette.primary.main,
-                          fontSize: "13px",
-                          letterSpacing: "0.8px",
-                          display: "flex",
-                          flexDirection: "row",
-                          flexWrap: "wrap",
-                          gap: "10px",
-                          my: 2,
-                          transition: "transform 0.3s ease-in-out",
-                          "&:hover": {
-                            transform: "translateX(-10px)",
-                            color: theme.palette.secondary.main,
-                          },
-                        }}
-                      >
-                        <Box sx={{ justifyContent: "space-evenly" }}>
-                          {item.icon}
-                        </Box>
-                        <Box sx={{ fontSize: "14px" }}>{item.text}</Box>
-                      </Box>
-                    </Link>
-                  ))}
-                </Box>
-              </Box>
-            </Grid>
-          ))}
-          <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
-            <Typography
-              sx={{
-                letterSpacing: "0.7px",
-                mb: 2,
-                fontWeight: "600",
-                fontSize: "20px",
-                color: theme.palette.primary.main,
-              }}
-            >
-              Contact Us
-            </Typography>
-            <Box sx={{ my: 1.3 }}>
-              <Box
-                sx={{
-                  textDecoration: "none",
-                  color: theme.palette.primary.main,
-                  fontSize: "16px",
-                  letterSpacing: "0.8px",
-                  my: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <EmailOutlinedIcon
-                  sx={{ fontSize: "30px", marginRight: "18px" }}
-                />
-                <Link
-                  to="mailto:edithtech01@gmail.com"
-                  style={{
-                    color: theme.palette.primary.main,
-                    fontFamily: theme.typography,
-                    fontSize: "14px",
-                  }}
-                >
-                  edithtech01@gmail.com
-                </Link>
-              </Box>
-              <Box
-                sx={{
-                  textDecoration: "none",
-                  color: theme.palette.primary.main,
-                  fontFamily: theme.typography,
-                  fontSize: "16px",
-                  letterSpacing: "0.8px",
-                  my: "9px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <CallOutlinedIcon
-                  sx={{ fontSize: "30px", marginRight: "18px" }}
-                />
-                <Box sx={{ fontSize: "13px" }}>
-                  <Link
-                    to="tel:+919601175985"
-                    style={{
-                      color: "#FFF",
-                      fontFamily: theme.typography.fontFamily,
-                      fontSize: "14px",
-                    }}
-                  >
-                    Phone: +91 98790 27562
-                  </Link>
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  textDecoration: "none",
-                  color: theme.palette.primary.main,
-                  fontSize: "16px",
-                  letterSpacing: "0.8px",
-                  my: "9px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <ShareLocationIcon
-                  sx={{ fontSize: "30px", marginRight: "18px" }}
-                />
-                <Box>
-                  <Link to="https://maps.app.goo.gl/qV6mdXRGmPpmxGP26">
-                    <address
-                      style={{
-                        color: "#fff",
-                        fontSize: "14px",
-                        fontFamily: theme.typography,
-                      }}
-                    >
-                      414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya
-                      Circle, Surat, Gujarat 395010
-                    </address>
-                  </Link>
-                </Box>
-              </Box>
               <Box
                 sx={{
                   display: "flex",
@@ -261,6 +168,187 @@ const Footer = () => {
                     </Link>
                   </Box>
                 ))}
+              </Box>
+            </Box>
+          </Grid>
+          {data.map((section) => (
+            <Grid item xs={12} sm={6} md={6} lg={3} xl={2} key={section.title}>
+              <Box>
+                <Typography
+                  sx={{
+                    letterSpacing: "0.7px",
+                    mb: 2,
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  {section.title}
+                </Typography>
+                <Box sx={{ my: 1.3 }}>
+                  {section.links.map((item) => (
+                    <Link to={item.to || "#"} title={item.text} key={item.text}>
+                      <Box
+                        sx={{
+                          textDecoration: "none",
+                          color: theme.palette.primary.main,
+                          fontSize: "13px",
+                          letterSpacing: "0.8px",
+                          display: "flex",
+                          flexDirection: "row",
+                          flexWrap: "wrap",
+                          gap: "10px",
+                          my: 2,
+                          transition: "transform 0.3s ease-in-out",
+                          "&:hover": {
+                            transform: "translateX(-10px)",
+                            color: theme.palette.secondary.main,
+                          },
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            justifyContent: "space-evenly",
+                            fontSize: "14px",
+                          }}
+                        >
+                          {item.icon}
+                        </Box>
+                        <Box sx={{ fontSize: "14px" }}>{item.text}</Box>
+                      </Box>
+                    </Link>
+                  ))}
+                </Box>
+              </Box>
+            </Grid>
+          ))}
+          <Grid item xs={12} sm={6} md={6} lg={3} xl={4}>
+            <Typography
+              sx={{
+                letterSpacing: "0.7px",
+                mb: 2,
+                fontWeight: "600",
+                fontSize: "20px",
+                color: theme.palette.primary.main,
+              }}
+            >
+              Contact Us
+            </Typography>
+            <Box sx={{ my: 1.3 }}>
+              <Box
+                sx={{
+                  textDecoration: "none",
+                  ba: theme.palette.primary.main,
+                  fontSize: "16px",
+                  letterSpacing: "0.8px",
+                  my: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: theme.palette.secondary.main,
+                    width: "40px",
+                    height: "40px",
+                    lineHeight: "50px",
+                    textAlign: "center",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <EmailOutlinedIcon sx={{ fontSize: "25px" }} />
+                </Box>
+
+                <Link
+                  to="mailto:edithtech01@gmail.com"
+                  style={{
+                    color: theme.palette.primary.main,
+                    fontFamily: theme.typography,
+                    fontSize: "14px",
+                    marginLeft: "18px",
+                  }}
+                >
+                  edithtech01@gmail.com
+                </Link>
+              </Box>
+              <Box
+                sx={{
+                  textDecoration: "none",
+                  color: theme.palette.primary.main,
+                  fontFamily: theme.typography,
+                  fontSize: "16px",
+                  letterSpacing: "0.8px",
+                  my: "9px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: theme.palette.secondary.main,
+                    width: "40px",
+                    height: "40px",
+                    lineHeight: "50px",
+                    textAlign: "center",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <CallOutlinedIcon sx={{ fontSize: "25px" }} />
+                </Box>
+
+                <Box sx={{ fontSize: "13px" }}>
+                  <Link
+                    to="tel:+919601175985"
+                    style={{
+                      color: "#FFF",
+                      fontFamily: theme.typography.fontFamily,
+                      fontSize: "14px",
+                      marginLeft: "18px",
+                    }}
+                  >
+                     +91 98790 27562
+                  </Link>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  textDecoration: "none",
+                  color: theme.palette.primary.main,
+                  fontSize: "16px",
+                  letterSpacing: "0.8px",
+                  my: "9px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: theme.palette.secondary.main,
+                    width: "60px",
+                    height: "40px",
+                    lineHeight: "50px",
+                    textAlign: "center",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <FmdGoodIcon sx={{ fontSize: "25px" }} />
+                </Box>
+
+                <Box>
+                  <Link to="https://maps.app.goo.gl/qV6mdXRGmPpmxGP26">
+                    <address
+                      style={{
+                        color: "#fff",
+                        fontSize: "14px",
+                        fontFamily: theme.typography.fontFamily,
+                        marginLeft: "18px",
+                      }}
+                    >
+                      414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya
+                      Circle, Surat, Gujarat 395010
+                    </address>
+                  </Link>
+                </Box>
               </Box>
             </Box>
           </Grid>

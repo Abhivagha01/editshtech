@@ -1,6 +1,6 @@
 import { useTheme } from "@emotion/react";
 import React from "react";
-import videoFile from "../../assets/video/v.mp4";
+
 import { Box, Button, Typography } from "@mui/material";
 
 function Heroslider() {
@@ -9,11 +9,13 @@ function Heroslider() {
   return (
     <>
       <Box className="banner">
-        <video className="background-video" autoPlay muted loop>
-          <source src={videoFile} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      
+        <div className="background-image">
+          <img
+            src="https://i.postimg.cc/xd5WPpfb/modern-education-Skillstork.jpg"
+            alt="image"
+          />
+        </div>
+
         <Box
           sx={{
             position: "absolute",
@@ -78,7 +80,7 @@ function Heroslider() {
             sx={{
               color: theme.palette.primary.main,
               textAlign: "center",
-              fontSize:'14px'
+              fontSize: "14px",
             }}
             data-aos="zoom-in"
             data-aos-duration="3000"

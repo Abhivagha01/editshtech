@@ -1,13 +1,33 @@
 import { useTheme } from "@emotion/react";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import counter_back_image from "../../assets/common_background.png";
-import { TiltleTwoAnimation } from "../../global/TiltleTwoAnimation,";
+import { TitleTwoAnimation } from "../../global/TitleTwoAnimation";
+import axios from "axios";
 
 const Counter = () => {
+  //eslint-disable-next-line
   const [counterOn, setCounterOn] = useState(false);
+  const [experiences, setExperiences] = useState([]);
+
+  const fetchExperiences = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/experince/view"
+      );
+      console.log(response);
+      setExperiences(response.data.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchExperiences();
+  }, []);
+
   const theme = useTheme();
 
   return (
@@ -20,17 +40,17 @@ const Counter = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        "@media (maxWidth:600px)": {
+        "@media (max-width:600px)": {
           backgroundImage: `url(${counter_back_image})`,
         },
       }}
     >
       <Container sx={{ my: { sm: 2, lg: 6 } }}>
         <Box align="center" py={3}>
-          <TiltleTwoAnimation
+          <TitleTwoAnimation
             variant="h4"
             py={3}
-            title={`We have the experience`}
+            title="We have the experience"
           />
         </Box>
         <Box sx={{ py: { sm: 2, md: 4, lg: 8 } }}>
@@ -38,47 +58,102 @@ const Counter = () => {
             onEnter={() => setCounterOn(true)}
             onExit={() => setCounterOn(false)}
           >
-            <Grid container spacing={3}>
-              {[
-                { end: 50, label: "Happy Clients" },
-                { end: 80, label: "Projects" },
-                { end: 98, label: "Hard Workers" },
-                { end: 4650, label: "Hours Spent" },
-              ].map((item, index) => (
-                <Grid item xl={3} lg={3} md={6} sm={6} xs={12} key={index}>
-                  <Typography
-                    sx={{
-                      fontSize: "40px",
-                      textAlign: "center",
-                      color: theme.palette.white,
-                      fontWeight: 500,
-                    }}
-                  >
-                    {counterOn && (
-                      <CountUp
-                        sx={{
-                          textAlign: "center",
-                          color: theme.palette.white,
-                          fontWeight: 900,
-                        }}
-                        start={0}
-                        end={item.end}
-                        duration={2}
-                        delay={0}
-                      />
-                    )}
-                    +
-                  </Typography>
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      color: theme.palette.white,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
-                </Grid>
+            <Grid
+              container
+              spacing={2}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              {experiences.map((item, index) => (
+                <React.Fragment key={index}>
+                  <Grid item xs={12} md={6} lg={3}>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      Happy Clients
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      <CountUp end={item.happyClients} duration={2} />+
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={3}>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      Hard Workers
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      <CountUp end={item.hardWorkers} duration={2} />+
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={3}>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      Hours Spent
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      <CountUp end={item.hoursSpent} duration={2} />+
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={3}>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      Projects
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        fontWeight: "bold",
+                        color: theme.palette.white,
+                        textAlign: "center",
+                      }}
+                    >
+                      <CountUp end={item.projects} duration={2} />+
+                    </Typography>
+                  </Grid>
+                </React.Fragment>
               ))}
             </Grid>
           </ScrollTrigger>

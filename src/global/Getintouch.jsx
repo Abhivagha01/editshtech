@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import {
   Box,
   Button,
   Container,
-  createTheme,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   TextField,
-  ThemeProvider,
   Typography,
 } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
 import counter_back_image from "../assets/common_background.png";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
@@ -19,45 +25,20 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import "../../src/assets/Css/contact.css";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
 
-function Getintouch() {
+const Getintouch = () => {
   const theme = useTheme();
 
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formValues);
-  };
-
-  const customTheme = createTheme({
-    components: {
-      MuiOutlinedInput: {
-        styleOverrides: {
-          root: {
-            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: theme.palette.primary.main,
-            },
-          },
-          notchedOutline: {
-            borderColor: theme.palette.primary.main,
-          },
-        },
-      },
-    },
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    mobile: Yup.string().required("Phone number is required"),
+    message: Yup.string().required("Message is required"),
+    service: Yup.string().required("Service is required"),
   });
 
   const contactInfo = [
@@ -92,188 +73,288 @@ function Getintouch() {
   ];
 
   return (
-    <Box
-      sx={{
-        my: 2,
-        py: 2,
-        backgroundImage: `url(${counter_back_image})`,
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        "@media (maxWidth:600px)": {
+    <>
+      <ToastContainer />
+      <Box
+        sx={{
+          my: 2,
+          py: 2,
           backgroundImage: `url(${counter_back_image})`,
-        },
-      }}
-    >
-      <Container sx={{ py: 10 }}>
-        <Box className="form">
-          <Box className="contact-info">
-            <Typography
-              sx={{
-                fontSize: "30px",
-                mb: 2,
-                fontWeight: "bold",
-                fontFamily: theme.typography.fontFamily,
-              }}
-            >
-              Let's get in touch
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                mb: 2,
-              }}
-            >
-              Ready to start a project?
-            </Typography>
-            <Box className="info">
-              {contactInfo.map((info, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    mb: 2,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "40px",
-                      height: "40px",
-                      lineHeight: "40px",
-                      textAlign: "center",
-                      backgroundColor: theme.palette.lightwhite,
-                      color: theme.palette.white,
-                      borderRadius: "10%",
-                      mr: 2,
-                      pt: 1,
-                    }}
-                  >
-                    {info.icon}
-                  </Box>
-                  <Box>
-                    {info.link ? (
-                      <Link to={info.link} sx={{ fontSize: "14px" }}>
-                        {info.text}
-                      </Link>
-                    ) : (
-                      <Typography sx={{ fontSize: "14px" }}>
-                        {info.text}
-                      </Typography>
-                    )}
-                  </Box>
-                </Box>
-              ))}
-            </Box>
-            <Box className="social-media">
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          "@media (maxWidth:600px)": {
+            backgroundImage: `url(${counter_back_image})`,
+          },
+        }}
+      >
+        <Container sx={{ py: 10 }}>
+          <Box className="form">
+            <Box className="contact-info">
               <Typography
                 sx={{
-                  fontSize: "16px",
+                  fontSize: "30px",
+                  mb: 2,
                   fontWeight: "bold",
+                  fontFamily: theme.typography.fontFamily,
                 }}
               >
-                Connect with Us
+                Let's get in touch
               </Typography>
-              <Box className="social-icons">
-                {socialMediaLinks.map((media, index) => (
-                  <Link key={index} href={media.link} color="inherit">
-                    {media.icon}
-                  </Link>
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 2,
+                }}
+              >
+                Ready to start a project?
+              </Typography>
+              <Box className="info">
+                {contactInfo.map((info, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                      mb: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "40px",
+                        height: "40px",
+                        lineHeight: "40px",
+                        textAlign: "center",
+                        backgroundColor: theme.palette.lightwhite,
+                        color: theme.palette.white,
+                        borderRadius: "10%",
+                        mr: 2,
+                        pt: 1,
+                      }}
+                    >
+                      {info.icon}
+                    </Box>
+                    <Box>
+                      {info.link ? (
+                        <Link to={info.link} sx={{ fontSize: "14px" }}>
+                          {info.text}
+                        </Link>
+                      ) : (
+                        <Typography sx={{ fontSize: "14px" }}>
+                          {info.text}
+                        </Typography>
+                      )}
+                    </Box>
+                  </Box>
                 ))}
               </Box>
-            </Box>
-          </Box>
-          <Box className="contact-form">
-            <Box className="circle one" />
-            <Box className="circle two" />
-            <ThemeProvider theme={customTheme}>
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                autoComplete="off"
-                sx={{
-                  "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
-                    {
-                      borderColor: theme.palette.white,
-                    },
-                  "& .MuiInputLabel-root:hover": {
-                    color: theme.palette.lightwhite,
-                  },
-                }}
-              >
-                <TextField
-                  label="Name"
-                  name="name"
-                  value={formValues.name}
-                  onChange={handleInputChange}
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  InputLabelProps={{
-                    style: { color: theme.palette.primary.main },
-                  }}
-                />
-                <TextField
-                  label="Email"
-                  name="email"
-                  value={formValues.email}
-                  onChange={handleInputChange}
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  InputLabelProps={{
-                    style: { color: theme.palette.primary.main },
-                  }}
-                />
-                <TextField
-                  label="Phone"
-                  name="phone"
-                  value={formValues.phone}
-                  onChange={handleInputChange}
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  InputLabelProps={{
-                    style: { color: theme.palette.primary.main },
-                  }}
-                />
-                <TextField
-                  label="Message"
-                  name="message"
-                  value={formValues.message}
-                  onChange={handleInputChange}
-                  multiline
-                  rows={4}
-                  fullWidth
-                  margin="normal"
-                  variant="outlined"
-                  InputLabelProps={{
-                    style: { color: theme.palette.primary.main },
-                  }}
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
+              <Box className="social-media">
+                <Typography
                   sx={{
-                    backgroundColor: theme.palette.secondary.main,
-                    mt: 2,
-                    "&:hover": {
-                      backgroundColor: theme.palette.lightwhite,
-                    },
+                    fontSize: "16px",
+                    fontWeight: "bold",
                   }}
                 >
-                  Send
-                </Button>
+                  Connect with Us
+                </Typography>
+                <Box className="social-icons">
+                  {socialMediaLinks.map((media, index) => (
+                    <Link key={index} href={media.link} color="inherit">
+                      {media.icon}
+                    </Link>
+                  ))}
+                </Box>
               </Box>
-            </ThemeProvider>
+            </Box>
+            <Box className="contact-form">
+              <Box className="circle one" />
+              <Box className="circle two" />
+              <Formik
+                initialValues={{
+                  name: "",
+                  email: "",
+                  mobile: "",
+                  message: "",
+                  service: "",
+                }}
+                validationSchema={validationSchema}
+                onSubmit={async (values, { setSubmitting, resetForm }) => {
+                  try {
+                    const response = await axios.post(
+                      "http://localhost:8000/api/gettouch/add",
+                      values
+                    );
+                    toast.success(response.data.message);
+                  } catch (error) {
+                    console.error("Error submitting form:", error);
+                    toast.error("Error submitting form!");
+                  } finally {
+                    setSubmitting(false);
+                    resetForm();
+                  }
+                }}
+              >
+                {({ handleChange, values }) => (
+                  <Form
+                    noValidate
+                    autoComplete="off"
+                    style={{
+                      "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
+                        {
+                          borderColor: theme.palette.secondary.main,
+                        },
+                      "& .MuiInputLabel-root:hover": {
+                        color: theme.palette.secondary.main,
+                      },
+                    }}
+                  >
+                    <Grid container spacing={2}>
+                      <Grid item xs={12}>
+                        <Field
+                          as={TextField}
+                          label="Name"
+                          name="name"
+                          value={values.name}
+                          onChange={handleChange}
+                          placeholder="Name"
+                          fullWidth
+                          variant="filled"
+                          InputLabelProps={{
+                            style: { color: theme.palette.secondary.main },
+                            shrink: true,
+                          }}
+                          InputProps={{
+                            style: { color: theme.palette.secondary.main },
+                            placeholder: "Name",
+                          }}
+                          helperText={<ErrorMessage name="name" />}
+                          error={!!values.name}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Field
+                          as={TextField}
+                          label="Email"
+                          name="email"
+                          value={values.email}
+                          onChange={handleChange}
+                          fullWidth
+                          placeholder="Email"
+                          variant="filled"
+                          InputLabelProps={{
+                            style: { color: theme.palette.secondary.main },
+                            shrink: true,
+                          }}
+                          InputProps={{
+                            style: { color: theme.palette.secondary.main },
+                            placeholder: "Email",
+                          }}
+                          helperText={<ErrorMessage name="email" />}
+                          error={!!values.email}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Field
+                          as={TextField}
+                          label="Mobile"
+                          name="mobile"
+                          value={values.mobile}
+                          onChange={handleChange}
+                          fullWidth
+                          placeholder="+91 0000 00000"
+                          variant="filled"
+                          InputLabelProps={{
+                            style: { color: theme.palette.secondary.main },
+                            shrink: true,
+                          }}
+                          InputProps={{
+                            style: { color: theme.palette.secondary.main },
+                            placeholder: "+91 0000 00000",
+                          }}
+                          helperText={<ErrorMessage name="mobile" />}
+                          error={!!values.mobile}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <FormControl fullWidth variant="filled">
+                          <InputLabel
+                            style={{ color: theme.palette.secondary.main }}
+                            shrink
+                          >
+                            Service
+                          </InputLabel>
+                          <Field
+                            as={Select}
+                            name="service"
+                            value={values.service}
+                            onChange={handleChange}
+                            displayEmpty
+                            style={{ color: theme.palette.secondary.main }}
+                            inputProps={{ "aria-label": "Without label" }}
+                          >
+                            <MenuItem value="" disabled>
+                              Select a service
+                            </MenuItem>
+                            <MenuItem value="Mobile App Development">
+                              Mobile App Development
+                            </MenuItem>
+                            <MenuItem value="Web Development">
+                              Web Development
+                            </MenuItem>
+                          </Field>
+                          <ErrorMessage name="service" />
+                        </FormControl>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Field
+                          as={TextField}
+                          label="Message"
+                          name="message"
+                          value={values.message}
+                          onChange={handleChange}
+                          multiline
+                          rows={4}
+                          fullWidth
+                          variant="filled"
+                          InputLabelProps={{
+                            style: { color: theme.palette.secondary.main },
+                            shrink: true,
+                          }}
+                          InputProps={{
+                            style: { color: theme.palette.secondary.main },
+                            placeholder: "Message",
+                          }}
+                          helperText={<ErrorMessage name="message" />}
+                          error={!!values.message}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          style={{
+                            width: "130px",
+                            border: "1px solid #8c8c8c",
+                            display: "inline-block",
+                            padding: "8px 16px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          Send
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Form>
+                )}
+              </Formik>
+            </Box>
           </Box>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
-}
+};
 
 export default Getintouch;

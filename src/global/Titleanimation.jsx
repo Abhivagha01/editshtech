@@ -19,7 +19,7 @@ export const Titleanimation = ({ title }) => {
               xs: "18px",
               lg: "30px",
             },
-            fontWeight: "500",
+            fontWeight: "600",
           }}
         >
           {title}

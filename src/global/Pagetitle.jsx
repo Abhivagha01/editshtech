@@ -1,8 +1,14 @@
 import { useTheme } from "@emotion/react";
-import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  Link as MUILink,
+} from "@mui/material";
 import React from "react";
 import title_image from "../../src/assets/common_background.png";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import HomeIcon from "@mui/icons-material/Home";
 
@@ -26,10 +32,14 @@ function Pagetitle({ title, description }) {
           zIndex: -1,
           position: "relative",
           py: 15,
-          px: 8,
+          px: {
+            xs: 2,
+            md: 12,
+            lg: 20,
+          },
         }}
       >
-        <Grid container row spacing={2}>
+        <Grid container rowSpacing={2} alignItems="center">
           <Grid item xs={12} sm={12} md={6} lg={6}>
             <Typography
               sx={{
@@ -37,7 +47,7 @@ function Pagetitle({ title, description }) {
                 fontSize: {
                   xs: 20,
                 },
-                py:2,
+                py: 2,
                 fontWeight: "600",
                 textTransform: "uppercase",
               }}
@@ -48,16 +58,16 @@ function Pagetitle({ title, description }) {
             <Box>
               <Breadcrumbs
                 sx={{
-                  border: "2px dotted #404040",
+                  border: "1px dotted #404040",
                   display: "inline-block",
                   p: 1,
                   borderRadius: 8,
                   position: "relative",
-                  zIndex: 4,
+                  zIndex: 10,
                 }}
                 separator={
                   <NavigateNextIcon
-                    fontSize="small"
+                    fontSize="14px"
                     sx={{
                       color: theme.palette.white,
                     }}
@@ -65,27 +75,38 @@ function Pagetitle({ title, description }) {
                 }
                 aria-label="breadcrumb"
               >
-                <Link
-                  underline="hover"
-                  to="/"
-                  style={{
+                <Box
+                  sx={{
                     display: "flex",
                     alignItems: "center",
-                    color: theme.palette.white,
                   }}
                 >
                   <HomeIcon
                     sx={{ mr: 0.5, color: theme.palette.primary.main }}
                   />
-                  Home
-                </Link>
-                <Link
-                  style={{
+                  <MUILink
+                    component={RouterLink}
+                    to="/"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: theme.palette.white,
+                      textDecoration:'none',
+                    }}
+                  >
+                    Home
+                  </MUILink>
+                </Box>
+                <MUILink
+                  component={RouterLink}
+                  to="/"
+                  sx={{
                     color: theme.palette.secondary.main,
+                    textDecoration:'none',
                   }}
                 >
                   {title}
-                </Link>
+                </MUILink>
               </Breadcrumbs>
             </Box>
           </Grid>

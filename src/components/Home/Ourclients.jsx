@@ -1,24 +1,28 @@
 import { useTheme } from "@emotion/react";
 import { Box, Container, Grid, Button } from "@mui/material";
-import React from "react";
-import client1 from "../../assets/clients/client1.png";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Titleanimation } from "../../global/Titleanimation";
+import axios from 'axios'
 
 function OurClients() {
+  const [clients, setClients] = useState([]);
   const theme = useTheme();
 
-  const clients = [
-    { id: 1, src: client1, alt: "Client 1" },
-    { id: 2, src: client1, alt: "Client 2" },
-    { id: 3, src: client1, alt: "Client 3" },
-    { id: 4, src: client1, alt: "Client 3" },
-    { id: 5, src: client1, alt: "Client 3" },
-    { id: 6, src: client1, alt: "Client 3" },
-    { id: 7, src: client1, alt: "Client 3" },
-    { id: 8, src: client1, alt: "Client 3" },
-    { id: 9, src: client1, alt: "Client 3" },
-  ];
+  const fetchClients = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/clients/view"
+      );
+      setClients(response?.data?.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchClients();
+  }, []);
 
   const styles = {
     headerBox: {
@@ -75,8 +79,8 @@ function OurClients() {
               <Grid item key={client.id} xs={6} sm={4} md={3} lg={2}>
                 <Box sx={styles.clientImageContainer}>
                   <img
-                    src={client.src}
-                    alt={client.alt}
+                    src={client.logoImage}
+                    alt={client.companyName}
                     style={styles.clientImage}
                   />
                 </Box>

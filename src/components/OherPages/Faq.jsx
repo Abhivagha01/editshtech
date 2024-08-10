@@ -1,7 +1,6 @@
 import React from "react";
-import counter_back_image from "../../assets/common_background.png";
+import faqImage from "../../assets/Faq.jpg";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import faqImage from "../../assets/faq.jpg";
 import Pagetitle from "../../global/Pagetitle";
 import { useTheme } from "@emotion/react";
 import Accordion from "@mui/material/Accordion";

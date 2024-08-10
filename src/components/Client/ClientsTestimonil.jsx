@@ -1,42 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import {
-  Container,
-  Typography,
-  Card,
-  Avatar,
-  Box,
-} from "@mui/material";
+import { Container, Typography, Card, Avatar, Box } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Titleanimation } from "../../global/Titleanimation";
-import t1 from "../../assets/OurCliets/t1.webp";
 import { useTheme } from "@mui/material/styles";
-
-const testimonials = [
-  {
-    name: "Vishal Kanpariya",
-    feedback:
-      "Webito Infotech excels in application development. Their team's technical prowess and innovative approach consistently result in exceptional applications. They prioritize timely delivery and ensure client satisfaction throughout the development process. Webito has become my preferred partner for application projects, and I highly recommend their services to anyone in need of top-notch application development expertise...!!!",
-    avatar: t1,
-  },
-  {
-    name: "Jane Smith",
-    feedback:
-      "Webito Infotech excels in application development. Their team's technical prowess and innovative approach consistently result in exceptional applications. They prioritize timely delivery and ensure client satisfaction throughout the development process. Webito has become my preferred partner for application projects, and I highly recommend their services to anyone in need of top-notch application development expertise...!!!",
-    avatar: t1,
-  },
-  {
-    name: "Michael Johnson",
-    feedback:
-      "Webito Infotech excels in application development. Their team's technical prowess and innovative approach consistently result in exceptional applications. They prioritize timely delivery and ensure client satisfaction throughout the development process. Webito has become my preferred partner for application projects, and I highly recommend their services to anyone in need of top-notch application development expertise...!!!",
-    avatar: t1,
-  },
-];
+import axios from "axios";
 
 const ClientsTestimonil = () => {
   const theme = useTheme();
+  const [testimonial, settestimonial] = useState([]);
+  const fetchExperiences = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/testimonial/view"
+      );
+      console.log(response);
+      settestimonial(response?.data?.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchExperiences();
+  }, []);
 
   const PrevArrow = (props) => {
     const { className, style, onClick } = props;
@@ -54,7 +43,7 @@ const ClientsTestimonil = () => {
           width: "35px",
           height: "35px",
           padding: "8px",
-          borderRadius:'4px',
+          borderRadius: "4px",
           backgroundColor: theme.palette.lightwhite,
           color: theme.palette.white,
           boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
@@ -78,7 +67,7 @@ const ClientsTestimonil = () => {
           transform: "translateY(-50%)",
           zIndex: 1,
           width: "35px",
-          borderRadius:'4px',
+          borderRadius: "4px",
           height: "35px",
           padding: "8px",
           backgroundColor: theme.palette.lightwhite,
@@ -96,6 +85,7 @@ const ClientsTestimonil = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    cssEase: "linear", 
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -130,7 +120,7 @@ const ClientsTestimonil = () => {
           }}
         >
           <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
+            {testimonial.map((testimonial, index) => (
               <div key={index}>
                 <Card
                   sx={{
@@ -154,8 +144,8 @@ const ClientsTestimonil = () => {
                     }}
                   >
                     <Avatar
-                      alt={testimonial.name}
-                      src={testimonial.avatar}
+                      alt={testimonial.ClientImage}
+                      src={testimonial.ClientImage}
                       sx={{
                         margin: "0 auto",
                         marginBottom: 2,
@@ -168,7 +158,7 @@ const ClientsTestimonil = () => {
                       component="div"
                       sx={{ textAlign: "center" }}
                     >
-                      {testimonial.name}
+                      {testimonial.ClientName}
                     </Typography>
                     <Typography
                       variant="body2"
@@ -181,7 +171,7 @@ const ClientsTestimonil = () => {
                         fontStyle: "italic",
                       }}
                     >
-                      {testimonial.feedback}
+                      {testimonial.Review}
                     </Typography>
                   </Box>
                 </Card>

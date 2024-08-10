@@ -8,13 +8,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme/theme";
 import { CssBaseline } from "@mui/material";
+import { BlogProvider } from "./Context/BlogContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <BlogProvider>
       <App />
+      </BlogProvider>
     </ThemeProvider>
   </BrowserRouter>
 );

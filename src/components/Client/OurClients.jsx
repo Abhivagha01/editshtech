@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Titleanimation } from "../../global/Titleanimation";
-import company1 from "../../assets/OurCliets/company1.png";
 import { Container, Box } from "@mui/material";
 import { styled } from "@mui/system";
 
 const MainContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   "--s": "130px",
-  "--m": "4px", 
+  "--m": "4px",
   "--f": "calc(1.732 * var(--s) + 4 * var(--m) - 1px)",
 }));
 
 const StyledContainer = styled(Box)(({ theme }) => ({
-  fontSize: "0", 
+  fontSize: "0",
   "&::before": {
     content: '""',
     width: "calc(var(--s) / 2 + var(--m))",
@@ -47,10 +47,27 @@ const StyledImg = styled("img")({
 });
 
 function OurClients() {
+  const [Clients, setClients] = useState([]);
+
+  const fetchExperiences = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/Clients/view"
+      );
+      console.log(response);
+      setClients(response?.data?.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchExperiences();
+  }, []);
+
   return (
     <>
       <Titleanimation title="Our clients" />
-
       <Box
         sx={{
           py: {
@@ -58,17 +75,16 @@ function OurClients() {
             md: 6,
             lg: 6,
           },
-         margin:'10px 0'
+          margin: '10px 0'
         }}
       >
         <Container>
           <MainContainer>
             <StyledContainer>
-              {Array(12)
-                .fill()
-                .map((_, index) => (
+              {Clients
+                .map((client, index) => (
                   <StyledDiv key={index}>
-                    <StyledImg src={company1} alt="company" />
+                    <StyledImg src={client.logoImage} alt="company" />
                   </StyledDiv>
                 ))}
             </StyledContainer>

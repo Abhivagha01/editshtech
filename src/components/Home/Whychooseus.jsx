@@ -5,7 +5,7 @@ import certificate from "../../assets/Home/certificate.png";
 import inovation from "../../assets/Home/inovation.png";
 import satisfaction from "../../assets/Home/stisfaction.png";
 import counter_back_image from "../../assets/common_background.png";
-import { TiltleTwoAnimation } from "../../global/TiltleTwoAnimation,";
+import {TitleTwoAnimation} from "../../global/TitleTwoAnimation";
 
 
 function Whychooseus() {
@@ -42,7 +42,7 @@ function Whychooseus() {
                 fontFamily: theme.typography.fontFamily,
               }}
             >
-              <TiltleTwoAnimation title={`Why choose us?`} />
+              <TitleTwoAnimation title={`Why choose us?`} />
             </Box>
             <Box>
               <Grid

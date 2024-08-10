@@ -1,4 +1,5 @@
-import { useTheme } from "@emotion/react";
+import React from "react";
+import axios from "axios";
 import {
   Box,
   Button,
@@ -7,33 +8,51 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useTheme } from "@emotion/react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function ContactForm() {
+const ContactForm = () => {
   const theme = useTheme();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      mobile: "",
+    },
+    validationSchema: Yup.object().shape({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string().email("Invalid email").required("Email is required"),
+      mobile: Yup.string().required("Mobile number is required"),
+      subject: Yup.string().required("Subject is required"),
+      message: Yup.string().required("Message is required"),
+    }),
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/contact/add",
+          values
+        );
+        console.log("Submitted Data:", response.data);
+        toast.success(response.data.message);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        toast.error("Error submitting form!");
+      } finally {
+        setSubmitting(false);
+        resetForm();
+      }
+    },
   });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submitted Data:", formData);
-  };
 
   return (
     <>
+      <ToastContainer />
       <Box
         sx={{
           backgroundColor: theme.palette.black,
@@ -49,8 +68,8 @@ function ContactForm() {
               <iframe
                 title="map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.530529819246!2d72.88687117352991!3d21.210800881504532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f1f68e54d09%3A0xe1d3d1a8bc631529!2sEditsh%20Technology!5e0!3m2!1sen!2sin!4v1720786780182!5m2!1sen!2sin"
-                width={`100%`}
-                height={`100%`}
+                width="100%"
+                height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -60,98 +79,153 @@ function ContactForm() {
             <Grid item xs={12} lg={6}>
               <Box
                 component="form"
-                onSubmit={handleSubmit}
+                onSubmit={formik.handleSubmit}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
                   backgroundColor: theme.palette.lightBlack,
+                  padding: "20px",
+                  borderRadius: "10px",
                 }}
               >
-                <Box>
-                  <Typography
-                    sx={{
-                      fontSize: 30,
-                      color: theme.palette.white,
-                      fontWeight: 600,
-                    }}
-                  >
-                    Leave A Message
-                  </Typography>
-                </Box>
+                <Typography
+                  variant="h4"
+                  sx={{ color: theme.palette.white, fontWeight: 600 }}
+                >
+                  Leave A Message
+                </Typography>
+                {/* Name Field */}
                 <TextField
-                  label="Name"
+                  id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  label="Name"
                   variant="filled"
-                  required
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.name && Boolean(formik.errors.name)}
+                  helperText={formik.touched.name && formik.errors.name}
                   InputLabelProps={{
                     style: { color: theme.palette.white },
+                    shrink: true,
                   }}
                   InputProps={{
-                    readOnly: true,
+                    style: { color: theme.palette.white },
+                    placeholder: "Name",
                   }}
                 />
+                {/* Email Field */}
                 <TextField
-                  label="Email"
+                  id="email"
                   name="email"
+                  label="Email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  variant="filled"
-                  required
+                  fullWidth
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.email && Boolean(formik.errors.email)}
+                  helperText={formik.touched.email && formik.errors.email}
                   InputLabelProps={{
-                    style: { color: theme.palette.white},
+                    style: { color: theme.palette.white },
+                    shrink: true,
                   }}
                   InputProps={{
-                    readOnly: true,
+                    style: { color: theme.palette.white },
+                    placeholder: "Email",
                   }}
                 />
+                {/* Mobile Number Field */}
                 <TextField
-                  label="Subject"
+                  id="mobile"
+                  name="mobile"
+                  label="Mobile Number"
+                  type="tel"
+                  variant="filled"
+                  placeholder="+91 00000 00000"
+                  fullWidth
+                  value={formik.values.mobile}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.mobile && Boolean(formik.errors.mobile)}
+                  helperText={formik.touched.mobile && formik.errors.mobile}
+                  InputLabelProps={{
+                    style: { color: theme.palette.white },
+                    shrink: true,
+                  }}
+                  InputProps={{
+                    style: { color: theme.palette.white },
+                    placeholder: "+91 00000 00000",
+                  }}
+                />
+                {/* Subject Field */}
+                <TextField
+                  id="subject"
                   name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
+                  placeholder="Subject"
+                  label="Subject"
                   variant="filled"
-                  required
+                  fullWidth
+                  value={formik.values.subject}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.subject && Boolean(formik.errors.subject)
+                  }
+                  helperText={formik.touched.subject && formik.errors.subject}
                   InputLabelProps={{
-                    style: { color: "white" },
+                    style: { color: theme.palette.white },
+                    shrink: true,
                   }}
                   InputProps={{
-                    readOnly: true,
+                    style: { color: theme.palette.white },
+                    placeholder: "Subject",
                   }}
                 />
+                {/* Message Field */}
                 <TextField
-                  label="Message"
+                  id="message"
                   name="message"
+                  label="Message"
+                  placeholder="Messages"
                   multiline
                   rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
                   variant="filled"
-                  required
+                  fullWidth
+                  value={formik.values.message}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.message && Boolean(formik.errors.message)
+                  }
+                  helperText={formik.touched.message && formik.errors.message}
                   InputLabelProps={{
                     style: { color: theme.palette.white },
+                    shrink: true,
                   }}
                   InputProps={{
-                    readOnly: true,
+                    style: { color: theme.palette.white },
+                    placeholder: "Message",
                   }}
                 />
-                <Box>
-                  <Button
-                    type="submit"
-                    sx={{
-                      width: "130px",
-                      border: "1px solid #8c8c8c",
-                      display: "inline-block",
-                      p: 1,
-                      borderRadius:5
-                    }}
-                  >
-                    Submit
-                  </Button>
-                </Box>
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  sx={{
+                    width: "130px",
+                    borderRadius: 5,
+                    borderColor: theme.palette.grey[500],
+                    color: theme.palette.grey[500],
+                    "&:hover": {
+                      backgroundColor: theme.palette.grey[800],
+                      color: theme.palette.common.white,
+                    },
+                  }}
+                >
+                  Submit
+                </Button>
               </Box>
             </Grid>
           </Grid>
@@ -159,6 +233,6 @@ function ContactForm() {
       </Box>
     </>
   );
-}
+};
 
 export default ContactForm;

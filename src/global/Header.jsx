@@ -2,46 +2,144 @@ import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Box,
-  IconButton,
   Toolbar,
   Typography,
+  IconButton,
+  Menu,
+  MenuItem,
+  Grid,
   Drawer,
   List,
   ListItem,
   ListItemText,
+  Collapse,
   Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../assets/footer/logo.png";
-import { useTheme } from "@emotion/react";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/footer/logo.png";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [mobileExpandedCategory, setMobileExpandedCategory] = useState(null);
+  //eslint-disable-next-line
+  const [expandedSubCategories, setExpandedSubCategories] = useState({});
+  const [mobileExpandedSubCategories, setMobileExpandedSubCategories] =
+    useState({});
+  const [currentMenu, setCurrentMenu] = useState(null);
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const handleSubMenuOpen = (event, menuIndex) => {
+    setAnchorEl(event.currentTarget);
+    setCurrentMenu(menuIndex);
+  };
+
+  const handleSubMenuClose = () => {
+    setAnchorEl(null);
+    setCurrentMenu(null);
+  };
+  //eslint-disable-next-line
+  const toggleExpandCategory = (category) => {
+    setExpandedCategory(expandedCategory === category ? null : category);
+  };
+
+  const toggleMobileExpandCategory = (category) => {
+    setMobileExpandedCategory(
+      mobileExpandedCategory === category ? null : category
+    );
+  };
+//eslint-disable-next-line
+  const toggleSubCategoryExpand = (category, subCategory) => {
+    setExpandedSubCategories((prev) => ({
+      ...prev,
+      [category]: {
+        ...prev[category],
+        [subCategory]: !prev[category]?.[subCategory],
+      },
+    }));
+  };
+
+  const toggleMobileSubCategoryExpand = (category, subCategory) => {
+    setMobileExpandedSubCategories((prev) => ({
+      ...prev,
+      [category]: {
+        ...prev[category],
+        [subCategory]: !prev[category]?.[subCategory],
+      },
+    }));
+  };
+
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
-    { label: "Technology", to: "/technology" },
+    {
+      label: "Technology",
+      subItems: [
+        {
+          category: "App Development",
+          items: [
+            {
+              label: "React Native Development",
+              to: "/mobile/reactNativeAppDevelopment",
+            },
+            {
+              label: "Flutter Development",
+              to: "/mobile/FlutterAppDevelopment",
+            },
+            { label: "iOS Development", to: "/mobile/iosAppDevelopment" },
+            {
+              label: "Android Development",
+              to: "/mobile/androidAppDevelopment",
+            },
+          ],
+        },
+        {
+          category: "Web Development",
+          items: [
+            {
+              label: "React JS Development",
+              to: "/frontend/reactJsDevelopment",
+            },
+            {
+              label: "Angular Development",
+              to: "/frontend/angularJsDevelopment",
+            },
+            { label: "Vue JS Development", to: "/frontend/vueJsDevelopment" },
+          ],
+        },
+        {
+          category: "Backend Development",
+          items: [
+            { label: "Node.js Development", to: "/backend/nodejsDevelopment" },
+            { label: ".NET Development", to: "/backend/netDevelopment" },
+            { label: "Python Development", to: "/backend/pythonDevelopment" },
+          ],
+        },
+      ],
+    },
     { label: "Client", to: "/client" },
     { label: "Career", to: "/career" },
-    { label: "blog", to: "/blog" },
+    { label: "Blog", to: "/blogs" },
     { label: "Contact Us", to: "/contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -80,7 +178,7 @@ const Header = () => {
                 }}
               >
                 <NavLink to={"/"}>
-                  <Box to={"/"} className="logo-inner">
+                  <Box className="logo-inner">
                     <img src={logo} alt="Logo" height="70px" width="40%" />
                   </Box>
                 </NavLink>
@@ -91,6 +189,9 @@ const Header = () => {
                   size="large"
                   aria-label="menu"
                   onClick={toggleMobileMenu}
+                  sx={{
+                    color: theme.palette.white,
+                  }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -100,32 +201,113 @@ const Header = () => {
                 sx={{
                   display: { xs: "none", md: "flex" },
                   justifyContent: "flex-end",
+                  alignItems: "center",
                 }}
               >
-                {/* Desktop Menu Items */}
-                {menuItems.map((item, index) => (
-                  <NavLink
-                    key={index}
-                    to={item.to}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Typography
-                      sx={{
-                        mx: 1.5,
-                        color: theme.palette.white,
-                        display: "block",
-                        fontWeight: "500",
-                        fontSize: "15px",
-                        transition: "0.5s",
-                        "&:hover": {
-                          color: theme.palette.secondary.main,
-                        },
-                      }}
-                    >
-                      {item.label}
-                    </Typography>
-                  </NavLink>
-                ))}
+                {menuItems.map((item, index) => {
+                  if (item.subItems) {
+                    return (
+                      <Box key={index}>
+                        <Typography
+                          onClick={(e) => handleSubMenuOpen(e, index)}
+                          sx={{
+                            mx: 1.5,
+                            color: theme.palette.white,
+                            display: "flex",
+                            alignItems: "center",
+                            fontWeight: "500",
+                            fontSize: "15px",
+                            cursor: "pointer",
+                            transition: "0.5s",
+                            "&:hover": {
+                              color: theme.palette.secondary.main,
+                            },
+                          }}
+                        >
+                          {item.label}
+                          <ArrowDropDownIcon />
+                        </Typography>
+                        <Menu
+                          anchorEl={anchorEl}
+                          open={Boolean(anchorEl) && currentMenu === index}
+                          onClose={handleSubMenuClose}
+                          MenuListProps={{
+                            onMouseLeave: handleSubMenuClose,
+                          }}
+                          sx={{ mt: 2 }}
+                        >
+                          <Box
+                            sx={{
+                              padding: 2,
+                              backgroundColor: theme.palette.background.default,
+                            }}
+                          >
+                            <Grid container spacing={2}>
+                              {item.subItems.map((subItem, subIndex) => (
+                                <Grid item xs={12} md={4} key={subIndex}>
+                                  <Typography
+                                    variant="subtitle1"
+                                    sx={{ fontWeight: "bold", mb: 1 }}
+                                  >
+                                    {subItem.category}
+                                  </Typography>
+                                  {subItem.items.map(
+                                    (nestedItem, nestedIndex) => (
+                                      <NavLink
+                                        key={nestedIndex}
+                                        to={nestedItem.to}
+                                        style={{ textDecoration: "none" }}
+                                      >
+                                        <MenuItem
+                                          sx={{
+                                            fontSize: "14px",
+                                            paddingLeft: 1,
+                                            color: theme.palette.text.primary,
+                                            "&:hover": {
+                                              color:
+                                                theme.palette.secondary.main,
+                                            },
+                                          }}
+                                          onClick={handleSubMenuClose}
+                                        >
+                                          {nestedItem.label}
+                                        </MenuItem>
+                                      </NavLink>
+                                    )
+                                  )}
+                                </Grid>
+                              ))}
+                            </Grid>
+                          </Box>
+                        </Menu>
+                      </Box>
+                    );
+                  } else {
+                    return (
+                      <NavLink
+                        key={index}
+                        to={item.to}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Typography
+                          sx={{
+                            mx: 1.5,
+                            color: theme.palette.white,
+                            display: "block",
+                            fontWeight: "500",
+                            fontSize: "15px",
+                            transition: "0.5s",
+                            "&:hover": {
+                              color: theme.palette.secondary.main,
+                            },
+                          }}
+                        >
+                          {item.label}
+                        </Typography>
+                      </NavLink>
+                    );
+                  }
+                })}
               </Box>
             </Box>
           </Box>
@@ -135,7 +317,7 @@ const Header = () => {
       <Drawer
         anchor="left"
         open={mobileMenuOpen}
-        onClose={toggleMobileMenu}
+        onClose={() => setMobileMenuOpen(false)}
         sx={{ "& .MuiDrawer-paper": { width: "250px" } }}
       >
         <Box
@@ -143,21 +325,124 @@ const Header = () => {
             width: 250,
           }}
           role="presentation"
-          onClick={toggleMobileMenu}
-          onKeyDown={toggleMobileMenu}
         >
           <List>
-            {menuItems.map((item, index) => (
-              <NavLink
-                key={index}
-                to={item.to}
-                style={{ textDecoration: "none" }}
-              >
-                <ListItem button>
-                  <ListItemText primary={item.label} />
-                </ListItem>
-              </NavLink>
-            ))}
+            {menuItems.map((item, index) => {
+              if (item.subItems) {
+                return (
+                  <Box key={index}>
+                    <ListItem
+                      button
+                      onClick={() => toggleMobileExpandCategory(item.label)}
+                    >
+                      <ListItemText primary={item.label} />
+                      {mobileExpandedCategory === item.label ? (
+                        <ExpandLess />
+                      ) : (
+                        <ExpandMore />
+                      )}
+                    </ListItem>
+                    <Collapse
+                      in={mobileExpandedCategory === item.label}
+                      timeout="auto"
+                      unmountOnExit
+                    >
+                      <List component="div" disablePadding>
+                        {item.subItems.map((subItem, subIndex) => (
+                          <Box key={subIndex}>
+                            <ListItem
+                              button
+                              onClick={() =>
+                                toggleMobileSubCategoryExpand(
+                                  item.label,
+                                  subItem.category
+                                )
+                              }
+                            >
+                              <ListItemText
+                                primary={
+                                  <Box
+                                    sx={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "space-between",
+                                    }}
+                                  >
+                                    <Typography
+                                      sx={{ ml: 1, fontWeight: "bold" }}
+                                    >
+                                      {subItem.category}
+                                    </Typography>
+                                    {/* Plus and Minus icons for mobile only */}
+                                    {isMobile && (
+                                      <IconButton
+                                        onClick={() =>
+                                          toggleMobileSubCategoryExpand(
+                                            item.label,
+                                            subItem.category
+                                          )
+                                        }
+                                      >
+                                        {mobileExpandedSubCategories[
+                                          item.label
+                                        ]?.[subItem.category] ? (
+                                          <RemoveIcon />
+                                        ) : (
+                                          <AddIcon />
+                                        )}
+                                      </IconButton>
+                                    )}
+                                  </Box>
+                                }
+                              />
+                            </ListItem>
+                            <Collapse
+                              in={
+                                mobileExpandedSubCategories[item.label]?.[
+                                  subItem.category
+                                ]
+                              }
+                              timeout="auto"
+                              unmountOnExit
+                            >
+                              <List component="div" disablePadding>
+                                {subItem.items.map(
+                                  (nestedItem, nestedIndex) => (
+                                    <NavLink
+                                      key={nestedIndex}
+                                      to={nestedItem.to}
+                                      style={{ textDecoration: "none" }}
+                                    >
+                                      <ListItem button sx={{ ml: 1 }}>
+                                        <ListItemText
+                                          primary={nestedItem.label}
+                                        />
+                                      </ListItem>
+                                    </NavLink>
+                                  )
+                                )}
+                              </List>
+                            </Collapse>
+                          </Box>
+                        ))}
+                      </List>
+                    </Collapse>
+                  </Box>
+                );
+              } else {
+                return (
+                  <NavLink
+                    key={index}
+                    to={item.to}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <ListItem button>
+                      <ListItemText primary={item.label} />
+                    </ListItem>
+                  </NavLink>
+                );
+              }
+            })}
           </List>
           <Divider />
         </Box>
