@@ -1,17 +1,20 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import theme from "../../theme/theme";
-import moreabout from "../../assets/Home/IT-help.webp";
+import { Link } from "react-router-dom";
 
 function Moreabout() {
   return (
     <>
       <Container>
         <Grid container row alignItems="center">
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}
+          data-aos="fade-right"
+          data-aos-duration="3000"
+          >
             <Box sx={{ my: 10 }}>
               <Typography
-                variant="h5"
+                variant="h4"
                 sx={{
                   fontWeight: "700",
                 }}
@@ -21,7 +24,7 @@ function Moreabout() {
                   component="span"
                   sx={{
                     color: theme.palette.secondary.main,
-                    fontSize: "24px",
+                    fontSize: "32px",
                     mx: 1,
                     fontWeight: "700",
                   }}
@@ -45,7 +48,7 @@ function Moreabout() {
                   fontFamily: theme.typography.fontFamily,
                 }}
               >
-                Tagline Infotech’s Information technology consultants provide
+                Editsh Information technology consultants provide
                 the services which are essential for customers to effectively
                 control their IT problems. We have the knowledge, resources, and
                 technical expertise to assist your business to become more
@@ -54,12 +57,18 @@ function Moreabout() {
                 working on all dimensions of IT from planning to design to
                 digital. Talk To Our Experts
               </Typography>
-              <Box>
-                <Button
-                  sx={{
+              <Box sx={{
+                mt:4
+              }}>
+                <Link
+                to="contact"
+                  style={{
                     fontSize: "16px",
-                    my: 4,
+                    padding:"8px",
+                    color:theme.palette.white,
                     backgroundColor: theme.palette.secondary.main,
+                    borderRadius:'10px',
+                    textTransform:"capitalize",
                     "&:hover": {
                       transition: "transform 0.3s ease-in-out",
                       backgroundColor: theme.palette.lightwhite,
@@ -67,13 +76,16 @@ function Moreabout() {
                   }}
                 >
                   Talk to our Experts
-                </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <Box sx={{p:5}} className="moreabout-inner">
-              <img src={moreabout} alt="moreabout" />
+          <Grid item xs={12} sm={12} md={6}
+          data-aos="fade-left"
+          data-aos-duration="3000"
+          >
+            <Box sx={{p:0}}>
+              <img src="https://i.postimg.cc/q7QywtcZ/Cream-Pastel-Minimalist-6-Steps-Marketing-Plan-Graph.jpg" alt="More About" />
             </Box>
           </Grid>
         </Grid>

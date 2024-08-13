@@ -8,13 +8,15 @@ function RequestQuote() {
 
   return (
     <>
-      <Box sx={{
-        py:{
-          xs: 2,
-          sm:2,
-          md: 4,
-        }
-      }}>
+      <Box
+        sx={{
+          py: {
+            xs: 2,
+            sm: 2,
+            md: 4,
+          },
+        }}
+      >
         <Container>
           <Box
             sx={{
@@ -36,6 +38,8 @@ function RequestQuote() {
                     sx={{
                       color: theme.palette.black,
                       fontSize: "30px",
+                      fontWeight: "600",
+                      typography:theme.typography.fontFamily,
                     }}
                   >
                     Ready to Start Your
@@ -44,12 +48,13 @@ function RequestQuote() {
                     component="span"
                     sx={{
                       color: theme.palette.secondary.main,
+                      typography:theme.typography.fontFamily,
                       fontSize: "30px",
-                      fontWeight:'600',
-                      ml:2
+                      fontWeight: "600",
+                      ml: 1,
                     }}
                   >
-                   Project?
+                    Project?
                   </Typography>
                 </Box>
                 <Typography
@@ -74,7 +79,7 @@ function RequestQuote() {
                       padding: "10px",
                       textAlign: "center",
                       display: "block",
-                      borderRadius: 3,
+                      borderRadius:'10px',
                       p: 2,
                     }}
                   >

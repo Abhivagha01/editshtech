@@ -32,13 +32,13 @@ function VueJsdevelopment() {
       icon: Ser2,
       title: "Vue.js Storefront Development",
       description:
-        "Improve user engagement and increase sales. We, at Tagline Infotech, specialize in crafting visually captivating e-commerce storefronts using the latest Vue.js tools and technologies.",
+        "Improve user engagement and increase sales. We, at Editsh, specialize in crafting visually captivating e-commerce storefronts using the latest Vue.js tools and technologies.",
     },
     {
       icon: Ser3,
       title: "Vue.js Component Development",
       description:
-        "Tagline Infotech focuses on efficiency and scalability. Our Vue.js component development services ensure the creation of reusable and modular components, resulting in faster development cycles and easier maintenance of the applications.",
+        "Editsh focuses on efficiency and scalability. Our Vue.js component development services ensure the creation of reusable and modular components, resulting in faster development cycles and easier maintenance of the applications.",
     },
     {
       icon: Ser4,
@@ -56,7 +56,7 @@ function VueJsdevelopment() {
       icon: Ser6,
       title: "Interactive Dashboards",
       description:
-        "Tagline Infotech specializes in creating the most dynamic Vue.js dashboards that provide real-time data visualization and user interaction, empowering your team to monitor key metrics, track performance, and make informed decisions with ease.",
+        "Editsh specializes in creating the most dynamic Vue.js dashboards that provide real-time data visualization and user interaction, empowering your team to monitor key metrics, track performance, and make informed decisions with ease.",
     },
     {
       icon: Ser7,
@@ -112,8 +112,9 @@ function VueJsdevelopment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -126,7 +127,14 @@ function VueJsdevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -139,11 +147,11 @@ function VueJsdevelopment() {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: 16,
-                    lg: 40,
+                    xs: 25,
+                    lg: 35,
                   },
                   fontWeight: 600,
-                  my: 2,
+                  my: 1,
                 }}
               >
                 Vuejs Development Company
@@ -152,15 +160,23 @@ function VueJsdevelopment() {
                 sx={{
                   fontSize: "14px",
                   color: theme.palette.secondary.main,
-                  my: 4,
+                  my: 2,
                   lineHeight: "24px",
                 }}
               >
-                Editsh is a leading VueJS development company. Our experienced
-                team with cutting-edge front-end framework crafts
-                cost-effective, lightweight, and result-oriented Vue.js
-                applications with exceptional performance ready towards setting
-                new industry standards.
+                At Editsh, we pride ourselves on being a top-tier Vue.js
+                development company, dedicated to crafting exceptional web
+                applications with unparalleled performance. Our experienced team
+                harnesses the power of Vue.js, a cutting-edge front-end
+                framework, to deliver cost-effective, lightweight, and highly
+                efficient solutions tailored to meet your business needs. Vue.js
+                is renowned for its versatility and ease of integration, making
+                it the perfect choice for dynamic and scalable applications. Our
+                skilled developers leverage Vue.js to build applications that
+                not only meet but exceed industry standards. Whether you need a
+                sophisticated single-page application, a seamless user
+                interface, or a robust web application, our team is equipped to
+                handle it all.
               </Typography>
               <Box
                 sx={{
@@ -184,13 +200,20 @@ function VueJsdevelopment() {
                         color: theme.palette.white,
                       }}
                     >
-                      Contact Us
+                       Reaquest A Qoute
                     </Link>
                   </Button>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/wMzNyFKp/vue-banner.png"
                 alt="ios_image"
@@ -216,7 +239,13 @@ function VueJsdevelopment() {
       >
         <Container>
           <Grid container spacing={3} row>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/FzxF073L/javascript-frameworks-concept-illustration-114360-743.avif"
                 alt="ios_image"
@@ -230,33 +259,23 @@ function VueJsdevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                }}
-              >
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
+              <Box>
                 <Typography
                   component="span"
                   sx={{
                     color: theme.palette.black,
-                    fontSize: "22px",
-                    fontWeight: "600",
-                    pr: 1,
-                  }}
-                >
-                  Partner with Most-Prominent
-                </Typography>
-                <Typography
-                  component="span"
-                  sx={{
-                    color: theme.palette.secondary.main,
-                    fontSize: "22px",
+                    fontSize: "28px",
                     fontWeight: "600",
                   }}
                 >
-                  Vue.js Development Company
+                  Why Choose Vue.js
                 </Typography>
               </Box>
 
@@ -318,72 +337,87 @@ function VueJsdevelopment() {
             and robust frameworks. Hire Vue.js Developers to unlock the full
             potential of your digital journey with us.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
+          <Box
             sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
+              px: 2,
             }}
           >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
       <Box
@@ -453,7 +487,15 @@ function VueJsdevelopment() {
             }}
           >
             {features.map((service, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -515,7 +557,7 @@ function VueJsdevelopment() {
         }}
       >
         <Container>
-          <Titleanimation title="What Makes Tagline Infotech Most-Trusted VueJS Development Service Provider?" />
+          <Titleanimation title="What Makes Editsh Most-Trusted VueJS Development Service Provider?" />
           <Typography
             sx={{
               fontSize: "14px",
@@ -533,8 +575,8 @@ function VueJsdevelopment() {
           <TrutedProject />
         </Container>
       </Box>
-      <ProjectIndustry/>
-      <RequestQuote/>
+      <ProjectIndustry />
+      <RequestQuote />
     </>
   );
 }

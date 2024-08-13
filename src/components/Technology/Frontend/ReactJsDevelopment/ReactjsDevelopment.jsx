@@ -168,7 +168,14 @@ function ReactjsDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: {
@@ -217,13 +224,20 @@ function ReactjsDevelopment() {
                         color: theme.palette.white,
                       }}
                     >
-                      Contact Us
+                      Reaquest A Qoute
                     </Link>
                   </Button>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/j2Y1h2vR/react-service.webp"
                 alt="ios_image"
@@ -250,7 +264,13 @@ function ReactjsDevelopment() {
       >
         <Container>
           <Grid container spacing={3} row>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/FzxF073L/javascript-frameworks-concept-illustration-114360-743.avif"
                 alt="ios_image"
@@ -264,7 +284,13 @@ function ReactjsDevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Box
                 sx={{
                   display: "flex",
@@ -339,7 +365,7 @@ function ReactjsDevelopment() {
         }}
       >
         <Container>
-          <Titleanimation title="Flutter App Development Service We Offer" />
+          <Titleanimation title="Flutter App Development Service" />
           <Typography
             sx={{
               fontSize: "14px",
@@ -357,72 +383,87 @@ function ReactjsDevelopment() {
             components, JSX, and server-side rendering to optimize app
             performance.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
+          <Box
             sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
+              px: 2,
             }}
           >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
       <Box
@@ -462,7 +503,15 @@ function ReactjsDevelopment() {
             }}
           >
             {TechnologyIcon.map((item, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -567,7 +616,15 @@ function ReactjsDevelopment() {
             }}
           >
             {reactBenefits.map((service, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -615,7 +672,7 @@ function ReactjsDevelopment() {
         }}
       >
         <Container>
-          <Titleanimation title="Why Should You Choose Tagline Infotech for your ReactJS Development Project?" />
+          <Titleanimation title="Why Should You Choose Editsh for your ReactJS Development Project?" />
           <Typography
             sx={{
               fontSize: "14px",

@@ -17,7 +17,7 @@ function Blogs() {
   };
 
   return (
-    <Box sx={{ my: { sm: 2, lg: 8 } }}>
+    <Box sx={{ py: { xs: 2, sm: 3, lg: 4 } }}>
       <Container>
         <Box
           sx={{
@@ -35,9 +35,9 @@ function Blogs() {
           spacing={3}
           sx={{
             py: {
+              xs: 4,
               sm: 4,
-              md: 8,
-              lg: 10,
+              lg: 6,
             },
           }}
         >
@@ -47,12 +47,15 @@ function Blogs() {
                 sx={{
                   boxShadow: 1,
                   p: 2,
-                  borderBottom: `5px solid ${theme.palette.secondary.main}`,
+                  borderBottom: `2px solid ${theme.palette.secondary.main}`,
                   borderRadius: "5px",
                 }}
               >
                 <Box>
-                  <img src={blog.blogImage} alt="blog-image" />
+                  <img src={blog.blogImage} alt="blog-image" style={{
+                    borderRadius:'5px',
+                    height:'200px'
+                  }} />
                 </Box>
                 <Box
                   sx={{
@@ -76,6 +79,7 @@ function Blogs() {
                     <Typography
                       sx={{
                         color: theme.palette.secondary.main,
+                        fontSize: "14px",
                       }}
                     >
                       {new Date(blog.date).toLocaleDateString()}
@@ -86,8 +90,8 @@ function Blogs() {
                   <Typography
                     sx={{
                       color: theme.palette.lightwhite,
-                      fontSize: "18px",
-                      fontWeight: "500",
+                      fontSize: "16px",
+                      fontWeight: "600",
                       py: 1,
                     }}
                   >
@@ -97,7 +101,7 @@ function Blogs() {
                     <Typography
                       sx={{
                         color: theme.palette.secondary.main,
-                        fontSize: "14px",
+                        fontSize: "13px",
                         fontWeight: "400",
                         py: 1,
                       }}

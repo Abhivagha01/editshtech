@@ -19,7 +19,7 @@ function Pagetitle({ title, description }) {
     <Box
       sx={{
         background: theme.palette.black,
-        zIndex: -1,
+        zIndex: 1,
         position: "relative",
       }}
     >

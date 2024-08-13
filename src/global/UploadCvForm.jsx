@@ -28,7 +28,7 @@ function UploadCvForm() {
       formData.append("image", file);
 
       axios
-        .post("http://localhost:8000/api/upload-image", formData, {
+        .post("https://editsh-back.onrender.com/api/upload-image", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -49,7 +49,7 @@ function UploadCvForm() {
   const handleSubmit = async (values) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/resume/add",
+        "https://editsh-back.onrender.com/api/resume/add",
         values
       );
       console.log(response);

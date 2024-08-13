@@ -17,8 +17,7 @@ import ProjectPricing from "../../../../global/ProjectPricing";
 import TrutedProject from "../../../../global/TrutedProject";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
-import PhythonPanel   from './PhythonPanel';
-
+import PhythonPanel from "./PhythonPanel";
 
 function PhythonDevelopment() {
   const theme = useTheme();
@@ -69,7 +68,7 @@ function PhythonDevelopment() {
     {
       title: "Python Consulting Services",
       description:
-        "Unlock the potential of your business potential with Tagline Infotech’s Python consulting services. With Python, our professionals help you improve operations and reach your goals.",
+        "Unlock the potential of your business potential with Editsh’s Python consulting services. With Python, our professionals help you improve operations and reach your goals.",
       icon: s8,
     },
     {
@@ -118,7 +117,7 @@ function PhythonDevelopment() {
     {
       title: "Client Satisfaction",
       description:
-        "Get Python apps that are secure, reliable, and robust by partnering with Tagline Infotech. We follow quality standards throughout development stages ensuring smooth operation and user satisfaction.",
+        "Get Python apps that are secure, reliable, and robust by partnering with Editsh. We follow quality standards throughout development stages ensuring smooth operation and user satisfaction.",
     },
     {
       title: "Agile Methodology",
@@ -143,8 +142,9 @@ function PhythonDevelopment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -157,10 +157,17 @@ function PhythonDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
-                  fontSize: "16px",
+                  fontSize: "20px",
                   color: theme.palette.secondary.main,
                   fontWeight: "600",
                 }}
@@ -170,7 +177,7 @@ function PhythonDevelopment() {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: 16,
+                    xs: 25,
                     lg: 40,
                   },
                   fontWeight: 600,
@@ -183,18 +190,18 @@ function PhythonDevelopment() {
                 sx={{
                   fontSize: "14px",
                   color: theme.palette.secondary.main,
-                  my: 4,
+                  my: 2,
                   lineHeight: "24px",
                 }}
               >
-                Tagline Infotech, is the most-trusted Python development agency.
-                We have a team of highly professional Python developers who
-                specialise in various Python development services and have
-                significant expertise with frameworks such as Flask, Django and
-                FastAPI. Our developers provide cutting-edge AI/ML solutions
-                powered by insightful data and strong backend solutions for
-                web-based applications. Find the perfect Python developer in
-                just a few steps!
+                Editsh, is the most-trusted Python development agency. We have a
+                team of highly professional Python developers who specialise in
+                various Python development services and have significant
+                expertise with frameworks such as Flask, Django and FastAPI. Our
+                developers provide cutting-edge AI/ML solutions powered by
+                insightful data and strong backend solutions for web-based
+                applications. Find the perfect Python developer in just a few
+                steps!
               </Typography>
               <Box
                 sx={{
@@ -218,13 +225,20 @@ function PhythonDevelopment() {
                         color: theme.palette.white,
                       }}
                     >
-                      Contact Us
+                      Reaquest A Qoute
                     </Link>
                   </Button>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/8zqJNhJj/What-is-Python-Why-Does-it-Matter-in-Software-Development-removebg-preview.png"
                 alt="ios_image"
@@ -240,6 +254,7 @@ function PhythonDevelopment() {
           </Grid>
         </Container>
       </Box>
+
       <Box
         sx={{
           py: {
@@ -249,8 +264,15 @@ function PhythonDevelopment() {
         }}
       >
         <Container>
-          <Grid container spacing={3} row>
-            <Grid item xs={12} lg={7}>
+          <Grid container spacing={3}>
+            <Grid
+              item
+              xs={12}
+              lg={7}
+              order={{ xs: 2, lg: 1 }}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/w38pvcJj/9656459687-removebg-preview.png"
                 alt="ios_image"
@@ -259,7 +281,14 @@ function PhythonDevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={5}>
+            <Grid
+              item
+              xs={12}
+              lg={5}
+              order={{ xs: 1, lg: 2 }}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
                 <Typography
                   component="span"
@@ -291,14 +320,14 @@ function PhythonDevelopment() {
                   mt: 2,
                 }}
               >
-                Tagline Infotech is a top-notch Python development company that
-                serves clients worldwide. With 6+ years of experience in the
+                Editsh is a top-notch Python development company that serves
+                clients worldwide. With 6+ years of experience in the
                 development of applications with exceptional performance and
                 minimal latency, we have a team of expert Python developers. We
                 offer Python developers who work for you as per your project
-                needs: full-time, part-time, or hourly. Our Tagline Infotech
-                team works dedicatedly to deliver the most exceptional Python
-                development services in the industry.
+                needs: full-time, part-time, or hourly. Our Editsh team works
+                dedicatedly to deliver the most exceptional Python development
+                services in the industry.
               </Typography>
               <Typography
                 sx={{
@@ -315,13 +344,13 @@ function PhythonDevelopment() {
                 needs. We've successfully served 500+ companies across various
                 sectors and work with advanced tech concepts like ML, AI, AR/VR,
                 IoT and Blockchain. Experience the finest in Python software
-                development with Tagline Infotech, where excellence meets
-                innovation.
+                development with Editsh, where excellence meets innovation.
               </Typography>
             </Grid>
           </Grid>
         </Container>
       </Box>
+
       <Box
         sx={{
           py: {
@@ -342,81 +371,95 @@ function PhythonDevelopment() {
               margin: "auto",
             }}
           >
-            Tagline Infotech, a premier Python development company, excels in
-            delivering bespoke Python development services with precision and
-            expertise. Our team of dedicated Python developers crafts
-            user-friendly applications with modern interfaces, specialising in
-            AI & ML development and Python-based IoT app solutions tailored to
-            meet your business goals and objectives.
+            Editsh, a premier Python development company, excels in delivering
+            bespoke Python development services with precision and expertise.
+            Our team of dedicated Python developers crafts user-friendly
+            applications with modern interfaces, specialising in AI & ML
+            development and Python-based IoT app solutions tailored to meet your
+            business goals and objectives.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
-            sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
-            }}
-          >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+          <Box sx={{
+            px:2
+          }}>
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
+
       <Box
         sx={{
           py: {
@@ -443,6 +486,7 @@ function PhythonDevelopment() {
           <ProjectPricing />
         </Container>
       </Box>
+
       <Box
         sx={{
           height: "70vh",
@@ -458,14 +502,23 @@ function PhythonDevelopment() {
       >
         <Container>
           <Box
-              sx={{
-                height: "70vh",
-                overflow: "hidden",
-                display: "flex",
-              }}
+            sx={{
+              height: "70vh",
+              overflow: "hidden",
+              display: "flex",
+            }}
           >
             <Grid container spacing={3} sx={{ flex: 1 }}>
-              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
+                data-aos="fade-right"
+                data-aos-duration="3000"
+              >
                 <Box>
                   <Typography
                     sx={{
@@ -502,11 +555,10 @@ function PhythonDevelopment() {
                       my: 2,
                     }}
                   >
-                    Tagline Infotech is your top Python development agency for
-                    web services, chosen for our unwavering commitment to
-                    excellence and client satisfaction. We deliver exceptional
-                    solutions that exceed expectations. Here's what makes us
-                    different:
+                    Editsh is your top Python development agency for web
+                    services, chosen for our unwavering commitment to excellence
+                    and client satisfaction. We deliver exceptional solutions
+                    that exceed expectations. Here's what makes us different:
                   </Typography>
                 </Box>
               </Grid>
@@ -523,6 +575,8 @@ function PhythonDevelopment() {
                   scrollbarWidth: "none",
                   pr: 2,
                 }}
+                data-aos="fade-left"
+                data-aos-duration="3000"
               >
                 {softwareDevelopmentDetails.map((content, index) => (
                   <Box
@@ -559,6 +613,7 @@ function PhythonDevelopment() {
           </Box>
         </Container>
       </Box>
+
       <Box
         sx={{
           py: {
@@ -599,7 +654,15 @@ function PhythonDevelopment() {
             }}
           >
             {contentArray.map((service, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -636,18 +699,19 @@ function PhythonDevelopment() {
           </Grid>
         </Container>
       </Box>
+
       <Box
         sx={{
           py: {
             xs: 4,
             sm: 4,
-            lg: 8,
+            lg: 6,
           },
         }}
       >
         <Container>
           <Titleanimation
-            title={`What Makes Tagline Infotech Trusted Leader in Python Development Services Provider?`}
+            title={`What Makes Editsh Trusted Leader in Python Development Services Provider?`}
           />
           <Typography
             sx={{
@@ -658,11 +722,11 @@ function PhythonDevelopment() {
               margin: "auto",
             }}
           >
-            Tagline Infotech delivering innovative, scalable Python applications
-            tailored to your business needs. Our top-notch solutions and
-            unmatched Python expertise make us the trusted choice for
-            cutting-edge Python development. Here are some of the reasons why
-            choosing to build Python applications is the best option:
+            Editsh delivering innovative, scalable Python applications tailored
+            to your business needs. Our top-notch solutions and unmatched Python
+            expertise make us the trusted choice for cutting-edge Python
+            development. Here are some of the reasons why choosing to build
+            Python applications is the best option:
           </Typography>
           <PhythonPanel />
         </Container>
@@ -679,7 +743,7 @@ function PhythonDevelopment() {
         }}
       >
         <Container>
-          <Titleanimation title="What Makes Tagline Infotech Trusted Leader in Python Development Services Provider?" />
+          <Titleanimation title="What Makes Editsh Trusted Leader in Python Development Services Provider?" />
           <Typography
             sx={{
               fontSize: "14px",
@@ -689,11 +753,11 @@ function PhythonDevelopment() {
               margin: "auto",
             }}
           >
-            Tagline Infotech delivering innovative, scalable Python applications
-            tailored to your business needs. Our top-notch solutions and
-            unmatched Python expertise make us the trusted choice for
-            cutting-edge Python development. Here are some of the reasons why
-            choosing to build Python applications is the best option:
+            Editsh delivering innovative, scalable Python applications tailored
+            to your business needs. Our top-notch solutions and unmatched Python
+            expertise make us the trusted choice for cutting-edge Python
+            development. Here are some of the reasons why choosing to build
+            Python applications is the best option:
           </Typography>
           <TrutedProject />
         </Container>

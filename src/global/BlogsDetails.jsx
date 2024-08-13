@@ -8,10 +8,10 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material/styles";
 import axios from "axios";
 import Pagetitle from "./Pagetitle";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object({
@@ -29,7 +29,7 @@ function BlogsDetails() {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/blogs/${id}`
+          `https://editsh-back.onrender.com/api/blogs/${id}`
         );
         setBlog(response?.data?.data);
       } catch (err) {
@@ -40,9 +40,9 @@ function BlogsDetails() {
     const fetchComments = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/comment/${id}`
+          `https://editsh-back.onrender.com/api/comment/${id}`
         );
-        console.log(response);
+
         setComments(response?.data);
       } catch (err) {
         console.error(err);
@@ -59,14 +59,15 @@ function BlogsDetails() {
       blog: id,
     };
     try {
-      await axios.post(`http://localhost:8000/api/comment/add`, payload);
+      await axios.post(
+        `https://editsh-back.onrender.com/api/comment/add`,
+        payload
+      );
       resetForm();
       const response = await axios.get(
-        `http://localhost:8000/api/comment/${id}`
+        `https://editsh-back.onrender.com/api/comment/${id}`
       );
-      console.log(response);
-      resetForm();
-      setComments(response?.data?.data); // Update comments list
+      setComments(response?.data?.data);
     } catch (err) {
       console.error(err);
     }
@@ -75,42 +76,38 @@ function BlogsDetails() {
   return (
     <>
       <Pagetitle
-        title={`Blogs`}
-        description={`We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses.`}
+        title="Blogs"
+        description="We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses."
       />
       <Container>
-        <Grid container row sx={{ py: { sm: 5, lg: 6 } }}>
-          <Grid item xs={12} md={12} lg={12}>
+        <Grid container sx={{ py: { sm: 5, lg: 6 } }}>
+          <Grid item xs={12}>
             <Box>
-              <Box>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    mb: 2,
-                    color: theme.palette.lightwhite,
-                    fontWeight: "600",
-                  }}
-                >
-                  {blog?.blogTitle}
-                </Typography>
-              </Box>
+              <Typography
+                variant="h5"
+                sx={{
+                  mb: 2,
+                  color: theme.palette.lightwhite,
+                  fontWeight: 600,
+                  fontSize: "20px",
+                }}
+              >
+                {blog?.blogTitle}
+              </Typography>
 
               <Box
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  py: {
-                    sm: 2,
-                    lg: 4,
-                  },
+                  py: { sm: 2, lg: 4 },
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: "18px",
-                    fontWeight: "500",
-                    backgroundColor: theme.palette.lightwhite,
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    backgroundColor: theme.palette.black,
                     color: theme.palette.white,
                     display: "inline-block",
                     lineHeight: "24px",
@@ -120,176 +117,188 @@ function BlogsDetails() {
                 >
                   {blog?.technology}
                 </Typography>
-                <Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Box>
-                      <img
-                        src={blog?.authorImage}
-                        alt="author"
-                        style={{
-                          width: "60px",
-                          height: "60px",
-                          borderRadius: "50%",
-                        }}
-                      />
-                    </Box>
-                    <Box>
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          mt: 2,
-                          fontSize: "20px",
-                          ml: 2,
-                          fontWeight: "bold",
-                          color: theme.palette.black,
-                        }}
-                      >
-                        {blog?.authorName}
-                      </Typography>
-                    </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <Box>
+                    <img
+                      src={blog?.authorImage}
+                      alt="author"
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </Box>
+                  <Box sx={{ ml: 2 }}>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: "15px",
+                        fontWeight: "bold",
+                        color: theme.palette.black,
+                      }}
+                    >
+                      {blog?.authorName}
+                    </Typography>
                   </Box>
                 </Box>
               </Box>
-              <Box>
-                <Box
-                  sx={{
-                    boxShadow: 3,
-                    borderRadius: 5,
+
+              <Box
+                sx={{
+                  borderRadius: 5,
+                  boxShadow: 2,
+                  p: 1,
+                }}
+              >
+                <img
+                  src={blog?.blogImage}
+                  alt="blog"
+                  style={{
+                    width: "100%",
+                    height: "450px",
+                    borderRadius: 8,
                   }}
-                >
-                  <img
-                    src={blog?.blogImage}
-                    alt="blog-image"
-                    style={{
-                      width: "100%",
-                      height: "500px",
-                    }}
-                  />
-                </Box>
-                <Typography variant="body1" sx={{ mt: 2 }}>
-                  {blog?.blogDescription}
-                </Typography>
-              </Box>
-              <Box>
-                <div
-                  dangerouslySetInnerHTML={{ __html: blog?.otherDetails }}
-                  style={{ marginTop: 20 }}
                 />
               </Box>
 
-              {/* Comment Form */}
+              <Typography variant="body1" sx={{ mt: 2 }}>
+                {blog?.blogDescription}
+              </Typography>
+
+              <div
+                dangerouslySetInnerHTML={{ __html: blog?.otherDetails }}
+                style={{ marginTop: 20 }}
+              />
+
               <Box sx={{ mt: 4 }}>
-                <Typography
-                 variant="h6"
-                 sx={{
-                  fontWeight: "bold",
-                 }}>Add Comment :
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Add Comment:
                 </Typography>
-                <Formik
-                  initialValues={{ name: "", comment: "" }}
-                  validationSchema={validationSchema}
-                  onSubmit={handleCommentSubmit}
-                >
-                  {({ isSubmitting }) => (
-                    <Form>
-                      <Box sx={{ mb: 2 }}>
-                        <Field
-                          as={TextField}
-                          name="name"
-                          label="Name"
-                          fullWidth
-                          required
-                          variant="filled"
-                          error={Boolean(<ErrorMessage name="name" />)}
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
+
+                <Box sx={{ my: 2 }}>
+                  <Formik
+                    initialValues={{ name: "", comment: "" }}
+                    validationSchema={validationSchema}
+                    onSubmit={handleCommentSubmit}
+                  >
+                    {({ errors, touched }) => (
+                      <Form>
+                        <Box sx={{ mb: 2 }}>
+                          <Field
+                            as={TextField}
+                            name="name"
+                            label="Name"
+                            fullWidth
+                            required
+                            variant="filled"
+                            error={touched.name && Boolean(errors.name)}
+                            helperText={touched.name && errors.name}
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "Name",
+                            }}
+                          />
+                        </Box>
+                        <Box sx={{ mb: 2 }}>
+                          <Field
+                            as={TextField}
+                            name="comment"
+                            label="Comment"
+                            required
+                            fullWidth
+                            variant="filled"
+                            multiline
+                            rows={4}
+                            error={touched.comment && Boolean(errors.comment)}
+                            helperText={touched.comment && errors.comment}
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "Your Comment",
+                            }}
+                          />
+                        </Box>
+                        <Button
+                          type="submit"
+                          variant="outlined"
+                          sx={{
+                            width: "130px",
+                            borderRadius: 5,
+                            borderColor: theme.palette.grey[500],
+                            color: theme.palette.grey[500],
+                            "&:hover": {
+                              backgroundColor: theme.palette.grey[800],
+                              color: theme.palette.common.white,
+                            },
                           }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "Name",
-                          }}
-                        />
-                      </Box>
-                      <Box sx={{ mb: 2 }}>
-                        <Field
-                          as={TextField}
-                          name="comment"
-                          label="Comment"
-                          required
-                          fullWidth
-                          variant="filled"
-                          multiline
-                          rows={4}
-                          error={Boolean(<ErrorMessage name="comment" />)}
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
-                          }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "Your Comment",
-                          }}
-                        />
-                      </Box>
-                      <Button
-                        type="submit"
-                        variant="filled"
-                        color="primary"
-                        disabled={isSubmitting}
-                      >
-                        Submit
-                      </Button>
-                    </Form>
-                  )}
-                </Formik>
+                        >
+                          Submit
+                        </Button>
+                      </Form>
+                    )}
+                  </Formik>
+                </Box>
               </Box>
 
-              {/* Comments List */}
               <Box sx={{ mt: 4 }}>
                 <Typography
                   sx={{
                     fontWeight: 600,
-                    fontSize:'18px',
+                    fontSize: "18px",
                     my: 2,
                   }}
                 >
-                  Comments:-
+                  Comments:
                 </Typography>
-                {comments?.length ? (
-                  comments.map((comment) => (
-                    <Box
-                      key={comment._id}
-                      sx={{
-                        mb: 2,
-                        p: 3,
-                        border: "1px solid #ddd",
-                        borderRadius: "4px",
-                      }}
-                    >
-                      <Typography variant="body1"
-                       sx={{ fontWeight: "bold",fontSize:'18px',mb:2 }}>
-                        {comment?.name}
-                      </Typography>
-                      <Typography variant="body2"
-                      sx={{
-                        fontSize:'14px',
-                        fontWeight:'500'
-                      }}>
-                        {comment?.comment}
-                      </Typography>
-                    </Box>
-                  ))
-                ) : (
-                  <Typography variant="body1">
-                    No comments were found
-                  </Typography>
-                )}
+                <Grid container row spacing={3} justifyContent="center">
+                  {comments?.length ? (
+                    comments.map((comment) => (
+                      <Grid item xs={12} sm={6} md={6} lg={4} key={comment._id}>
+                        <Box
+                          sx={{
+                            mb: 2,
+                            p: 3,
+                            border: "1px solid #ddd",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          <Typography
+                            variant="body1"
+                            sx={{ fontWeight: "bold", fontSize: "18px", mb: 2 }}
+                          >
+                            {comment?.name}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              fontSize: "14px",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {comment?.comment}
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    ))
+                  ) : (
+                    <Typography variant="body1">
+                      No comments were found
+                    </Typography>
+                  )}
+                </Grid>
               </Box>
             </Box>
           </Grid>

@@ -65,7 +65,16 @@ function TrutedProject() {
       >
         <Grid container spacing={3}>
           {Project.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={4}
+              key={index}
+              data-aos="zoom-in"
+              data-aos-duration="3000"
+            >
               <Box
                 sx={{
                   background: theme.palette.white,

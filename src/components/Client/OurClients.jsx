@@ -52,7 +52,7 @@ function OurClients() {
   const fetchExperiences = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/Clients/view"
+        "https://editsh-back.onrender.com/api/Clients/view"
       );
       console.log(response);
       setClients(response?.data?.data);
@@ -67,29 +67,39 @@ function OurClients() {
 
   return (
     <>
-      <Titleanimation title="Our clients" />
       <Box
         sx={{
           py: {
             sm: 4,
-            md: 6,
+            md: 4,
             lg: 6,
           },
-          margin: '10px 0'
+          margin: "10px 0",
         }}
       >
-        <Container>
-          <MainContainer>
-            <StyledContainer>
-              {Clients
-                .map((client, index) => (
+        <Titleanimation title="Our clients" />
+        <Box
+          sx={{
+            py: {
+              sm: 4,
+              md: 4,
+              lg: 6,
+            },
+            margin: "10px 0",
+          }}
+        >
+          <Container>
+            <MainContainer>
+              <StyledContainer>
+                {Clients.map((client, index) => (
                   <StyledDiv key={index}>
                     <StyledImg src={client.logoImage} alt="company" />
                   </StyledDiv>
                 ))}
-            </StyledContainer>
-          </MainContainer>
-        </Container>
+              </StyledContainer>
+            </MainContainer>
+          </Container>
+        </Box>
       </Box>
     </>
   );

@@ -45,8 +45,8 @@ function ReactNativePanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
+      id={`horizontal-tabpanel-${index}`}
+      aria-labelledby={`horizontal-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -67,8 +67,8 @@ ReactNativePanel.propTypes = {
 // Helper function for accessibility props
 function a11yProps(index) {
   return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
+    id: `horizontal-tab-${index}`,
+    "aria-controls": `horizontal-tabpanel-${index}`,
   };
 }
 
@@ -84,32 +84,33 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        py: {
-          xs: 4,
-          lg: 4,
-        },
-      }}
+    sx={{
+      margin: "auto",
+      py: {
+        xs: 4,
+        sm: 4,
+        lg: 8,
+      },
+    }}
     >
       <Tabs
-        orientation="vertical"
-        variant="scrollable"
         value={value}
         onChange={handleChange}
-        aria-label="Tabs example"
-        sx={{
-          width: { xs: "100%", sm: "100%", md: "auto" },
-        }}
+        aria-label="Horizontal Tabs Example"
+        variant="scrollable"
+        scrollButtons="auto"
+        textColor="secondary"
+        indicatorColor="secondary"
       >
         <Tab
           label="Frameworks & Libraries"
+          
           sx={{
             textTransform: "capitalize",
             fontWeight: "600",
-            color:
-              value === 0 ? theme.palette.lightwhite : theme.palette.secondary.main,
+            flex: "1 1 25%",
+            maxWidth: "25%",
+            color: value === 0 ? theme.palette.secondary.main : "inherit",
           }}
           {...a11yProps(0)}
         />
@@ -118,8 +119,9 @@ export default function VerticalTabs() {
           sx={{
             textTransform: "capitalize",
             fontWeight: "600",
-            color:
-              value === 1 ? theme.palette.lightwhite : theme.palette.secondary.main,
+            flex: "1 1 25%",
+            maxWidth: "25%",
+            color: value === 1 ? theme.palette.secondary.main : "inherit",
           }}
           {...a11yProps(1)}
         />
@@ -128,8 +130,9 @@ export default function VerticalTabs() {
           sx={{
             textTransform: "capitalize",
             fontWeight: "600",
-            color:
-              value === 2 ? theme.palette.lightwhite : theme.palette.lightwhite,
+            flex: "1 1 25%",
+            maxWidth: "25%",
+            color: value === 2 ? theme.palette.secondary.main : "inherit",
           }}
           {...a11yProps(2)}
         />
@@ -138,8 +141,9 @@ export default function VerticalTabs() {
           sx={{
             textTransform: "capitalize",
             fontWeight: "600",
-            color:
-              value === 3 ? theme.palette.lightwhite : theme.palette.lightwhite,
+            flex: "1 1 25%",
+            maxWidth: "25%",
+            color: value === 3 ? theme.palette.secondary.main : "inherit",
           }}
           {...a11yProps(3)}
         />
@@ -178,7 +182,7 @@ export const FrameWorkLibraries = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {frameworks.map((item) => (
-        <Grid item xs={12} sm={6} md={3} lg={2} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={2}  key={item.id}>
           <Box
             sx={{
               boxShadow: 1,
@@ -227,7 +231,7 @@ export const DataBase = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {databases.map((item) => (
-        <Grid item xs={12} sm={6} md={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,
@@ -279,7 +283,7 @@ export const Tools = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {tools.map((item) => (
-        <Grid item xs={12} sm={6} md={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,
@@ -328,7 +332,7 @@ export const Platform = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {platforms.map((item) => (
-        <Grid item xs={12} sm={6} md={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,

@@ -14,7 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
-import counter_back_image from "../assets/common_background.png";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -67,9 +66,9 @@ const Getintouch = () => {
 
   const socialMediaLinks = [
     { icon: <FacebookIcon />, link: "#" },
-    { icon: <InstagramIcon />, link: "#" },
+    { icon: <InstagramIcon />, link: "https://www.instagram.com/editsh_technology/" },
     { icon: <TwitterIcon />, link: "#" },
-    { icon: <LinkedInIcon />, link: "#" },
+    { icon: <LinkedInIcon />, link: "https://www.linkedin.com/company/editsh/about/" },
   ];
 
   return (
@@ -79,13 +78,13 @@ const Getintouch = () => {
         sx={{
           my: 2,
           py: 2,
-          backgroundImage: `url(${counter_back_image})`,
+          backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           "@media (maxWidth:600px)": {
-            backgroundImage: `url(${counter_back_image})`,
+            backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           },
         }}
       >
@@ -161,7 +160,7 @@ const Getintouch = () => {
                 </Typography>
                 <Box className="social-icons">
                   {socialMediaLinks.map((media, index) => (
-                    <Link key={index} href={media.link} color="inherit">
+                    <Link key={index} to={media.link} color="inherit" target="_blank">
                       {media.icon}
                     </Link>
                   ))}
@@ -183,7 +182,7 @@ const Getintouch = () => {
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
                   try {
                     const response = await axios.post(
-                      "http://localhost:8000/api/gettouch/add",
+                      "https://editsh-back.onrender.com/api/gettouch/add",
                       values
                     );
                     toast.success(response.data.message);
@@ -333,16 +332,19 @@ const Getintouch = () => {
                       <Grid item xs={12}>
                         <Button
                           type="submit"
-                          variant="contained"
-                          style={{
+                          variant="outlined"
+                          sx={{
                             width: "130px",
-                            border: "1px solid #8c8c8c",
-                            display: "inline-block",
-                            padding: "8px 16px",
-                            borderRadius: "5px",
+                            borderRadius: 5,
+                            borderColor: theme.palette.primary.main,
+                            color: theme.palette.grey[500],
+                            "&:hover": {
+                              backgroundColor: theme.palette.secondary.main,
+                              color: theme.palette.common.white,
+                            },
                           }}
                         >
-                          Send
+                          Submit
                         </Button>
                       </Grid>
                     </Grid>

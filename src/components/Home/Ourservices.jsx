@@ -7,6 +7,7 @@ import s2 from "../../assets/Services/s2.png";
 import s1 from "../../assets/Services/s1.webp";
 import backImage from "../../assets/Services/backimage.webp";
 import { Titleanimation } from "../../global/Titleanimation";
+import { Link } from "react-router-dom";
 
 function Ourservices() {
   const theme = useTheme();
@@ -25,7 +26,10 @@ function Ourservices() {
         <Titleanimation title="Our Services" />
       </Box>
       <Grid container spacing={3} sx={{ py: { sm: 2, md: 6, lg: 8 } }}>
-        <Grid item xs={12} sm={6} md={6} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}
+         data-aos="zoom-in"
+         data-aos-duration="3000"
+         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
               variant="h4"
@@ -74,7 +78,7 @@ function Ourservices() {
           {
             img: s2,
             title: "Software outsourcing company",
-            description: `Tagline Infotech is an experienced software outsourcing company that provides services for various businesses. We have
+            description: `Editsh is an experienced software outsourcing company that provides services for various businesses. We have
                         a reliable team of developers that provides high-quality outsourcing services to scale your business.`,
           },
           {
@@ -84,7 +88,10 @@ function Ourservices() {
                         of your company. Our team creates the most logical digital infrastructure to improve the efficiency of your business.`,
           },
         ].map((service, index) => (
-          <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+          <Grid item xs={12} sm={6} md={6} lg={4} key={index}
+          data-aos="zoom-in"
+          data-aos-duration="3000"
+          >
             <Box
               sx={{ height: "100%", display: "flex", flexDirection: "column" }}
             >
@@ -129,7 +136,10 @@ function Ourservices() {
           </Grid>
         ))}
 
-        <Grid item xs={12} sm={6} md={6} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}
+         data-aos="zoom-in"
+          data-aos-duration="3000"
+        >
           <Box
             sx={{
               position: "relative",
@@ -165,15 +175,21 @@ function Ourservices() {
                 Drop us a line.
               </Typography>
             </Typography>
-            <Button
-              sx={{
+            <Link
+            to="/contact"
+              style={{
                 backgroundColor: theme.palette.lightwhite,
                 display: "inline-block",
+                color:theme.palette.white,
+                padding: "10px 20px",
+                textDecoration: "none",
+                borderRadius: "10px",
                 width: "150px",
+                mt:4
               }}
             >
               Contact Us
-            </Button>
+            </Link>
           </Box>
         </Grid>
       </Grid>

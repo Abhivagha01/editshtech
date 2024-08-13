@@ -91,7 +91,7 @@ function ProjectIndustry() {
           },
         }}
       >
-        <Titleanimation title="Enabling a wide range of Industry growth with Us" />
+        <Titleanimation title="Industry growth with Us" />
         <Container>
           <Typography
             sx={{
@@ -119,7 +119,10 @@ function ProjectIndustry() {
             }}
           >
             {IosIndustry.map((item) => (
-              <Grid item xs={12} sm={3} md={3} lg={2} key={item.id}>
+              <Grid item xs={6} sm={3} md={3} lg={2} key={item.id}
+               data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     padding: 2,

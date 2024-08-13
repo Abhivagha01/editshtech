@@ -62,7 +62,6 @@ import FP7 from "../../../../assets/Technoogy/Mobile/FlutterAppDevelopment/Flutt
 import FP8 from "../../../../assets/Technoogy/Mobile/FlutterAppDevelopment/FlutterProject/timezone.png";
 import FP9 from "../../../../assets/Technoogy/Mobile/FlutterAppDevelopment/FlutterProject/documentation.png";
 //Industry We Serve
-
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 const services = [
@@ -261,9 +260,14 @@ const rightSideContent = [
 const Section = ({ title, items }) => {
   const theme = useTheme();
   return (
-    <Grid
+   <Box
+   sx={{
+    px:2
+   }}
+   >
+     <Grid
       container
-      spacing={2}
+      spacing={1}
       row
       sx={{
         boxShadow: 2,
@@ -298,7 +302,7 @@ const Section = ({ title, items }) => {
       <Grid item xs={12} sm={12} md={9} lg={10} xl={10}>
         <Grid container spacing={2}>
           {items.map((item, index) => (
-            <Grid key={index} item xs={12} md={4} lg={3} xl={2}>
+            <Grid key={index} item xs={6} md={4} lg={3} xl={2}>
               <Box
                 sx={{
                   display: "flex",
@@ -326,9 +330,9 @@ const Section = ({ title, items }) => {
         </Grid>
       </Grid>
     </Grid>
+   </Box>
   );
 };
-
 
 function FlutterAppDevelopment() {
   const theme = useTheme();
@@ -438,7 +442,7 @@ function FlutterAppDevelopment() {
         }}
       >
         <Container>
-          <Titleanimation title="Flutter App Development Service We Offer" />
+          <Titleanimation title="Flutter App Development Service" />
           <Typography
             sx={{
               fontSize: "14px",
@@ -456,72 +460,75 @@ function FlutterAppDevelopment() {
             Development, and seamless migration tailored to the client's
             specific needs.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
-            sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
-            }}
-          >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
-                >
+          <Container>
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              justifyContent="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         </Container>
       </Box>
       <Box
@@ -657,7 +664,10 @@ function FlutterAppDevelopment() {
       </Box>
       <Box
         sx={{
-          height: "100vh",
+          height: {
+            xs: "100%",
+            lg: "80vh",
+          },
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -671,7 +681,10 @@ function FlutterAppDevelopment() {
         <Container>
           <Box
             sx={{
-              height: "100vh",
+              height: {
+                xs: "100%",
+                lg: "80vh",
+              },
               overflow: "hidden",
               display: "flex",
             }}
@@ -732,7 +745,7 @@ function FlutterAppDevelopment() {
                       }}
                     >
                       Flutter development company
-                    </Typography>{" "}
+                    </Typography>
                     can make your idea into a real-life success. Its unique
                     development of high-quality native interfaces for various
                     platforms both iOS and Android, Desktop, and Web, Mac in its
@@ -749,7 +762,10 @@ function FlutterAppDevelopment() {
                 lg={6}
                 xl={6}
                 sx={{
-                  height: "100vh",
+                  height: {
+                    xs: "100%",
+                    lg: "80vh",
+                  },
                   overflowY: "auto",
                   scrollbarWidth: "none",
                   pr: 2,
@@ -790,8 +806,8 @@ function FlutterAppDevelopment() {
           </Box>
         </Container>
       </Box>
-      <ProjectIndustry/>
-      <RequestQuote/>
+      <ProjectIndustry />
+      <RequestQuote />
     </>
   );
 }

@@ -147,7 +147,7 @@ const AboutSection = () => {
   );
 
   return (
-    <Box sx={{ py: { sm: 2, lg: 4 } }}>
+    <Box sx={{ py: {xs: 2, sm: 2, lg: 4 } }}>
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>

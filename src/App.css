@@ -66,21 +66,7 @@ img {
   height: 50px;
 }
 
-@media (max-width: 1600px) {
-  .logo-inner {
-    width: 30%;
-  }
-}
-@media (max-width: 767px) {
-  .logo-inner {
-    width: 30%;
-  }
-}
-@media (max-width: 640px) {
-  .logo-inner {
-    width: 60%;
-  }
-}
+
 .client_image {
   width: 100%;
   margin: 10px;
@@ -157,3 +143,62 @@ img {
   }
 }
 /* ==========Error-Not Page Found=============== */
+
+
+/* ==============Media Query=================== */
+@media (max-width: 1600px) {
+  .logo-inner {
+    width: 30%;
+  }
+}
+@media (max-width: 1400px) {
+  .logo-inner {
+    width: 40%;
+  }
+  .logo-inner img {
+    height: 50px;
+}
+}
+@media (max-width: 800px) {
+  .logo-inner {
+    width: 30%;
+  }
+  .banner{
+    height: 600px;
+  }
+}
+@media (max-width: 767px) {
+  .logo-inner {
+    width: 30%;
+  }
+  .banner{
+    height: 600px;
+  }
+}
+@media (max-width: 640px) {
+  .logo-inner {
+    width: 75%;
+  }
+  .banner{
+    height: 400px;
+  }
+}
+@media (max-width: 479px) {
+  .logo-inner {
+    width: 75%;
+  }
+  .banner{
+    height: 400px;
+  }
+}
+@media (max-width: 320px) {
+  .logo-inner {
+    width: 60%;
+  }
+  .banner{
+    height: 400px;
+  }
+}
+form{
+  padding: 0  !important;
+}

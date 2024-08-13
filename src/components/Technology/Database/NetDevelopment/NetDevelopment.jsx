@@ -22,7 +22,7 @@ import p5 from "../../../../assets/Technoogy/Backend/net/project/p5.png";
 import p6 from "../../../../assets/Technoogy/Backend/net/project/p6.png";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
-import NetDevelopPanel from  './NetDevelopPanel'
+import NetDevelopPanel from "./NetDevelopPanel";
 
 function NetDevelopment() {
   const theme = useTheme();
@@ -118,7 +118,7 @@ function NetDevelopment() {
       icon: p2,
       title: "Maximum Security and Scalability",
       description:
-        "Tagline Infotech is an ASP .NET development company that prioritizes maximum security and scalability. Our programmers ensure that your applications are safe against all threats and can seamlessly handle the growth of your business.",
+        "Editsh is an ASP .NET development company that prioritizes maximum security and scalability. Our programmers ensure that your applications are safe against all threats and can seamlessly handle the growth of your business.",
     },
     {
       icon: p3,
@@ -136,7 +136,7 @@ function NetDevelopment() {
       icon: p5,
       title: "Scalable ASP NET Solution",
       description:
-        "At Tagline Infotech, we ensure to build ASP NET solutions that can handle increasing demands and growth, providing a robust and reliable platform for your business to thrive and succeed.",
+        "At Editsh, we ensure to build ASP NET solutions that can handle increasing demands and growth, providing a robust and reliable platform for your business to thrive and succeed.",
     },
     {
       icon: p6,
@@ -152,8 +152,9 @@ function NetDevelopment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -166,7 +167,14 @@ function NetDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: {
@@ -216,13 +224,20 @@ function NetDevelopment() {
                         color: theme.palette.white,
                       }}
                     >
-                      Portfolio
+                     Reaquest A Qoute
                     </Link>
                   </Button>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/fbffg145/microsoft-integration-services.jpg"
                 alt="ios_image"
@@ -242,6 +257,7 @@ function NetDevelopment() {
       <Box
         sx={{
           py: {
+            xs: 4,
             sm: 4,
             lg: 8,
           },
@@ -261,9 +277,17 @@ function NetDevelopment() {
                 justifyContent: "center",
                 display: "flex",
               }}
+              data-aos="fade-right"
+              data-aos-duration="3000"
             />
           </Grid>
-          <Grid item xs={12} lg={6}>
+          <Grid
+            item
+            xs={12}
+            lg={6}
+            data-aos="fade-LEFT"
+            data-aos-duration="3000"
+          >
             <Box
               sx={{
                 p: 2,
@@ -328,11 +352,12 @@ function NetDevelopment() {
           py: {
             xs: 4,
             sm: 4,
+            lg: 6,
           },
         }}
       >
         <Container>
-          <Titleanimation title="Our .NET Development Services The Highest Standards" />
+          <Titleanimation title="Our .NET Development Services" />
           <Typography
             sx={{
               fontSize: "14px",
@@ -347,72 +372,87 @@ function NetDevelopment() {
             business needs. Our skilled team of experts follows various security
             protocols to offer different types of .NET development services.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
+          <Box
             sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
+              px: 2,
             }}
           >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -438,7 +478,16 @@ function NetDevelopment() {
             }}
           >
             <Grid container spacing={3} sx={{ flex: 1 }}>
-              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
+                data-aos="fade-right"
+                data-aos-duration="3000"
+              >
                 <Box>
                   <Typography
                     sx={{
@@ -497,6 +546,8 @@ function NetDevelopment() {
                   scrollbarWidth: "none",
                   pr: 2,
                 }}
+                data-aos="fade-left"
+                data-aos-duration="3000"
               >
                 {rightSideContent.map((content, index) => (
                   <Box
@@ -534,7 +585,6 @@ function NetDevelopment() {
         </Container>
       </Box>
 
-
       <Box
         sx={{
           py: {
@@ -550,7 +600,6 @@ function NetDevelopment() {
         </Container>
       </Box>
 
-
       <Box
         sx={{
           py: {
@@ -561,7 +610,7 @@ function NetDevelopment() {
         }}
       >
         <Titleanimation
-          title={`Why Choose Tagline Infotech For Your .NET Development Project?`}
+          title={`Why Choose Editsh For Your .NET Development Project?`}
         />
         <Container>
           <Typography
@@ -574,11 +623,11 @@ function NetDevelopment() {
               margin: "auto",
             }}
           >
-            You should choose Tagline Infotech as your offshore .Net development
-            company which has a proven track record of providing custom .NET
-            development services for different types of businesses. Connect with
-            us to get customized services, seamless project delivery, and the
-            best possible solution for your business to achieve new heights.
+            You should choose Editsh as your offshore .Net development company
+            which has a proven track record of providing custom .NET development
+            services for different types of businesses. Connect with us to get
+            customized services, seamless project delivery, and the best
+            possible solution for your business to achieve new heights.
           </Typography>
           <Grid
             container
@@ -592,6 +641,8 @@ function NetDevelopment() {
                 lg: 8,
               },
             }}
+            data-aos="zoom-in"
+            data-aos-duration="3000"
           >
             {project.map((service, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
@@ -657,7 +708,7 @@ function NetDevelopment() {
           </Grid>
         </Container>
       </Box>
-      <ProjectIndustry/>
+      <ProjectIndustry />
       <RequestQuote />
     </>
   );

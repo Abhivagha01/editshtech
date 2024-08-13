@@ -12,7 +12,7 @@ function OurClients() {
   const fetchClients = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/clients/view"
+        "https://editsh-back.onrender.com/api/clients/view"
       );
       setClients(response?.data?.data);
     } catch (err) {

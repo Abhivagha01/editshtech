@@ -1,12 +1,7 @@
 import { useTheme } from "@emotion/react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import certificate from "../../assets/Home/certificate.png";
-import inovation from "../../assets/Home/inovation.png";
-import satisfaction from "../../assets/Home/stisfaction.png";
-import counter_back_image from "../../assets/common_background.png";
-import {TitleTwoAnimation} from "../../global/TitleTwoAnimation";
-
+import { TitleTwoAnimation } from "../../global/TitleTwoAnimation";
 
 function Whychooseus() {
   const theme = useTheme();
@@ -17,13 +12,13 @@ function Whychooseus() {
         sx={{
           my: 2,
           py: 2,
-          backgroundImage: `url(${counter_back_image})`,
+          backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           "@media (maxWidth:600px)": {
-            backgroundImage: `url(${counter_back_image})`,
+            backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           },
         }}
       >
@@ -55,21 +50,22 @@ function Whychooseus() {
               >
                 {whyChoooseBox({
                   theme,
-                  imgSrc: satisfaction,
+                  imgSrc:
+                    "https://i.postimg.cc/pLq6NQwY/quality-badge-6161728-5073619.webp",
                   title: "Quality",
                   description:
                     "We know that what is value of quality. We never compromise with the quality of our work and design.",
                 })}
                 {whyChoooseBox({
                   theme,
-                  imgSrc: inovation,
+                  imgSrc: "https://i.postimg.cc/fyvqCxZP/6648986.webp",
                   title: "Innovation",
                   description:
                     "We bring new and innovative ideas to the table, ensuring that our solutions are both creative and effective.",
                 })}
                 {whyChoooseBox({
                   theme,
-                  imgSrc: certificate,
+                  imgSrc: "https://i.postimg.cc/4NG2F4Lg/4745552.webp",
                   title: "Expertise",
                   description:
                     "Our team consists of highly skilled professionals with years of experience in the industry.",
@@ -86,7 +82,15 @@ function Whychooseus() {
 export default Whychooseus;
 
 const whyChoooseBox = ({ theme, imgSrc, title, description }) => (
-  <Grid item xs={12} sm={6} md={4} lg={4}>
+  <Grid
+    item
+    xs={12}
+    sm={6}
+    md={4}
+    lg={4}
+    data-aos="zoom-in-down"
+    data-aos-duration="3000"
+  >
     <Box
       sx={{
         p: 4,

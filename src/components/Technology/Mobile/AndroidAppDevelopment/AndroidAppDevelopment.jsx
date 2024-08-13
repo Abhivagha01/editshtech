@@ -104,14 +104,16 @@ function AndroidAppDevelopment() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 8,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 6,
     slidesToScroll: 1,
     cssEase: "linear",
     responsive: [
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 8,
+          slidesToShow: 6,
           slidesToScroll: 3,
           arrows: false,
         },
@@ -143,8 +145,9 @@ function AndroidAppDevelopment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -157,7 +160,14 @@ function AndroidAppDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: {
@@ -246,7 +256,14 @@ function AndroidAppDevelopment() {
                 </Grid>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/cCXP7c2H/ios1.png"
                 alt="ios_image"
@@ -273,7 +290,13 @@ function AndroidAppDevelopment() {
       >
         <Container>
           <Grid container spacing={3} row>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <img
                 src={whychooseus}
                 alt="ios_image"
@@ -287,7 +310,13 @@ function AndroidAppDevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   color: theme.palette.black,
@@ -393,58 +422,74 @@ function AndroidAppDevelopment() {
             container
             spacing={3}
             row
+            justifyContent="center"
             sx={{
               mt: 2,
             }}
           >
             {appServices.map((service, index) => (
-              <Grid item xs={12} md={6} lg={6} key={index}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    p: 4,
-                    boxShadow: 3,
-                    borderRadius: 4,
                     height: "100%",
-                    "&:hover": {
-                      boxShadow:
-                        "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
-                      backgroundColor: "grey.100",
-                    },
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
-                  <Box>
+                  <Box
+                    sx={{ boxShadow: 2, p: 3, borderRadius: 4, height: "100%" }}
+                  >
                     <Box
                       sx={{
-                        width: "80px",
-                        height: "80px",
-                        display: "block",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
                       }}
                     >
-                      <img
-                        src={service.icon}
-                        alt={service.title}
-                        style={{
-                          width: "50%",
-                          height: "50%",
+                      <Box
+                        sx={{
+                          mr: 3,
+                          borderRadius: "50%",
                         }}
-                      />
+                      >
+                        <img
+                          src={service.icon}
+                          alt="images"
+                          style={{
+                            width: 40,
+                            height: 40,
+                          }}
+                        />
+                      </Box>
+                      <Typography
+                        sx={{
+                          color: theme.palette.black,
+                          fontSize: "16px",
+                          fontWeight: "600",
+                          letterSpacing: 1,
+                        }}
+                      >
+                        {service.title}
+                      </Typography>
                     </Box>
-                  </Box>
-                  <Box ml={2}>
                     <Typography
                       sx={{
-                        fontSize: "18px",
-                        fontWeight: "bold",
                         color: theme.palette.secondary.main,
-                        mb: 2,
+                        fontSize: "14px",
+                        pt: 2,
                       }}
                     >
-                      {service.title}
+                      {service.description}
                     </Typography>
-                    <Typography>{service.description}</Typography>
                   </Box>
                 </Box>
               </Grid>
@@ -455,9 +500,9 @@ function AndroidAppDevelopment() {
       <Box
         sx={{
           py: {
-            xs: 6,
-            sm: 6,
-            lg: 8,
+            xs: 2,
+            sm: 4,
+            lg: 6,
           },
         }}
       >
@@ -478,8 +523,8 @@ function AndroidAppDevelopment() {
           <Grid
             sx={{
               py: {
-                sm: 4,
-                lg: 6,
+                sm: 2,
+                lg: 4,
               },
             }}
           >
@@ -493,6 +538,10 @@ function AndroidAppDevelopment() {
                       textAlign: "center",
                       mx: 2,
                       my: 2,
+                      height: "150px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
                     }}
                   >
                     <img
@@ -504,7 +553,9 @@ function AndroidAppDevelopment() {
                         margin: "auto",
                       }}
                     />
-                    <Typography sx={{ fontSize: "14px", textAlign: "center" }}>
+                    <Typography
+                      sx={{ fontSize: "14px", textAlign: "center", mt: 2 }}
+                    >
                       {item.title}
                     </Typography>
                   </Box>
@@ -522,9 +573,8 @@ function AndroidAppDevelopment() {
             lg: 4,
           },
         }}
-      >
-      </Box>
-        <ProjectIndustry />
+      ></Box>
+      <ProjectIndustry />
       <RequestQuote />
     </>
   );

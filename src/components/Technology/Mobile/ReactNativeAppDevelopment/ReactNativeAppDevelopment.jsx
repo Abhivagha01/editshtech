@@ -102,7 +102,6 @@ function ReactNativeAppDevelopment() {
     },
   ];
 
-
   return (
     <>
       <Pagetitle title="React Native Development" />
@@ -124,7 +123,14 @@ function ReactNativeAppDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: {
@@ -182,7 +188,14 @@ function ReactNativeAppDevelopment() {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src={AboutImage}
                 alt="ios_image"
@@ -210,7 +223,13 @@ function ReactNativeAppDevelopment() {
       >
         <Container>
           <Grid container spacing={3} row>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <img
                 src={whychooseus}
                 alt="ios_image"
@@ -224,24 +243,23 @@ function ReactNativeAppDevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   color: theme.palette.black,
-                  fontSize: "20px",
+                  fontSize: "24px",
                   fontWeight: "600",
-                  pb: 2,
+                  pb: 1,
                 }}
               >
                 Your First Choice for React Native App Development
               </Typography>
-              <Typography
-                sx={{
-                  width: "35%",
-                  height: "2px",
-                  backgroundColor: theme.palette.secondary.main,
-                }}
-              ></Typography>
               <Typography
                 sx={{
                   color: theme.palette.secondary.main,
@@ -328,12 +346,21 @@ function ReactNativeAppDevelopment() {
             container
             spacing={4}
             row
+            justifyContent="center"
             sx={{
               mt: 2,
             }}
           >
             {ReactNativeServices.map((service, index) => (
-              <Grid item xs={12} md={6} lg={3} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -402,13 +429,17 @@ function ReactNativeAppDevelopment() {
             spacing={2}
             sx={{
               py: {
-                xs: 4,
+                xs: 2,
+                sm: 2,
                 lg: 8,
               },
             }}
           >
             {TechnologyIcon.map((item, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid item xs={12} md={6} lg={4} key={index}
+               data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -475,23 +506,21 @@ function ReactNativeAppDevelopment() {
         </Container>
       </Box>
       <Box
-       sx={{
-        py: {
-          xs: 4,
-          sm: 4,
-          lg: 6,
-        },
-      }}
+        sx={{
+          py: {
+            xs: 4,
+            sm: 4,
+            lg: 6,
+          },
+        }}
       >
         <Container>
-          <Titleanimation
-            title={`Cross-Platform Combinations with React Native`}
-          />
+          <Titleanimation title={`Cross-Platform with React Native`} />
           <ReactNativePanel />
         </Container>
       </Box>
-      <ProjectIndustry/>
-      <RequestQuote/>
+      <ProjectIndustry />
+      <RequestQuote />
     </>
   );
 }

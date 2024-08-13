@@ -1,12 +1,6 @@
 import React from "react";
 import Pagetitle from "../../../../global/Pagetitle";
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  Container,
-} from "@mui/material";
+import { Box, Button, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 // Anguljs development services
@@ -117,8 +111,9 @@ function AngularJsDeveloment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -131,7 +126,14 @@ function AngularJsDeveloment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -144,7 +146,7 @@ function AngularJsDeveloment() {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: 16,
+                    xs: 22,
                     lg: 30,
                   },
                   fontWeight: 600,
@@ -197,26 +199,16 @@ function AngularJsDeveloment() {
                     </Link>
                   </Button>
                 </Box>
-                <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Our Portfolio
-                    </Link>
-                  </Button>
-                </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/Lsh5J7PY/angular-hero-top.png"
                 alt="ios_image"
@@ -236,14 +228,21 @@ function AngularJsDeveloment() {
       <Box
         sx={{
           py: {
-            sm: 4,
-            lg: 8,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
         <Container>
           <Grid container spacing={3} row>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/65kfLkwZ/hire-angular-developer.png"
                 alt="ios_image"
@@ -257,7 +256,13 @@ function AngularJsDeveloment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Box
                 sx={{
                   pb: 2,
@@ -314,9 +319,9 @@ function AngularJsDeveloment() {
       <Box
         sx={{
           py: {
-            xs: 4,
-            sm: 4,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -337,72 +342,87 @@ function AngularJsDeveloment() {
             JavaScript, HTML, CSS, Docker, Redux, and CoreUI. We guarantee 98%
             client satisfaction with top-notch performance and user experience.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
+          <Box
             sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
+              px: 2,
             }}
           >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -410,9 +430,9 @@ function AngularJsDeveloment() {
       <Box
         sx={{
           py: {
-            xs: 4,
-            sm: 4,
-            lg: 8,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -428,12 +448,12 @@ function AngularJsDeveloment() {
             }}
           >
             Let our expert AngularJS developers unlock your projects' potential.
-            Tagline Infotech custom solutions give your web apps creativity and
-            expertise with unmatched development skills.
+            Editsh custom solutions give your web apps creativity and expertise
+            with unmatched development skills.
           </Typography>
           <Grid
             container
-            spacing={3}
+            spacing={1}
             alignItems="center"
             justifyContent="center"
             sx={{
@@ -444,16 +464,18 @@ function AngularJsDeveloment() {
               },
             }}
           >
-          <ProjectPricing/>
+            <ProjectPricing />
           </Grid>
         </Container>
       </Box>
       {/* Benefits of Angular App Development */}
       <Box
         sx={{
-          xs: 4,
-          sm: 4,
-          md: 6,
+          py: {
+            xs: 2,
+            sm: 2,
+            md: 4,
+          },
         }}
       >
         <Titleanimation
@@ -490,7 +512,15 @@ function AngularJsDeveloment() {
             }}
           >
             {AngularBenefits.map((service, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -531,20 +561,19 @@ function AngularJsDeveloment() {
       <Box
         sx={{
           py: {
-            xs: 4,
-            sm: 4,
-            lg: 8,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
         <Container>
           <Titleanimation
-            title={`Tools and Technologies Stack We Use for Angularjs Development`}
+            title={`Tools and Technologies Angularjs Development`}
           />
           <AngularPanel />
         </Container>
       </Box>
-      {/* PRojevt Indrustry Growth */}
       <ProjectIndustry />
       <RequestQuote />
     </>

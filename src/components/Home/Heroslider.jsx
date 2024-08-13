@@ -3,8 +3,14 @@ import React from "react";
 
 import { Box, Button, Typography } from "@mui/material";
 
-function Heroslider() {
+function Heroslider({ getInTouchRef }) {
   const theme = useTheme();
+
+  const handleClick = () => {
+    if (getInTouchRef.current) {
+      getInTouchRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -100,12 +106,12 @@ function Heroslider() {
             data-aos-duration="3000"
             data-aos-easing="linear"
           >
-            <Button
+              <Button
+              onClick={handleClick}
               sx={{
                 backgroundColor: theme.palette.lightwhite,
                 color: theme.palette.primary.main,
                 zIndex: 3,
-
                 width: "auto",
               }}
             >

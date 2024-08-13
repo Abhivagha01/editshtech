@@ -15,25 +15,31 @@ export const TitleTwoAnimation = ({ title }) => {
       <Box align="center">
         <Box
           sx={{
-            fontSize: "35px",
+            fontSize:{
+              xs: "24px",
+              sm: "26px",
+              md: "40px",
+              lg: "45px",
+            },
             fontWeight: "500",
             color: theme.palette.primary.main,
           }}
+       
         >
           {title}
         </Box>
         <Box sx={{ marginTop: "10px" }}>
           <Box
             sx={{
-              height: "3px",
-              width: "100px",
+              height: "2px",
+              width: "150px",
               backgroundColor: theme.palette.primary.main,
               position: "relative",
             }}
           >
             <Typography
               sx={{
-                height: "13px",
+                height: "10px",
                 width: "13px",
                 borderRadius: "50%",
                 position: "absolute",

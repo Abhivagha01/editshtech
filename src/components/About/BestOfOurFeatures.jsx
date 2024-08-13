@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Button } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import feature1 from "../../assets/about/feature1.jpg";
 import ficon1 from "../../assets/about/ficon1.svg";
@@ -15,29 +15,28 @@ function BestOfOurFeatures() {
     {
       id: 1,
       title: "Improved quality",
-      imagge: ficon1,
+      image: ficon1,
       description:
         "Increase the quality of your software by conducting thorough testing, code reviews, and continuous integration. Use automated testing tools, follow code standards, and use industry best practices. Develop a culture of quality assurance among the development team to produce software that is dependable and effective.",
     },
     {
       id: 2,
       title: "Reduced risk",
-      imagge: ficon2,
+      image: ficon2,
       description:
-        "Use a clear contract to implement riskinc reduction strategies in the software development process. Clearly define the roles, responsibilities, project parameters, standards for quality, and mitigating tactics. Make sure there are legal and financial safeguards in place to reduce ambiguities and conflicts and to promote a smooth project development process.",
+        "Use a clear contract to implement risk reduction strategies in the software development process. Clearly define the roles, responsibilities, project parameters, standards for quality, and mitigating tactics. Make sure there are legal and financial safeguards in place to reduce ambiguities and conflicts and to promote a smooth project development process.",
     },
     {
       id: 3,
       title: "Increased Efficiency",
-      imagge: ficon3,
-
+      image: ficon3,
       description:
         "Improve operational effectiveness with optimized software solutions. Consolidate processes, automate routine work, and improve resource usage. Our experience ensures prompt implementation while reducing hiccups. Get measurable productivity gains and a smooth changeover. Make contact with us to transform your productivity.",
     },
     {
       id: 4,
       title: "Improved Communication",
-      imagge: ficon4,
+      image: ficon4,
       description:
         "Optimize software communication effectiveness by streamlining contact features. For seamless user contact, employ clear messages, timely alerts, and user-friendly interfaces. Place an emphasis on responsive layouts and user-centered design to promote speedier and more effective communication while maintaining a user-friendly experience.",
     },
@@ -49,14 +48,22 @@ function BestOfOurFeatures() {
     <Box
       sx={{
         backgroundColor: theme.palette.primary.main,
-        my: {
+        py: {
+          xs: 4,
           sm: 4,
           lg: 6,
         },
       }}
     >
-      <Grid container row>
-        <Grid xs={12} md={6} lg={4}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={6} lg={4} 
+        sx={{
+          display:{
+            xs: 'none',
+            xs: 'none',
+            md: 'block',
+          }
+        }}>
           <Box
             sx={{ position: "relative", height: "100%", overflow: "hidden" }}
           >
@@ -132,24 +139,24 @@ function BestOfOurFeatures() {
                 >
                   Best Of Our Features
                 </Typography>
-                <Link
-                  to="/"
-                  style={{
-                    background: "transparent",
-                    border: "2px solid #000",
-                    color: theme.palette.black,
-                    padding: 10,
-                    borderRadius: "4px",
-                    zIndex: 4,
-                  }}
-                >
-                  Talk to our Experts
+                <Link to="/contact" style={{ textDecoration: "none" }}>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      color: theme.palette.black,
+                      borderColor: theme.palette.black,
+                      padding: "10px 20px",
+                      borderRadius: "4px",
+                    }}
+                  >
+                    Talk to our Experts
+                  </Button>
                 </Link>
               </Box>
             </Box>
           </Box>
         </Grid>
-        <Grid xs={12} md={6} lg={8}>
+        <Grid item xs={12} md={6} lg={8}>
           <Box sx={{ p: 4 }}>
             <Grid container spacing={3}>
               {features.map((feature) => (
@@ -161,8 +168,6 @@ function BestOfOurFeatures() {
                   md={12}
                   lg={6}
                   xl={6}
-                  data-aos="zoom-in"
-                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
@@ -180,7 +185,7 @@ function BestOfOurFeatures() {
                         m: "auto",
                       }}
                     >
-                      <img src={feature.imagge} alt="icon" />
+                      <img src={feature.image} alt="icon" />
                     </Box>
                     <Typography
                       sx={{

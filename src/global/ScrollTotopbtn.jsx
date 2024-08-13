@@ -7,6 +7,7 @@ const ScrollToTopButton = styled("div")(({ theme }) => ({
   position: "fixed",
   bottom: theme.spacing(2),
   right: theme.spacing(2),
+  zIndex:11
 }));
 
 const ScrollToTop = ({ children }) => {

@@ -151,20 +151,32 @@ const Footer = () => {
               >
                 {socialLinks.map((social, index) => (
                   <Box key={index}>
-                    <Link href={social.href} target="_blank">
-                      <social.Icon
+                    <Link to={social.href} target="_blank">
+                      <Box
                         sx={{
-                          fontSize: "30px",
-                          color: theme.palette.primary.main,
-                          mx: "2px",
-                          mr: 3,
-                          transition: "transform 0.3s ease-in-out",
+                          backgroundColor: theme.palette.secondary.main,
+                          width: "45px",
+                          height: "45px",
+                          margin: "auto",
+                          lineHeight: "60px",
+                          mr: 2,
+                          textAlign: "center",
+                          borderRadius: "50%",
                           "&:hover": {
                             transform: "translateY(-10px)",
                             color: theme.palette.secondary.main,
+                            transition: "transform 0.3s ease-in-out",
                           },
                         }}
-                      />
+                      >
+                        <social.Icon
+                          sx={{
+                            fontSize: "30px",
+                            color: theme.palette.primary.main,
+                            textAlign: "center",
+                          }}
+                        />
+                      </Box>
                     </Link>
                   </Box>
                 ))}
@@ -187,7 +199,7 @@ const Footer = () => {
                 </Typography>
                 <Box sx={{ my: 1.3 }}>
                   {section.links.map((item) => (
-                    <Link to={item.to || "#"} title={item.text} key={item.text}>
+                    <Link to={item.to || "#"} title={item.text} key={item.text} tar>
                       <Box
                         sx={{
                           textDecoration: "none",
@@ -254,6 +266,11 @@ const Footer = () => {
                     lineHeight: "50px",
                     textAlign: "center",
                     borderRadius: "50%",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "translateX(-10px)",
+                      color: theme.palette.primary.main,
+                    },
                   }}
                 >
                   <EmailOutlinedIcon sx={{ fontSize: "25px" }} />
@@ -291,6 +308,11 @@ const Footer = () => {
                     lineHeight: "50px",
                     textAlign: "center",
                     borderRadius: "50%",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "translateX(-10px)",
+                      color: theme.palette.primary.main,
+                    },
                   }}
                 >
                   <CallOutlinedIcon sx={{ fontSize: "25px" }} />
@@ -306,7 +328,7 @@ const Footer = () => {
                       marginLeft: "18px",
                     }}
                   >
-                     +91 98790 27562
+                    +91 98790 27562
                   </Link>
                 </Box>
               </Box>
@@ -324,11 +346,16 @@ const Footer = () => {
                 <Box
                   sx={{
                     backgroundColor: theme.palette.secondary.main,
-                    width: "60px",
-                    height: "40px",
-                    lineHeight: "50px",
+                    width: "45px",
+                    height: "45px",
+                    lineHeight: "55px",
                     textAlign: "center",
                     borderRadius: "50%",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "translateX(-10px)",
+                      color: theme.palette.primary.main,
+                    },
                   }}
                 >
                   <FmdGoodIcon sx={{ fontSize: "25px" }} />
@@ -342,6 +369,9 @@ const Footer = () => {
                         fontSize: "14px",
                         fontFamily: theme.typography.fontFamily,
                         marginLeft: "18px",
+                        wordWrap: "break-word",
+                        wordBreak: "break-word",
+                        maxWidth:'200px'
                       }}
                     >
                       414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya
@@ -369,7 +399,7 @@ const Footer = () => {
             fontSize: "12px",
           }}
         >
-          Copyright © 2024 EDITSH Technology All Rights Reserved
+          Copyright © 2024 EDITSH All Rights Reserved
         </Box>
       </Box>
       <ScrollTotopbtn />

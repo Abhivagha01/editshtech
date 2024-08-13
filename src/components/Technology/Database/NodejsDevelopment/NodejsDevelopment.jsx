@@ -103,7 +103,7 @@ function NodejsDevelopment() {
     {
       title: "Cost-Effective Development Solutions",
       description:
-        "Using Node.js improves development processes, reduces time-to-market, and lowers operating expenses, Tagline Infotech’s developers can now build high-quality web solutions using Node.js without compromising product performance or scalability.",
+        "Using Node.js improves development processes, reduces time-to-market, and lowers operating expenses, Editsh’s developers can now build high-quality web solutions using Node.js without compromising product performance or scalability.",
     },
     {
       title: "Enhanced Performance",
@@ -156,8 +156,9 @@ function NodejsDevelopment() {
       <Box
         sx={{
           py: {
-            sm: 5,
-            lg: 6,
+            xs: 2,
+            sm: 2,
+            md: 4,
           },
         }}
       >
@@ -170,7 +171,14 @@ function NodejsDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -183,7 +191,7 @@ function NodejsDevelopment() {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: 16,
+                    xs: 30,
                     lg: 40,
                   },
                   fontWeight: 600,
@@ -196,7 +204,7 @@ function NodejsDevelopment() {
                 sx={{
                   fontSize: "14px",
                   color: theme.palette.secondary.main,
-                  my: 4,
+                  my: 2,
                   lineHeight: "24px",
                 }}
               >
@@ -232,13 +240,20 @@ function NodejsDevelopment() {
                         color: theme.palette.white,
                       }}
                     >
-                      Portfolio
+                       Reaquest A Qoute
                     </Link>
                   </Button>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/50RK4X9j/NodeJS.png"
                 alt="ios_image"
@@ -258,14 +273,37 @@ function NodejsDevelopment() {
       <Box
         sx={{
           py: {
+            xs: 4,
             sm: 4,
             lg: 8,
           },
         }}
       >
         <Container>
-          <Grid container spacing={3} row alignItems="center">
-            <Grid item xs={12} lg={6}>
+          <Grid
+            container
+            spacing={3}
+            alignItems="center"
+            sx={{
+              flexDirection: {
+                xs: "row-reverse",
+                sm: "row-reverse",
+                md: "row",
+              },
+            }}
+          >
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              order={{
+                xs: 2,
+                sm: 2,
+                md: 1,
+              }}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src="https://i.postimg.cc/mDPKKt0Z/parts-of-nodejs.avif"
                 alt="ios_image"
@@ -279,7 +317,18 @@ function NodejsDevelopment() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid
+              item
+              xs={12}
+              lg={6}
+              order={{
+                xs: 1,
+                sm: 1,
+                md: 2,
+              }}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Box
                 sx={{
                   pb: 2,
@@ -377,72 +426,87 @@ function NodejsDevelopment() {
             in creating content management systems, CRMs, fast API generation
             tools, and other similar projects.
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            alignItems="center"
-            row
+          <Box
             sx={{
-              py: {
-                xs: 4,
-                sm: 4,
-                lg: 6,
-              },
+              px: 2,
             }}
           >
-            {services.map((service, index) => (
-              <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
-                <Box
-                  sx={{
-                    border: `1px solid ${theme.palette.primary.main}`,
-                    height: 320,
-                    p: 4,
-                  }}
+            <Grid
+              container
+              spacing={1}
+              alignItems="center"
+              row
+              sx={{
+                py: {
+                  xs: 4,
+                  sm: 4,
+                  lg: 6,
+                },
+              }}
+            >
+              {services.map((service, index) => (
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
                 >
                   <Box
                     sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      width: "80px",
-                      height: "80px",
-                      justifyContent: "center",
-                      background: theme.palette.primary.shadow,
-                      lineHeight: "24px",
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      height: 320,
+                      p: 4,
                     }}
                   >
-                    <img
-                      src={service.icon}
-                      alt="icon"
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        margin: "0 auto",
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        background: theme.palette.primary.shadow,
+                        lineHeight: "24px",
                       }}
-                    />
+                    >
+                      <img
+                        src={service.icon}
+                        alt="icon"
+                        style={{
+                          width: "50%",
+                          height: "50%",
+                          margin: "0 auto",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontSize: 16,
+                        fontWeight: 600,
+                        py: 2,
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      {service.name}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.primary,
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 600,
-                      py: 2,
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    {service.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: 14,
-                      color: theme.palette.text.primary,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -508,7 +572,16 @@ function NodejsDevelopment() {
             }}
           >
             <Grid container spacing={3} sx={{ flex: 1 }}>
-              <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box>
                   <Typography
                     sx={{
@@ -649,7 +722,15 @@ function NodejsDevelopment() {
             }}
           >
             {NodeBenefits.map((service, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
+              >
                 <Box
                   sx={{
                     p: 2,
@@ -736,16 +817,16 @@ function NodejsDevelopment() {
               margin: "auto",
             }}
           >
-            Editsh offers full-stack Node.js development services to
-            all customers, using the latest Node.Js tools and technologies we
-            aim to create the safest and reliable web applications that meets
-            all the standards.Here are some reasons why clients choose us:
+            Editsh offers full-stack Node.js development services to all
+            customers, using the latest Node.Js tools and technologies we aim to
+            create the safest and reliable web applications that meets all the
+            standards.Here are some reasons why clients choose us:
           </Typography>
           <TrutedProject />
         </Container>
       </Box>
-      <ProjectIndustry/>
-      <RequestQuote/>
+      <ProjectIndustry />
+      <RequestQuote />
     </>
   );
 }
