@@ -64,6 +64,7 @@ import FP9 from "../../../../assets/Technoogy/Mobile/FlutterAppDevelopment/Flutt
 //Industry We Serve
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 const services = [
   {
     name: "Custom app development",
@@ -75,13 +76,13 @@ const services = [
     name: "Flutter app consulting",
     icon: Ser8,
     description:
-      "Get the best guidance along with strategic advice from highly skilled Flutter professionals. Enhance your App's performance and user experience by uncovering the full potential of Flutter app Development.",
+      "Get the best guidance along with strategic advice from highly skilled Flutter professionals. Enhance your app's performance and user experience by uncovering the full potential of Flutter app development.",
   },
   {
     name: "Flutter app design",
     icon: Ser9,
     description:
-      "At Editsh, our experts specialize in designing your ideas into innovative design concepts, and visually captivating UI to make your app unique and functional.",
+      "At Editsh, our experts specialize in designing your ideas into innovative design concepts and visually captivating UI to make your app unique and functional.",
   },
   {
     name: "Flutter app migration",
@@ -93,7 +94,7 @@ const services = [
     name: "Flutter app testing",
     icon: Ser2,
     description:
-      "With Editsh’s Flutter app testing procedures, identifying and addressing any issues becomes seamless ensuring flawless performance and seamless user experience for your app.",
+      "With Editsh’s Flutter app testing procedures, identifying and addressing any issues becomes seamless, ensuring flawless performance and a seamless user experience for your app.",
   },
   {
     name: "Flutter upgrade services",
@@ -111,7 +112,7 @@ const services = [
     name: "Flutter app audit",
     icon: Ser3,
     description:
-      "Improve Flutter app's performance and security with our app audit service. Our process includes expert evaluation to identify different areas for optimization and improving quality in general.",
+      "Improve the Flutter app's performance and security with our app audit service. Our process includes expert evaluation to identify different areas for optimization and improving quality in general.",
   },
   {
     name: "Flutter App Support and maintenance",
@@ -169,15 +170,15 @@ const Plugins = [
 ];
 const FlutterProject = [
   {
-    name: "A Dedicated Expert Teams",
+    name: "A Dedicated Expert Team",
     iconSrc: FP1,
   },
   {
-    name: "100% Client Satisfaction",
+    name: "100% client satisfaction",
     iconSrc: FP2,
   },
   {
-    name: "Avail 15-day risk-free trial",
+    name: "Avail a 15-day risk-free trial",
     iconSrc: FP3,
   },
   {
@@ -209,17 +210,12 @@ const rightSideContent = [
   {
     title: "Single Codebase for Android & iOS",
     description:
-      "We create a single codebase in Dart language created by Google that is very similar to Java. Flutter converts this Dart code into native iOS and Android apps without compromising performance.",
+      "We create a single codebase in the Dart language created by Google that is very similar to Java. Flutter converts this Dart code into native iOS and Android apps without compromising performance.",
   },
   {
     title: "Smooth Integration",
     description:
-      "With Flutter, developers can integrate multiple APIs and widgets, allowing easy data exchange and improving the functionality and versatility of the App.",
-  },
-  {
-    title: "Fast & Test-driven development",
-    description:
-      "Flutter offers comprehensive test-driven development, ensuring robustness and code reliability throughout the app's development cycle.",
+      "With Flutter, developers can integrate multiple APIs and widgets, allowing easy data exchange and improving the functionality and versatility of the app.",
   },
   {
     title: "Fast & Test-driven development",
@@ -260,77 +256,88 @@ const rightSideContent = [
 const Section = ({ title, items }) => {
   const theme = useTheme();
   return (
-   <Box
-   sx={{
-    px:2
-   }}
-   >
-     <Grid
-      container
-      spacing={1}
-      row
+    <Box
       sx={{
-        boxShadow: 2,
-        my: {
-          xs: 4,
-          sm: 4,
-          lg: 3,
-        },
+        px: 2,
       }}
     >
       <Grid
-        xs={12}
-        sm={12}
-        md={3}
-        lg={2}
-        xl={2}
+        container
+        spacing={1}
+        row
         sx={{
-          backgroundColor: theme.palette.primary.main,
+          boxShadow: 2,
+          my: {
+            xs: 4,
+            sm: 4,
+            lg: 3,
+          },
         }}
       >
-        <Typography
+        <Grid
+          xs={12}
+          sm={12}
+          md={3}
+          lg={2}
+          xl={2}
           sx={{
-            fontSize: 14,
-            color: theme.palette.text.primary,
-            fontWeight: "600",
-            p: 2,
+            backgroundColor: theme.palette.primary.main,
           }}
+          data-aos="fade-right"
+          data-aos-duration="3000"
         >
-          {title}
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={12} md={9} lg={10} xl={10}>
-        <Grid container spacing={2}>
-          {items.map((item, index) => (
-            <Grid key={index} item xs={6} md={4} lg={3} xl={2}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mb: 2,
-                }}
-              >
-                <img
-                  src={item.iconSrc}
-                  alt={item.name}
-                  style={{ width: "30px", height: "30px" }}
-                />
-                <Typography
-                  component="span"
+          <Typography
+            sx={{
+              fontSize: 14,
+              color: theme.palette.text.primary,
+              fontWeight: "600",
+              p: 2,
+            }}
+          >
+            {title}
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={9}
+          lg={10}
+          xl={10}
+          data-aos="fade-right"
+          data-aos-duration="3000"
+        >
+          <Grid container spacing={2}>
+            {items.map((item, index) => (
+              <Grid key={index} item xs={6} md={4} lg={3} xl={2}>
+                <Box
                   sx={{
-                    fontSize: 14,
-                    ml: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    mb: 2,
                   }}
                 >
-                  {item.name}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
+                  <img
+                    src={item.iconSrc}
+                    alt={item.name}
+                    style={{ width: "30px", height: "30px" }}
+                  />
+                  <Typography
+                    component="span"
+                    sx={{
+                      fontSize: 14,
+                      ml: 2,
+                    }}
+                  >
+                    {item.name}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
-   </Box>
+    </Box>
   );
 };
 
@@ -358,7 +365,14 @@ function FlutterAppDevelopment() {
               justifyContent: "center",
             }}
           >
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
               <Typography
                 sx={{
                   fontSize: {
@@ -385,7 +399,7 @@ function FlutterAppDevelopment() {
                 codebases. Our cross-platform solutions offer rapid updates,
                 stunning UIs, and consistent native-like performance, all while
                 aligning with your business objectives. Experience innovation
-                with our out-of-the-box flutter solutions that are suitable for
+                with our out-of-the-box Flutter solutions that are suitable for
                 startups and businesses.
               </Typography>
               <Box
@@ -397,27 +411,20 @@ function FlutterAppDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.common.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.common.white,
-                        textDecoration: "none",
-                      }}
-                    >
-                      Request A Quote
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6} lg={6}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
               <img
                 src={AboutImage}
                 alt="Flutter App Development"
@@ -455,9 +462,9 @@ function FlutterAppDevelopment() {
             We provide comprehensive Flutter app development services to create
             robust, natively compiled cross-platform applications. Hire Flutter
             App Developers to build top-notch mobile apps using innovative
-            solutions such as a single codebase for iOS and Android, Web, Mac
-            and Linux, Custom UI/UX design, API integration, Backend
-            Development, and seamless migration tailored to the client's
+            solutions such as a single codebase for iOS and Android, Web, Mac,
+            and Linux, custom UI/UX design, API integration, backend
+            development, and seamless migration tailored to the client's
             specific needs.
           </Typography>
           <Container>
@@ -476,7 +483,16 @@ function FlutterAppDevelopment() {
               }}
             >
               {services.map((service, index) => (
-                <Grid xs={12} sm={12} md={6} lg={4} xl={4} key={index}>
+                <Grid
+                  xs={12}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
+                >
                   <Box
                     sx={{
                       border: `1px solid ${theme.palette.primary.main}`,
@@ -551,7 +567,7 @@ function FlutterAppDevelopment() {
           >
             Dive into our advanced Flutter app development tools and
             technologies for best performance, flexibility, and user experience.
-            As a leading Professional Flutter app development company, we use
+            As a leading professional Flutter app development company, we use
             the most recent technologies to create innovative, secure, and
             robust solutions that represent the true essence of your brand and
             ensure a sustainable future.
@@ -564,6 +580,8 @@ function FlutterAppDevelopment() {
                 lg: 4,
               },
             }}
+            data-aos="zoom-in"
+            data-aos-duration="3000"
           >
             <Section title="Frameworks" items={frameworks} />
             <Section title="Tools" items={tools} />
@@ -614,7 +632,16 @@ function FlutterAppDevelopment() {
           >
             <Grid container spacing={3}>
               {FlutterProject.map((project, index) => (
-                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-duration="3000"
+                >
                   <Box
                     sx={{
                       background: theme.palette.white,
@@ -737,20 +764,21 @@ function FlutterAppDevelopment() {
                   >
                     Flutter has become a new industry standard in cross-platform
                     application development across many sectors, including
-                    companies such as Google, eBay, Dream11, and Alibaba. A{" "}
+                    companies such as Google, eBay, Dream11, and Alibaba. A 
                     <Typography
                       component="span"
                       sx={{
                         fontWeight: "600",
+                        mr: 1,
                       }}
                     >
-                      Flutter development company
+                      Flutter development company 
                     </Typography>
-                    can make your idea into a real-life success. Its unique
+                    can turn your idea into a real-life success. Its unique
                     development of high-quality native interfaces for various
-                    platforms both iOS and Android, Desktop, and Web, Mac in its
-                    exceptional combination of high productivity, performance,
-                    and flawless user experience.
+                    platforms, both iOS and Android, desktop and web, and Mac, 
+                    in its exceptional combination of high productivity,
+                    performance, and flawless user experience.
                   </Typography>
                 </Box>
               </Grid>

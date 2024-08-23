@@ -530,14 +530,14 @@ function Career() {
                       sx={{ fontSize: "30px", marginRight: "18px" }}
                     />
                     <Link
-                      to="mailto:edithtech01@gmail.com"
+                      to="mailto:editshtech01@gmail.com"
                       style={{
                         color: theme.palette.primary.main,
                         fontFamily: theme.typography,
                         fontSize: "14px",
                       }}
                     >
-                      edithtech01@gmail.com
+                      editshtech01@gmail.com
                     </Link>
                   </Box>
                   <Box

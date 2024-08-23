@@ -1,7 +1,7 @@
 import React from "react";
 import Pagetitle from "../global/Pagetitle";
 import Ourlocation from "../components/Contact/Ourlocation";
-import ContaactForm from "../components/Contact/ContaactForm";
+import ContactForm from "../components/Contact/ContactForm";
 
 function Contact() {
   return (
@@ -10,8 +10,10 @@ function Contact() {
         title={`Contact Us`}
         description={`We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses.`}
       />
+      {/* Our Location */}
       <Ourlocation />
-      <ContaactForm />
+      {/* Contact us Form  */}
+      <ContactForm />
     </>
   );
 }

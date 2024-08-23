@@ -3,7 +3,7 @@ import { Box, Container, Grid, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Titleanimation } from "../../global/Titleanimation";
-import axios from 'axios'
+import axios from "axios";
 
 function OurClients() {
   const [clients, setClients] = useState([]);
@@ -66,15 +66,22 @@ function OurClients() {
   };
 
   return (
-    <Box sx={{
-      py:10
-    }}>
+    <Box>
       <Container>
         <Titleanimation title={`Our clients`} />
-        <Box sx={{ py: { sm: 4, lg: 4, xl: 10 } }}>
-          <Grid container spacing={2} justifyContent="center" sx={{
-            pt:4
-          }}>
+        <Box sx={{ py: { sm: 6, lg: 6, xl: 10 } }}>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            sx={{
+              py: {
+                sm: 6,
+                md: 4,
+                lg: 6,
+              },
+            }}
+          >
             {clients.map((client) => (
               <Grid item key={client.id} xs={6} sm={4} md={3} lg={2}>
                 <Box sx={styles.clientImageContainer}>
@@ -94,24 +101,6 @@ function OurClients() {
               mt: 4,
             }}
           >
-            <Button
-              sx={{
-                zIndex: 3,
-                width: "150px",
-                border: "1px solid #100404",
-                borderRadius: "20px",
-              }}
-            >
-              <Link
-                to="/"
-                sx={{
-                  backgroundColor: theme.palette.white,
-                  color: theme.palette.black,
-                }}
-              >
-                View More
-              </Link>
-            </Button>
           </Box>
         </Box>
       </Container>

@@ -14,6 +14,7 @@ import icon5 from "../../../../assets/Technoogy/Mobile/iosDevelopment/iosservice
 import icon6 from "../../../../assets/Technoogy/Mobile/iosDevelopment/iosservice/i6.png";
 import icon7 from "../../../../assets/Technoogy/Mobile/iosDevelopment/iosservice/i7.png";
 import icon8 from "../../../../assets/Technoogy/Mobile/iosDevelopment/iosservice/i8.png";
+import ios from "../../../../assets/Technoogy/Mobile/iosDevelopment/ios.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,6 +28,7 @@ import firebase from "../../../../assets/Technoogy/Mobile/iosDevelopment/IosTech
 import cocoatouchicon from "../../../../assets/Technoogy/Mobile/iosDevelopment/IosTech/cocoa-touch-icon.png";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function IosAppDevelopmet() {
   const theme = useTheme();
@@ -94,7 +96,7 @@ function IosAppDevelopmet() {
     dots: false,
     infinite: true,
     speed: 500,
-    autoplay:true,
+    autoplay: true,
     slidesToShow: 6,
     autoPlay: true,
     slidesToScroll: 1,
@@ -178,10 +180,15 @@ function IosAppDevelopmet() {
                   lineHeight: "24px",
                 }}
               >
-                We are a leading iPhone application Development Company that
-                develops iOS applications for the next generation. Our
-                developers and designers will create appealing designs and build
-                creative iOS applications.
+                We are a top-tier iPhone application development company,
+                specializing in crafting innovative iOS apps for the next
+                generation. Our expert developers and designers are committed to
+                delivering visually stunning designs paired with seamless
+                functionality. Whether you're looking to launch a new app or
+                enhance an existing one, we bring creativity, precision, and
+                expertise to every project. Trust us to transform your ideas
+                into dynamic iOS applications that stand out in the competitive
+                mobile landscape.
               </Typography>
               <Box
                 sx={{
@@ -192,22 +199,9 @@ function IosAppDevelopmet() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
               <Box>
@@ -255,7 +249,7 @@ function IosAppDevelopmet() {
               data-aos-duration="3000"
             >
               <img
-                src="https://i.postimg.cc/cCXP7c2H/ios1.png"
+                src={ios}
                 alt="ios_image"
                 style={{
                   width: "80%",
@@ -330,7 +324,7 @@ function IosAppDevelopmet() {
                 user-friendly, secure, and compatible iPhone applications. We
                 provide a variety of iOS application development solutions to
                 satisfy your needs by utilizing the skills of our iOS developers
-                in both Objective C and Swift.
+                in both Objective-C and Swift.
               </Typography>
               <Typography
                 sx={{
@@ -340,11 +334,11 @@ function IosAppDevelopmet() {
                 }}
               >
                 We have a team of professional iOS app developers with extensive
-                industry knowledge and skills to assess your company needs and
+                industry knowledge and skills to assess your company's needs and
                 design the ideal solution for you. We create feature-rich mobile
                 apps that boost user experience and help you establish market
                 authority and expand your brand. To ensure the accuracy of the
-                final product, our designers work parallel with the whole iOS
+                final product, our designers work in parallel with the whole iOS
                 lifecycle.
               </Typography>
               <Typography
@@ -357,7 +351,7 @@ function IosAppDevelopmet() {
                 As a leading iOS mobile app development company, we utilize
                 state-of-the-art technologies and tools to develop friendly,
                 robust, and secure apps for your company. Our development
-                process, ideas and tactics, allowing us to remain among the best
+                process, ideas, and tactics allow us to remain among the best
                 iOS app development firms. We will go the extra mile if
                 necessary for your product.
               </Typography>
@@ -369,11 +363,11 @@ function IosAppDevelopmet() {
                 }}
               >
                 Editsh is an experienced and trusted iPhone app development
-                company in California and you should hire iOS app developer in
-                California to empower your business. Our company is a top-rated
-                iOS app development company in New York and to avail of our
-                top-notch services you need to hire iOS app developers in New
-                York.
+                company in California, and you should hire an iOS app developer
+                in California to empower your business. Our company is a
+                top-rated iOS app development company in New York, and to avail
+                of our top-notch services, you need to hire iOS app developers
+                in New York.
               </Typography>
             </Grid>
           </Grid>
@@ -404,7 +398,7 @@ function IosAppDevelopmet() {
             services to assist you in handling your business objectives. Our
             services include UI/UX design, development of native iPhone
             applications, eCommerce app creation, iOS wearable app development,
-            NFC integration, Support, Maintenance, Optimization, and many more.
+            NFC integration, support, maintenance, optimization, and many more.
             We also manage the entire App Store inclusion procedure, including
             posting, depictions, and resources.
           </Typography>
@@ -533,7 +527,7 @@ function IosAppDevelopmet() {
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "center",
-                      alignItems: "center", 
+                      alignItems: "center",
                     }}
                   >
                     <img

@@ -1,6 +1,6 @@
 import React from "react";
 import Pagetitle from "../../../../global/Pagetitle";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import s1 from "../../../../assets/Technoogy/Backend/Nodejs/services/s1.png";
@@ -18,6 +18,7 @@ import NodejsPanel from "./NodejsPanel";
 import TrutedProject from "../../../../global/TrutedProject";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function NodejsDevelopment() {
   const theme = useTheme();
@@ -27,124 +28,120 @@ function NodejsDevelopment() {
       icon: s1,
       title: "Node.js Web App Development",
       description:
-        "At Editsh, we use Express.js, MongoDB, and tools like npm and Yarn to develop scalable web solutions using the Node.js runtime environment, ensuring optimal performance and flexibility.",
+        "At Editsh, we leverage Express.js, MongoDB, and package managers like npm and Yarn to build scalable web solutions using the Node.js environment, ensuring top performance and adaptability.",
     },
     {
       icon: s2,
-
       title: "Node.js Product Development",
       description:
-        "Using Agile methodologies, RESTful APIs, and tools like Mocha and Chai, our experts create high-quality, customisable applications that match client's business goals.",
+        "Applying Agile practices, RESTful APIs, and tools such as Mocha and Chai, our experts develop high-quality, customizable applications aligned with client business objectives.",
     },
     {
       icon: s3,
       title: "Node.js CMS Development",
       description:
-        "Our team at Editsh uses different technologies, such as Apollo Server, GraphQL and Keystone.js, to guarantee that your app's content management system and customisation are done seamlessly.",
+        "Our team at Editsh employs technologies like Apollo Server, GraphQL, and Keystone.js to ensure seamless development and customization of your app's content management system.",
     },
     {
       icon: s4,
-
       title: "Google V8 Engine Integration",
       description:
-        "We specialize in developing Node.js apps with the powerful Google V8 engine, together with profiling tools such as Chrome DevTools, leading to a high performance, efficiency, and scalable solution.",
+        "We specialize in integrating the powerful Google V8 engine into Node.js applications, utilizing profiling tools like Chrome DevTools for high performance, efficiency, and scalability.",
     },
     {
       icon: s5,
-
       title: "Node.js IoT App Development",
       description:
-        "Build secure and scalable Internet of Things applications with Editsh. Our skilled experts using Socket.io, MQTT, Node-RED, and tools like Johnny-Five, boost connectivity and real-time data processing of your app.",
+        "Develop secure and scalable Internet of Things applications with Editsh. Our experts use tools like Socket.io, MQTT, Node-RED, and Johnny-Five to enhance connectivity and real-time data processing.",
     },
     {
       icon: s6,
-
       title: "Node.js Microservices Architecture",
       description:
-        "We use Docker, Kubernetes, RabbitMQ, and monitoring tools like Prometheus to create resilient microservices architectures that ensure flexibility and scalability for your Node.JavaScript apps.",
+        "We build robust microservices architectures using Docker, Kubernetes, RabbitMQ, and monitoring tools like Prometheus to ensure your Node.js applications are flexible and scalable.",
     },
     {
       icon: s7,
-
       title: "Node.js Maintenance & Support",
       description:
-        "Editsh guarantees continuous optimal performance and reliability by offering proactive maintenance and 24/7 support using tools such as Jenkins, Winston, PM2 and New Relic.",
+        "Editsh offers continuous performance optimization and reliability through proactive maintenance and 24/7 support, utilizing tools such as Jenkins, Winston, PM2, and New Relic.",
     },
     {
       icon: s8,
-
       title: "Node.js Consulting Services",
       description:
-        "Our team provides professional Node.js consulting services to maximize performance tuning, optimize the architecture, and adoption of best practices by utilizing frameworks and tools customized to your project's needs.",
+        "Our consulting services focus on maximizing performance, optimizing architecture, and applying best practices with tailored frameworks and tools to meet your project’s specific needs.",
     },
     {
       icon: s9,
       title: "Node.js UI/UX Development",
       description:
-        "We specialise in the design and development of user-friendly user interfaces using advanced JavaScript frameworks such as React.js and Vue.js, as well as tools like Redux and Storybook, to improve user engagement and experiences.",
+        "We excel in crafting user-friendly interfaces with advanced JavaScript frameworks like React.js and Vue.js, complemented by tools such as Redux and Storybook to enhance user engagement and experience.",
     },
   ];
+
   const rightSideContent = [
     {
-      title: "Optimised Data Management",
+      title: "Efficient Data Handling",
       description:
-        "Node.js is ideal for easily handling large amounts of data because of its non-blocking I/O technique, which allows efficient data management. Our Node.js developers utilise MongoDB and Redis to develop reliable, scalable applications with outstanding speed.",
+        "Node.js excels in managing large datasets thanks to its non-blocking I/O model, which ensures efficient data processing. Our Node.js developers use MongoDB and Redis to create robust, scalable applications with exceptional speed.",
     },
     {
-      title: "Flexible and Expandable Solutions",
+      title: "Versatile and Scalable Solutions",
       description:
-        "The Node.js framework allows developers to build scalable, modular apps with the ability to include new features swiftly, giving customers greater flexibility and helping their businesses expand.",
+        "Node.js allows developers to build modular and scalable applications with ease, enabling rapid feature additions and providing clients with enhanced flexibility and business growth potential.",
     },
     {
-      title: "Comprehensive Front-end and Back-end Development",
+      title: "Integrated Front-end and Back-end Development",
       description:
-        "With Node.js, you can build your front-and-back-end applications quickly, easily, and with a single codebase that uses JavaScript. With its robust community support, real-time capabilities, and extensive ecosystem, our professionals improve productivity and offer the best Node Js solution.",
+        "Node.js facilitates the rapid development of both front-end and back-end applications using a unified JavaScript codebase. With its strong community support, real-time capabilities, and vast ecosystem, our experts enhance productivity and deliver top-notch Node.js solutions.",
     },
     {
-      title: "Cost-Effective Development Solutions",
+      title: "Cost-Efficient Development Strategies",
       description:
-        "Using Node.js improves development processes, reduces time-to-market, and lowers operating expenses, Editsh’s developers can now build high-quality web solutions using Node.js without compromising product performance or scalability.",
+        "By leveraging Node.js, we streamline development processes, shorten time-to-market, and reduce operational costs. Editsh’s developers deliver high-quality web solutions without sacrificing performance or scalability.",
     },
     {
-      title: "Enhanced Performance",
+      title: "Optimized Performance",
       description:
-        "Node.js's non-blocking, event-driven architecture guarantees efficient handling of simultaneous requests and quick response times. This supports developers to create strong applications, leading to excellently performing applications of your requirement.",
+        "Node.js's event-driven, non-blocking architecture ensures efficient handling of concurrent requests and rapid response times. This enables developers to build powerful applications that perform exceptionally well according to your needs.",
     },
     {
-      title: "Scalable Infrastructure",
+      title: "Adaptive Infrastructure",
       description:
-        "With the help of Docker and Kubernetes, Node.js enables applications, guaranteeing smooth scaling to effectively handle increasing workloads and traffic for long-term performance and growth.",
+        "Node.js, combined with Docker and Kubernetes, supports seamless scaling to manage growing workloads and traffic, ensuring long-term performance and scalability for your applications.",
     },
   ];
+
   const NodeBenefits = [
     {
-      title: "Low Development and Operational Cost",
+      title: "Cost-Effective Development and Operations",
       description:
-        "Our experienced developers teams employ a full set of Node.js functionalities, such as Express.js, npm, and MongoDB, to minimize development and operational expenses, thereby offering the most effective Node.js solutions for different kinds of businesses.",
+        "Our skilled development teams utilize a comprehensive range of Node.js features, including Express.js, npm, and MongoDB, to lower both development and operational costs, providing optimal Node.js solutions for various business needs.",
       icon: "orange-round",
     },
     {
-      title: "Flexible to Work According to Your Time Zone",
+      title: "Adaptable to Your Time Zone",
       description:
-        "Hire Node.js developers from Editsh; we offer services that are adaptive to your required time zone, promising that you have a scalable, smart web application that will help your company's growth.",
+        "Engage Node.js developers from Editsh who adjust their working hours to match your time zone, ensuring the creation of a smart, scalable web application that supports your company’s growth.",
       icon: "orange-round",
     },
     {
-      title: "Access to Experienced Developers",
+      title: "Experienced Development Team",
       description:
-        "Editsh has a team of highly qualified Node.js developers who are skilled with the latest technologies and tools, including Docker, Redis, and RabbitMQ. This guarantees that your project will be developed to a high standard.",
+        "Editsh boasts a team of highly skilled Node.js developers proficient in the latest technologies and tools such as Docker, Redis, and RabbitMQ, ensuring your project is developed to the highest standards.",
       icon: "orange-round",
     },
     {
-      title: "Reduced Development Times",
+      title: "Accelerated Development Timelines",
       description:
-        "Using latest Node.JS models and tools like Jenkins and PM2, our developers expertly shorten the development timelines and provide clients with top-notch Node.js web applications before schedule.",
+        "By leveraging advanced Node.js methodologies and tools like Jenkins and PM2, our developers efficiently shorten project timelines, delivering high-quality Node.js web applications ahead of schedule.",
       icon: "orange-round",
     },
     {
-      title: "Assured Quality Services",
+      title: "Guaranteed Quality Assurance",
       description:
-        "Editsh offers expert Node.js development services if you need help with your web project after it's been deployed. Our developers create web apps that meet all the necessary industry standards using different testing frameworks such as Chai and Mocha.",
+        "Editsh provides expert Node.js development services with post-deployment support. Our developers ensure your web applications meet industry standards using various testing frameworks such as Chai and Mocha.",
       icon: "orange-round",
     },
   ];
@@ -208,15 +205,17 @@ function NodejsDevelopment() {
                   lineHeight: "24px",
                 }}
               >
-                Editsh connects you to top Node.js developers for professional
-                web application development. As the best Node.js development
-                company, we have dedicated developers for your business
-                full-time or by the hour. Our flexible, feature-rich Node.js
-                development services help you make web apps that are light,
-                fast, and scalable. Learn how to manage large input/output tasks
-                with ease and be a part of a community that uses Node.js for
-                creating robust websites. Editsh can help you with great Node.js
-                project creation, which will help your online presence.
+                Editsh connects you with top-tier Node.js developers for expert
+                web application development. As a leading Node.js development
+                company, we offer dedicated developers to work with your
+                business either full-time or on a flexible hourly basis. Our
+                comprehensive Node.js development services enable you to build
+                web applications that are lightweight, efficient, and highly
+                scalable. Discover how to handle complex I/O operations
+                effortlessly and join a vibrant community that leverages Node.js
+                for crafting powerful websites. With Editsh, you can elevate
+                your online presence through exceptional Node.js project
+                development.
               </Typography>
               <Box
                 sx={{
@@ -227,22 +226,9 @@ function NodejsDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                       Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -376,10 +362,10 @@ function NodejsDevelopment() {
                   wordSpacing: "2px",
                 }}
               >
-                Editsh, your go-to partner for scalable, feature-rich
-                development, can help you develop your app or website. We
-                specialize in Node.js project development that is intuitive,
-                with user-friendly frontends and quick backends.
+                Editsh is your trusted partner for developing scalable and
+                feature-rich applications. We excel in Node.js development,
+                creating intuitive apps with user-friendly interfaces and
+                efficient backends.
               </Typography>
               <Typography
                 sx={{
@@ -389,12 +375,13 @@ function NodejsDevelopment() {
                   wordSpacing: "2px",
                 }}
               >
-                For over 6 years, we have helped businesses and startups better
-                their web app backends with Express.js, Docker, MongoDB,
-                Kubernetes, AWS, and RESTful APIs. We provide web application
-                development services using Node.js to develop applications.
-                Editsh offers many exceptional Node.js development services that
-                will help transform your digital solutions.
+                With over 5 years of experience, we’ve empowered businesses and
+                startups by enhancing their web app infrastructures using
+                technologies such as Express.js, Docker, MongoDB, Kubernetes,
+                AWS, and RESTful APIs. Our Node.js development services are
+                designed to build robust applications and elevate your digital
+                solutions. Partner with Editsh to transform your web
+                applications and achieve outstanding results.
               </Typography>
             </Grid>
           </Grid>

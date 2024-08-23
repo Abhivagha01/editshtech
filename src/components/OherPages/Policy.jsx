@@ -227,12 +227,18 @@ function Policy() {
               </li>
             </ul>
           </Typography>
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{
+              fontWeight: "600",
+            }}
+          >
             How to exercise your rights
           </Typography>
           <Typography variant="body1" paragraph>
             You can exercise your rights by contacting us at{" "}
-            <a href="mailto:edithtech01@gmail.com">edithtech01@gmail.com</a>
+            <a href="mailto:editshtech01@gmail.com">editshtech01@gmail.com</a>
           </Typography>
           <Typography
             variant="h6"
@@ -255,7 +261,7 @@ function Policy() {
 
         <Typography variant="body1" paragraph>
           If you have any questions about this Privacy Policy, please contact us
-          at <a href="mailto:edithtech01@gmail.com">edithtech01@gmail.com</a>
+          at <a href="mailto:editshtech01@gmail.com">editshtech01@gmail.com</a>
         </Typography>
       </Container>
     </>

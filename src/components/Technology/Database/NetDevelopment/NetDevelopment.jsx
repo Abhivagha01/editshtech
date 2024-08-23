@@ -1,6 +1,6 @@
 import React from "react";
 import Pagetitle from "../../../../global/Pagetitle";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import s1 from "../../../../assets/Technoogy/Backend/net/services/s1.png";
@@ -13,7 +13,6 @@ import s7 from "../../../../assets/Technoogy/Backend/net/services/s7.png";
 import s8 from "../../../../assets/Technoogy/Backend/net/services/s8.png";
 import s9 from "../../../../assets/Technoogy/Backend/net/services/s9.png";
 import { Titleanimation } from "../../../../global/Titleanimation";
-
 import p1 from "../../../../assets/Technoogy/Backend/net/project/p1.png";
 import p2 from "../../../../assets/Technoogy/Backend/net/project/p2.png";
 import p3 from "../../../../assets/Technoogy/Backend/net/project/p3.png";
@@ -23,6 +22,7 @@ import p6 from "../../../../assets/Technoogy/Backend/net/project/p6.png";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
 import NetDevelopPanel from "./NetDevelopPanel";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function NetDevelopment() {
   const theme = useTheme();
@@ -32,117 +32,117 @@ function NetDevelopment() {
       icon: s1,
       title: "Custom .NET Development",
       description:
-        "Take your business to new heights with our fully customized ASP.NET application development services. Our developers create secure, scalable, and flexible solutions to ensure the success of your business.",
+        "Elevate your business with our bespoke ASP.NET development services. We craft tailored, secure, and scalable applications designed to propel your business forward.",
     },
     {
       icon: s2,
       title: ".NET Consulting",
       description:
-        "We are a dot net Development Company that understands the current situation of the market and advises on which type of .NET solution can be perfect for you.",
+        "Our expert consultants analyze your market needs and recommend the optimal .NET solutions for your business, ensuring strategic and effective outcomes.",
     },
     {
       icon: s3,
       title: ".NET Software Development",
       description:
-        "Editsh is a .NET software development company that utilizes .NET Core, ASP.NET, C#, VB.NET, Xamarin, and many more to create different types of cross-platform software.",
+        "At Editsh, we harness the power of .NET Core, ASP.NET, C#, VB.NET, Xamarin, and more to build versatile cross-platform software that meets diverse business needs.",
     },
     {
       icon: s4,
       title: ".NET Product Development",
       description:
-        "Grow your enterprise-grade software products like ERP, CRM, POS, CMS, and more with the .NET framework. Our programmers provide different types of .NET application development services to make sure that you get high-quality results for your business.",
+        "Enhance your enterprise-grade software products—ERP, CRM, POS, CMS, and more—with our .NET framework expertise. We deliver high-quality, tailored .NET application solutions to drive your business success.",
     },
     {
       icon: s5,
       title: ".NET Upgradation & Migration",
       description:
-        "Upgrade your existing solutions to the latest version of .NET for better security and compatibility across different web browsers. Our experts help to migrate your application to the latest version while ensuring your applications are optimized.",
+        "Modernize your existing applications with the latest .NET versions for improved security and cross-browser compatibility. Our specialists ensure a smooth migration and optimization of your solutions.",
     },
     {
       icon: s6,
       title: ".NET QA and Testing",
       description:
-        "We are an experienced .NET development company that provides end-to-end testing services to get high test coverage and give businesses confidence in the reliability and effectiveness of the applications.",
+        "Our comprehensive testing services cover all aspects of .NET applications, ensuring high-quality performance and reliability so you can trust in the robustness of your software.",
     },
     {
       icon: s7,
       title: ".NET Integration Services",
       description:
-        "Expand the capabilities of your .NET solutions by connecting them with different types of third-party applications. We specialize in seamless integration which allows your software to work easily with other tools and services.",
+        "Expand your .NET applications' capabilities by seamlessly integrating with various third-party applications. We specialize in ensuring your software interacts smoothly with other tools and services.",
     },
     {
       icon: s8,
       title: ".NET 3rd Party Customization",
       description:
-        "Whether you need to improve functionality, work with APIs, or enhance the user interface, our team of programmers can customize third-party plugins into these solutions to satisfy your unique needs.",
+        "Enhance functionality and user experience by customizing third-party plugins to fit your unique requirements. Our developers tailor solutions to meet your specific needs and preferences.",
     },
     {
       icon: s9,
       title: ".NET Maintenance & Support",
       description:
-        "Trust us to maintain and support your .NET applications to ensure their safety and performance so you can focus on your business without worrying about technical challenges.",
+        "Depend on us for ongoing maintenance and support of your .NET applications. We ensure their optimal performance and security, allowing you to focus on growing your business without technical distractions.",
     },
   ];
 
   const rightSideContent = [
     {
-      title: "Cross-platform development",
+      title: "Cross-Platform Development",
       description:
-        "Our experienced development team utilizes the .Net framework to create cross-platform applications that can run easily on different types of platforms.",
+        "Our expert team leverages the .NET framework to build versatile applications that seamlessly operate across multiple platforms, ensuring broad accessibility and functionality.",
     },
     {
-      title: "Rich resources and libraries",
+      title: "Extensive Resources and Libraries",
       description:
-        "Our .Net development team uses different types of tools and libraries to streamline development and deliver efficient and feature-rich solutions.",
+        "We harness a wide array of tools and libraries within the .NET ecosystem to enhance development efficiency and deliver sophisticated, feature-rich solutions tailored to your needs.",
     },
     {
-      title: "High security and reliability",
+      title: "Robust Security and Reliability",
       description:
-        "We integrate built-in security features and harness the power of the .Net framework to deliver secure and reliable software solutions for your business.",
+        "By integrating advanced security features and utilizing the full potential of the .NET framework, we deliver robust and reliable software solutions that safeguard your business data.",
     },
     {
-      title: "Access to skilled developers",
+      title: "Access to Expert Developers",
       description:
-        "Get our skilled developers who have in-depth knowledge and expertise in .Net development of delivering high-quality solutions as per your business requirements.",
+        "Our team of seasoned developers brings extensive expertise in .NET, providing top-notch solutions tailored to your business requirements and ensuring high-quality results.",
     },
   ];
 
   const project = [
     {
       icon: p1,
-      title: "Analytical, Accurate, and Result-Oriented Approach",
+      title: "Analytical and Results-Driven Approach",
       description:
-        "We are a dot net application development company that adopts an analytical, accurate, and result-oriented approach to focus on delivering high-quality solutions and ensuring that our clients achieve their desired outcomes with efficiency and effectiveness.",
+        "We adopt a meticulous, results-oriented methodology to deliver top-notch .NET solutions. Our focus is on providing accurate, data-driven outcomes that ensure your business goals are met with precision and efficiency.",
     },
     {
       icon: p2,
-      title: "Maximum Security and Scalability",
+      title: "Enhanced Security and Scalability",
       description:
-        "Editsh is an ASP .NET development company that prioritizes maximum security and scalability. Our programmers ensure that your applications are safe against all threats and can seamlessly handle the growth of your business.",
+        "At Editsh, we prioritize robust security and scalability for your ASP.NET applications. Our developers implement comprehensive security measures and design scalable solutions that grow with your business needs.",
     },
     {
       icon: p3,
-      title: "24×7 Client Assistance",
+      title: "Round-the-Clock Client Support",
       description:
-        "Our support team is available 24x7 to provide assistance for various .NET development services and address any queries or issues. We provide continuous support and timely resolution for a smooth and successful collaboration.",
+        "Our support team is available 24/7 to assist with any .NET development needs. We offer continuous support and prompt resolution to ensure a smooth and successful partnership.",
     },
     {
       icon: p4,
-      title: "Agile Development",
+      title: "Agile Development Methodology",
       description:
-        "We are an ASP .Net development company that follows an agile development approach. Our developers use iterative processes to deliver adaptable solutions that respond quickly and are easily deployed.",
+        "We utilize agile development techniques to deliver flexible and adaptive ASP.NET solutions. Our iterative approach allows for rapid adjustments and seamless deployment, meeting your evolving requirements.",
     },
     {
       icon: p5,
-      title: "Scalable ASP NET Solution",
+      title: "Robust and Scalable ASP.NET Solutions",
       description:
-        "At Editsh, we ensure to build ASP NET solutions that can handle increasing demands and growth, providing a robust and reliable platform for your business to thrive and succeed.",
+        "Editsh specializes in creating ASP.NET solutions that are both robust and scalable. Our platforms are designed to handle growing demands, providing a solid foundation for your business’s success.",
     },
     {
       icon: p6,
-      title: "Flexible Engagement Models",
+      title: "Customizable Engagement Models",
       description:
-        "We offer flexible engagement models for our .NET development services. Whether you need a team of developers on an hourly or monthly basis, we understand your preferences and requirements before starting the project.",
+        "We provide customizable engagement models for our .NET development services, tailored to your preferences. Whether on an hourly or monthly basis, we align our approach with your project needs and expectations.",
     },
   ];
 
@@ -211,22 +211,9 @@ function NetDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                     Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>

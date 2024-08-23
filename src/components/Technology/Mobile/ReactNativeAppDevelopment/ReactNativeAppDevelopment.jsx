@@ -17,6 +17,7 @@ import GraphQL from "../../../../assets/Technoogy/Mobile/Raectnativeappdevelopme
 import ReactNativePanel from "./ReactNativPanel";
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 function ReactNativeAppDevelopment() {
   const theme = useTheme();
 
@@ -39,7 +40,7 @@ function ReactNativeAppDevelopment() {
     {
       title: "Third-party API Integrations",
       description:
-        "Our React Native development company excels at integrating third-party APIs, expanding your app's functionality and enhancing user experience through external services and data such as real-time updates, payment gateways, authentication, data retrieval and notifications.",
+        "Our React Native development company excels at integrating third-party APIs, expanding your app's functionality, and enhancing the user experience through external services and data such as real-time updates, payment gateways, authentication, data retrieval, and notifications.",
     },
     {
       title: "React Native App Migration",
@@ -54,7 +55,7 @@ function ReactNativeAppDevelopment() {
     {
       title: "Code Audit and Optimization",
       description:
-        "Our experienced team at Editsh is dedicated to creating the most robust app possible. We identify and resolve code inefficiencies, reduce errors, and improve quality ensuring your React Native app runs smoothly and reliably.      ",
+        "At Editsh, we dedicate our experienced team to crafting the most robust app possible. We identify and resolve code inefficiencies, reduce errors, and improve quality, ensuring your React Native app runs smoothly and reliably.",
     },
     {
       title: "  React Native Consulting Services",
@@ -67,19 +68,19 @@ function ReactNativeAppDevelopment() {
     {
       title: "React Native + TypeScript",
       description:
-        "When used with TypeScript, React Native enhances static type-checking, code quality, and maintainability of the application. Using it our developer can spot errors during development, resulting in a cleaner and more flexible codebase for the application.",
+        "When used with TypeScript, React Native enhances static type-checking, code quality, and maintainability of the application. Using it, our developer can spot errors during development, resulting in a cleaner and more flexible codebase for the application.",
       icons: [react, typescripticon],
     },
     {
       title: "React Native + Redux",
       description:
-        "A combination of React Native and Redux helps developers build complex and high-performing applications for you, with centralized state management. Developers using this integration can predict app behavior, even with extensive data flows and intricate application logic.",
+        "A combination of React Native and Redux helps developers build complex and high-performing applications for you with centralized state management. Developers using this integration can predict app behavior, even with extensive data flows and intricate application logic.",
       icons: [react, reduxicon],
     },
     {
       title: "React Native + Expo",
       description:
-        "Our developers make use of Expo to speed up the React Native development process. They can get over-the-air updates, and use a wide range of built-in libraries, increasing overall workflow.",
+        "Our developers make use of Expo to speed up the React Native development process. They can get over-the-air updates and use a wide range of built-in libraries, increasing overall workflow.",
       icons: [react, expoicon],
     },
     {
@@ -91,7 +92,7 @@ function ReactNativeAppDevelopment() {
     {
       title: "React Native + MongoDB",
       description:
-        "React Native with MongoDB for flexible data storage. Our developers using the flexible schema of MongoDB, create scalable, dynamic cross-platform applications that adjust to changing requirements and evolving user needs.",
+        "React Native with MongoDB for flexible data storage. Our developers, using the flexible schema of MongoDB, create scalable, dynamic cross-platform applications that adjust to changing requirements and evolving user needs.",
       icons: [react, mongodbicon],
     },
     {
@@ -169,22 +170,9 @@ function ReactNativeAppDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -307,11 +295,11 @@ function ReactNativeAppDevelopment() {
                 }}
               >
                 Editsh is an experienced and trusted iPhone app development
-                company in California and you should hire iOS app developer in
-                California to empower your business. Our company is a top-rated
-                iOS app development company in New York and to avail of our
-                top-notch services you need to hire iOS app developers in New
-                York.
+                company in California, and you should hire an iOS app developer
+                in California to empower your business. Our company is a
+                top-rated iOS app development company in New York, and to avail
+                of our top-notch services, you need to hire iOS app developers
+                in New York.
               </Typography>
             </Grid>
           </Grid>
@@ -421,8 +409,8 @@ function ReactNativeAppDevelopment() {
             }}
           >
             Discover the powerful cross-platform combinations used by our React
-            Native developers, to create the most robust and versatile mobile
-            applications for you catering your diverse needs.
+            Native developers to create the most robust and versatile mobile
+            applications for you, catering to your diverse needs.
           </Typography>
           <Grid
             container
@@ -436,8 +424,13 @@ function ReactNativeAppDevelopment() {
             }}
           >
             {TechnologyIcon.map((item, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}
-               data-aos="zoom-in"
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                data-aos="zoom-in"
                 data-aos-duration="3000"
               >
                 <Box

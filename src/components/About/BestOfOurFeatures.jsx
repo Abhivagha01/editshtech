@@ -56,14 +56,19 @@ function BestOfOurFeatures() {
       }}
     >
       <Grid container spacing={4}>
-        <Grid item xs={12} md={6} lg={4} 
-        sx={{
-          display:{
-            xs: 'none',
-            xs: 'none',
-            md: 'block',
-          }
-        }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          lg={4}
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "block",
+            },
+          }}
+        >
           <Box
             sx={{ position: "relative", height: "100%", overflow: "hidden" }}
           >
@@ -156,7 +161,14 @@ function BestOfOurFeatures() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          lg={8}
+          data-aos="zoom-in"
+          data-aos-duration="3000"
+        >
           <Box sx={{ p: 4 }}>
             <Grid container spacing={3}>
               {features.map((feature) => (

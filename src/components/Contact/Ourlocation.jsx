@@ -26,19 +26,10 @@ const ContactBox = ({ icon: Icon, title, link, linkText }) => {
         },
       }}
     >
-      <Box
-        sx={{
-          width: "50px",
-          height: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderTopRightRadius: "20px",
-          borderBottomLeftRadius: "20px",
-          backgroundColor: theme.palette.primary.main,
-        }}
-      >
-        <Icon sx={{ color: theme.palette.lightwhite, fontSize: "30px" }} />
+      <Box>
+        <div className="service-icon">
+          <Icon sx={{ color: theme.palette.lightwhite, fontSize: "30px" }} />
+        </div>
       </Box>
       <Typography
         sx={{
@@ -73,7 +64,7 @@ function Ourlocation() {
     <Box
       sx={{
         backgroundColor: theme.palette.black,
-        py: {xs: 4, sm: 4, lg: 8 },
+        py: { xs: 4, sm: 4, lg: 8 },
       }}
     >
       <Container>
@@ -87,25 +78,24 @@ function Ourlocation() {
             },
             {
               icon: MarkEmailUnreadIcon,
-              title: "Mail Address",
-              link: "mailto:edithtech01@gmail.com",
-              linkText: "edithtech01@gmail.com",
+              title: "Email",
+              link: "mailto:editshtech@gmail.com",
+              linkText: "editshtech@gmail.com",
             },
             {
               icon: AddLocationAltIcon,
               title: "Our Location",
               link: "#",
               linkText:
-                "414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya Circle, Surat, Gujarat 395010",
+                "414, 4th Floor, Pavitra Point, Opp. BBC, Near Savaliya Circle, Surat, Gujarat 395010",
             },
             {
               icon: QueryBuilderIcon,
               title: "Office Hour",
-              link: "#",
               linkText: "Mon - Fri 09:30 AM - 06:30 PM",
             },
           ].map((item, index) => (
-            <Grid item xs={12} md={6} lg={3} key={index}>
+            <Grid item xs={12} sm={6} md={6} lg={3} key={index}>
               <ContactBox {...item} />
             </Grid>
           ))}

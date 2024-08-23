@@ -1,6 +1,5 @@
 import { useTheme } from "@emotion/react";
 import React from "react";
-
 import { Box, Button, Typography } from "@mui/material";
 
 function Heroslider({ getInTouchRef }) {
@@ -18,7 +17,7 @@ function Heroslider({ getInTouchRef }) {
         <div className="background-image">
           <img
             src="https://i.postimg.cc/xd5WPpfb/modern-education-Skillstork.jpg"
-            alt="image"
+            alt="images"
           />
         </div>
 

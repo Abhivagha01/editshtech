@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {
   Box,
-  Button,
   Container,
   FormControl,
   Grid,
@@ -16,6 +15,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
+import LightBtn from "./Button/LightBtn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -54,8 +54,8 @@ const Getintouch = () => {
     },
     {
       icon: <EmailIcon />,
-      text: "edithtech01@gmail.com",
-      link: "mailto:edithtech01@gmail.com",
+      text: "editshtech@gmail.com",
+      link: "mailto:editshtech@gmail.com",
     },
     {
       icon: <PhoneIcon />,
@@ -66,9 +66,15 @@ const Getintouch = () => {
 
   const socialMediaLinks = [
     { icon: <FacebookIcon />, link: "#" },
-    { icon: <InstagramIcon />, link: "https://www.instagram.com/editsh_technology/" },
+    {
+      icon: <InstagramIcon />,
+      link: "https://www.instagram.com/editsh_technology/",
+    },
     { icon: <TwitterIcon />, link: "#" },
-    { icon: <LinkedInIcon />, link: "https://www.linkedin.com/company/editsh/about/" },
+    {
+      icon: <LinkedInIcon />,
+      link: "https://www.linkedin.com/company/editsh/about/",
+    },
   ];
 
   return (
@@ -77,7 +83,11 @@ const Getintouch = () => {
       <Box
         sx={{
           my: 2,
-          py: 2,
+          py: {
+            xs: 1,
+            md: 2,
+            lg: 4,
+          },
           backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
@@ -160,7 +170,12 @@ const Getintouch = () => {
                 </Typography>
                 <Box className="social-icons">
                   {socialMediaLinks.map((media, index) => (
-                    <Link key={index} to={media.link} color="inherit" target="_blank">
+                    <Link
+                      key={index}
+                      to={media.link}
+                      color="inherit"
+                      target="_blank"
+                    >
                       {media.icon}
                     </Link>
                   ))}
@@ -209,145 +224,136 @@ const Getintouch = () => {
                       },
                     }}
                   >
-                    <Grid container spacing={2}>
-                      <Grid item xs={12}>
-                        <Field
-                          as={TextField}
-                          label="Name"
-                          name="name"
-                          value={values.name}
-                          onChange={handleChange}
-                          placeholder="Name"
-                          fullWidth
-                          variant="filled"
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
-                          }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "Name",
-                          }}
-                          helperText={<ErrorMessage name="name" />}
-                          error={!!values.name}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Field
-                          as={TextField}
-                          label="Email"
-                          name="email"
-                          value={values.email}
-                          onChange={handleChange}
-                          fullWidth
-                          placeholder="Email"
-                          variant="filled"
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
-                          }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "Email",
-                          }}
-                          helperText={<ErrorMessage name="email" />}
-                          error={!!values.email}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Field
-                          as={TextField}
-                          label="Mobile"
-                          name="mobile"
-                          value={values.mobile}
-                          onChange={handleChange}
-                          fullWidth
-                          placeholder="+91 0000 00000"
-                          variant="filled"
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
-                          }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "+91 0000 00000",
-                          }}
-                          helperText={<ErrorMessage name="mobile" />}
-                          error={!!values.mobile}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <FormControl fullWidth variant="filled">
-                          <InputLabel
-                            style={{ color: theme.palette.secondary.main }}
-                            shrink
-                          >
-                            Service
-                          </InputLabel>
+                    <Box
+                      sx={{
+                        p: 2,
+                      }}
+                    >
+                      <Grid container spacing={2}>
+                        <Grid item xs={12}>
                           <Field
-                            as={Select}
-                            name="service"
-                            value={values.service}
+                            as={TextField}
+                            label="Name"
+                            name="name"
+                            value={values.name}
                             onChange={handleChange}
-                            displayEmpty
-                            style={{ color: theme.palette.secondary.main }}
-                            inputProps={{ "aria-label": "Without label" }}
-                          >
-                            <MenuItem value="" disabled>
-                              Select a service
-                            </MenuItem>
-                            <MenuItem value="Mobile App Development">
-                              Mobile App Development
-                            </MenuItem>
-                            <MenuItem value="Web Development">
-                              Web Development
-                            </MenuItem>
-                          </Field>
-                          <ErrorMessage name="service" />
-                        </FormControl>
+                            placeholder="Name"
+                            fullWidth
+                            variant="filled"
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "Name",
+                            }}
+                            helperText={<ErrorMessage name="name" />}
+                            error={!!values.name}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Field
+                            as={TextField}
+                            label="Email"
+                            name="email"
+                            value={values.email}
+                            onChange={handleChange}
+                            fullWidth
+                            placeholder="Email"
+                            variant="filled"
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "Email",
+                            }}
+                            helperText={<ErrorMessage name="email" />}
+                            error={!!values.email}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Field
+                            as={TextField}
+                            label="Mobile"
+                            name="mobile"
+                            value={values.mobile}
+                            onChange={handleChange}
+                            fullWidth
+                            placeholder="+91 0000 00000"
+                            variant="filled"
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "+91 0000 00000",
+                            }}
+                            helperText={<ErrorMessage name="mobile" />}
+                            error={!!values.mobile}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <FormControl fullWidth variant="filled">
+                            <InputLabel
+                              style={{ color: theme.palette.secondary.main }}
+                              shrink
+                            >
+                              Service
+                            </InputLabel>
+                            <Field
+                              as={Select}
+                              name="service"
+                              value={values.service}
+                              onChange={handleChange}
+                              displayEmpty
+                              style={{ color: theme.palette.secondary.main }}
+                              inputProps={{ "aria-label": "Without label" }}
+                            >
+                              <MenuItem value="" disabled>
+                                Select a service
+                              </MenuItem>
+                              <MenuItem value="Mobile App Development">
+                                Mobile App Development
+                              </MenuItem>
+                              <MenuItem value="Web Development">
+                                Web Development
+                              </MenuItem>
+                            </Field>
+                            <ErrorMessage name="service" />
+                          </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Field
+                            as={TextField}
+                            label="Message"
+                            name="message"
+                            value={values.message}
+                            onChange={handleChange}
+                            multiline
+                            rows={4}
+                            fullWidth
+                            variant="filled"
+                            InputLabelProps={{
+                              style: { color: theme.palette.secondary.main },
+                              shrink: true,
+                            }}
+                            InputProps={{
+                              style: { color: theme.palette.secondary.main },
+                              placeholder: "Message",
+                            }}
+                            helperText={<ErrorMessage name="message" />}
+                            error={!!values.message}
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <LightBtn />
+                        </Grid>
                       </Grid>
-                      <Grid item xs={12}>
-                        <Field
-                          as={TextField}
-                          label="Message"
-                          name="message"
-                          value={values.message}
-                          onChange={handleChange}
-                          multiline
-                          rows={4}
-                          fullWidth
-                          variant="filled"
-                          InputLabelProps={{
-                            style: { color: theme.palette.secondary.main },
-                            shrink: true,
-                          }}
-                          InputProps={{
-                            style: { color: theme.palette.secondary.main },
-                            placeholder: "Message",
-                          }}
-                          helperText={<ErrorMessage name="message" />}
-                          error={!!values.message}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Button
-                          type="submit"
-                          variant="outlined"
-                          sx={{
-                            width: "130px",
-                            borderRadius: 5,
-                            borderColor: theme.palette.primary.main,
-                            color: theme.palette.grey[500],
-                            "&:hover": {
-                              backgroundColor: theme.palette.secondary.main,
-                              color: theme.palette.common.white,
-                            },
-                          }}
-                        >
-                          Submit
-                        </Button>
-                      </Grid>
-                    </Grid>
+                    </Box>
                   </Form>
                 )}
               </Formik>

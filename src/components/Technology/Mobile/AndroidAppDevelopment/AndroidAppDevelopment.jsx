@@ -28,6 +28,7 @@ import tech6 from "../../../../assets/Technoogy/Mobile/androidDevelopment/androi
 import tech7 from "../../../../assets/Technoogy/Mobile/androidDevelopment/androidTechnology/tech7.png";
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function AndroidAppDevelopment() {
   const theme = useTheme();
@@ -43,54 +44,55 @@ function AndroidAppDevelopment() {
     {
       icon: icon1,
       title: "BLE App Development",
-      description: `We have unique knowledge and skill in designing, implementing, testing, and deploying Bluetooth Low Energy applications. That's why we are a leading BLE application development company with clients all over the world.`,
+      description: `Our expertise in Bluetooth Low Energy app development ensures top-tier design, implementation, and deployment. We lead the industry with cutting-edge BLE applications that cater to clients worldwide.`,
     },
     {
       icon: icon2,
-      title: "Messaging app",
-      description: `Our specialized team of expert developers can create a secure, robust and adaptable mobile messaging app for Android or any other mobile platform. Our messaging apps are end-to-end encrypted for the privacy of your customers.`,
+      title: "Messaging App",
+      description: `We specialize in creating secure, robust, and versatile messaging apps for Android and other platforms. Our solutions prioritize end-to-end encryption, ensuring your customers' privacy is always protected.`,
     },
     {
       icon: icon3,
       title: "Social Networking App",
-      description: `We create and build high-quality social networking apps that may be fully customized. Using our network of services, you may create and share content with anybody across the globe.`,
+      description: `We develop customizable, high-quality social networking apps that enable users to create and share content globally. Our services provide a comprehensive platform for connecting people across the world.`,
     },
     {
       icon: icon4,
       title: "Enterprise App",
-      description: `We create and build high-quality social networking apps that may be fully customized. Using our network of services, you may create and share content with anybody across the globe.`,
+      description: `Our enterprise app development service focuses on creating scalable, high-performance applications that meet your business needs. We deliver tailored solutions that drive productivity and efficiency.`,
     },
     {
       icon: icon5,
       title: "On Demand App",
-      description: `Our on-demand app development service has produced several great commercial apps and technologies. And our team of mobile developer professionals guarantee that the most acceptable solutions are provided to your company requirements in the shortest amount of time possible.`,
+      description: `Our on-demand app development service delivers top-notch commercial apps with speed and precision. We ensure your business gets the best solutions quickly to meet your specific needs.`,
     },
     {
       icon: icon6,
       title: "eCommerce App",
-      description: `Editsh has assisted clients in developing, marketing, and promoting their eCommerce applications. Our applications are safe and protected, and the quality of our products meets all the eCommerce industry's requirements.`,
+      description: `We help clients develop, market, and promote secure and compliant eCommerce applications. Our eCommerce solutions are designed to meet the highest industry standards, ensuring safe and successful operations.`,
     },
     {
       icon: icon7,
       title: "Healthcare App",
-      description: `We create unique medical applications for doctors, hospitals, and other healthcare-related businesses. Our area of expertise is developing high-quality medical apps that help patients as well as medical professionals.`,
+      description: `We create innovative medical applications tailored for healthcare providers, enhancing patient care and operational efficiency. Our expertise lies in delivering high-quality medical apps that serve both patients and professionals.`,
     },
     {
       icon: icon8,
       title: "Wearable App Development",
-      description: `We specialize in creating wearable apps for smartwatches, wristbands, and other devices. Our developers have expertise in developing wearable apps for Android, iOS, and other operating systems.`,
+      description: `Our team excels in developing wearable apps for smartwatches, wristbands, and other devices. We bring your wearable app ideas to life on Android, iOS, and other platforms with precision and expertise.`,
     },
     {
       icon: icon9,
       title: "NFC Integration",
-      description: `Our staff members are up to date on the newest technology and can assist you in developing your following NFC-enabled product or upgrading your present one.`,
+      description: `Stay ahead with our NFC integration services. We assist in developing or upgrading NFC-enabled products with the latest technology, ensuring your offerings are cutting-edge and competitive.`,
     },
     {
       icon: icon10,
-      title: "Support, Maintenance & Optimize",
-      description: `Editsh is a mobile app development firm that specializes in developing high-quality, cost-effective, and efficient mobile apps for businesses. We provide targeted support, maintenance, and optimized mobile applications that help companies achieve their objectives.`,
+      title: "Support, Maintenance & Optimization",
+      description: `We provide specialized support, maintenance, and optimization services to keep your mobile applications running smoothly. Our solutions help businesses maintain high performance and achieve their goals efficiently.`,
     },
   ];
+
   const IosTechnology = [
     { id: 1, img: tech1, title: "Ionic" },
     { id: 2, img: tech2, title: "Android SDK" },
@@ -103,12 +105,13 @@ function AndroidAppDevelopment() {
   const Androidsettings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 6,
+    speed: 5000,
+    slidesToShow: 5,
     slidesToScroll: 1,
-    cssEase: "linear",
+    autoplay: true,
+    autoplaySpeed: 1,
+    pauseOnHover: false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -188,10 +191,15 @@ function AndroidAppDevelopment() {
                   lineHeight: "24px",
                 }}
               >
-                We are a leading iPhone application Development Company that
-                develops iOS applications for the next generation. Our
-                developers and designers will create appealing designs and build
-                creative iOS applications.
+                As a leading AngularJS Development Company, we develop scalable,
+                robust, secure, and user-friendly applications. Our expert
+                developers create dynamic web applications, SPAs, and mobile
+                apps, offering cost-effective solutions. Benefit from two-way
+                data binding, dependency injection, and modular development. We
+                use tools like Firebase, JavaScript, HTML, CSS, Docker, Redux,
+                Fuse, and CoreUI to deliver fast-loading, real-time web
+                applications. Trust us for top-notch Angular development
+                tailored to your business needs.
               </Typography>
               <Box
                 sx={{
@@ -202,22 +210,9 @@ function AndroidAppDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
               <Box>
@@ -404,19 +399,6 @@ function AndroidAppDevelopment() {
             development services across various industries, including
             E-Commerce/Shopping/Fashion, Entertainment, Education, Finance,
             Healthcare, Food & Beverage, Travel & Tourism, and more.
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "14px",
-              color: theme.palette.secondary.main,
-              my: 2,
-              textAlign: "center",
-            }}
-          >
-            Our services include UI/UX design, development of native Android
-            applications, eCommerce app creation, Android wearable app
-            development, NFC integration, Support, Maintenance, Optimization,
-            and many more.
           </Typography>
           <Grid
             container

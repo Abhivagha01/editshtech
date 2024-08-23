@@ -3,8 +3,6 @@ import React from "react";
 import { useTheme } from "@emotion/react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -16,14 +14,6 @@ import ScrollTotopbtn from "./ScrollTotopbtn";
 
 const Footer = () => {
   const socialLinks = [
-    {
-      href: "https://www.facebook.com/profile.php?id=61555676966897",
-      Icon: FacebookOutlinedIcon,
-    },
-    {
-      href: "https://twitter.com/JBSTechnology26",
-      Icon: TwitterIcon,
-    },
     {
       href: "https://www.instagram.com/editsh_technology/",
       Icon: InstagramIcon,
@@ -155,13 +145,13 @@ const Footer = () => {
                       <Box
                         sx={{
                           backgroundColor: theme.palette.secondary.main,
-                          width: "45px",
-                          height: "45px",
+                          width: "40px",
+                          height: "40px",
                           margin: "auto",
-                          lineHeight: "60px",
+                          lineHeight: "50px",
                           mr: 2,
                           textAlign: "center",
-                          borderRadius: "50%",
+                          borderRadius: "10px",
                           "&:hover": {
                             transform: "translateY(-10px)",
                             color: theme.palette.secondary.main,
@@ -171,7 +161,7 @@ const Footer = () => {
                       >
                         <social.Icon
                           sx={{
-                            fontSize: "30px",
+                            fontSize: "20px",
                             color: theme.palette.primary.main,
                             textAlign: "center",
                           }}
@@ -261,11 +251,11 @@ const Footer = () => {
                 <Box
                   sx={{
                     backgroundColor: theme.palette.secondary.main,
-                    width: "40px",
-                    height: "40px",
-                    lineHeight: "50px",
+                    width: "30px",
+                    height: "30px",
+                    lineHeight: "40px",
                     textAlign: "center",
-                    borderRadius: "50%",
+                    borderRadius: "10px",
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateX(-10px)",
@@ -273,11 +263,11 @@ const Footer = () => {
                     },
                   }}
                 >
-                  <EmailOutlinedIcon sx={{ fontSize: "25px" }} />
+                  <EmailOutlinedIcon sx={{ fontSize: "20px" }} />
                 </Box>
 
                 <Link
-                  to="mailto:edithtech01@gmail.com"
+                  to="mailto:editshtech01@gmail.com"
                   style={{
                     color: theme.palette.primary.main,
                     fontFamily: theme.typography,
@@ -285,7 +275,7 @@ const Footer = () => {
                     marginLeft: "18px",
                   }}
                 >
-                  edithtech01@gmail.com
+                  editshtech@gmail.com
                 </Link>
               </Box>
               <Box
@@ -303,11 +293,11 @@ const Footer = () => {
                 <Box
                   sx={{
                     backgroundColor: theme.palette.secondary.main,
-                    width: "40px",
-                    height: "40px",
-                    lineHeight: "50px",
+                    width: "30px",
+                    height: "30px",
+                    lineHeight: "40px",
                     textAlign: "center",
-                    borderRadius: "50%",
+                    borderRadius: "10px",
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateX(-10px)",
@@ -315,20 +305,20 @@ const Footer = () => {
                     },
                   }}
                 >
-                  <CallOutlinedIcon sx={{ fontSize: "25px" }} />
+                  <CallOutlinedIcon sx={{ fontSize: "20px" }} />
                 </Box>
 
                 <Box sx={{ fontSize: "13px" }}>
                   <Link
                     to="tel:+919601175985"
                     style={{
-                      color: "#FFF",
+                      color: theme.palette.white,
                       fontFamily: theme.typography.fontFamily,
                       fontSize: "14px",
                       marginLeft: "18px",
                     }}
                   >
-                    +91 98790 27562
+                    +91 96011 75985
                   </Link>
                 </Box>
               </Box>
@@ -346,11 +336,11 @@ const Footer = () => {
                 <Box
                   sx={{
                     backgroundColor: theme.palette.secondary.main,
-                    width: "45px",
-                    height: "45px",
-                    lineHeight: "55px",
+                    width: "30px",
+                    height: "30px",
+                    lineHeight: "40px",
                     textAlign: "center",
-                    borderRadius: "50%",
+                    borderRadius: "10px",                                      
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateX(-10px)",
@@ -358,7 +348,7 @@ const Footer = () => {
                     },
                   }}
                 >
-                  <FmdGoodIcon sx={{ fontSize: "25px" }} />
+                  <FmdGoodIcon sx={{ fontSize: "20px" }} />
                 </Box>
 
                 <Box>
@@ -371,7 +361,7 @@ const Footer = () => {
                         marginLeft: "18px",
                         wordWrap: "break-word",
                         wordBreak: "break-word",
-                        maxWidth:'200px'
+                        maxWidth:'250px'
                       }}
                     >
                       414, 4th Floor, Pavitraa Point, Opp. BBC, Near Savaliya

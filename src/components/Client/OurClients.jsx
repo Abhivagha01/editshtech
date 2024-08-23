@@ -69,18 +69,19 @@ function OurClients() {
     <>
       <Box
         sx={{
-          py: {
-            sm: 4,
-            md: 4,
+          pb: {
+            xs: 14,
+            sm: 6,
+            md: 6,
             lg: 6,
           },
-          margin: "10px 0",
         }}
       >
         <Titleanimation title="Our clients" />
         <Box
           sx={{
             py: {
+              xs: 4,
               sm: 4,
               md: 4,
               lg: 6,

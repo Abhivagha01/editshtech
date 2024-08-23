@@ -141,7 +141,7 @@ function Term() {
           </Typography>
           <Typography paragraph>
             If you have any questions about these Terms, please contact us at{" "}
-            <Link to="mailto:edithtech01@gmail.com">edithtech01@gmail.com</Link>
+            <Link to="mailto:editshtech01@gmail.com">editshtech01@gmail.com</Link>
             .
           </Typography>
 

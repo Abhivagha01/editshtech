@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import AboutImage from "../../assets/about/aboutimage.png";
 import a1 from "../../assets/about/a1.png";
 import a2 from "../../assets/about/a2.png";
 import a3 from "../../assets/about/a3.png";
@@ -97,16 +96,16 @@ const AboutSection = () => {
       >
         <Box
           sx={{
-            width: "75px",
-            height: "75px",
+            width: "50px",
+            height: "50px",
             display: "block",
             backgroundColor: theme.palette.lightwhite,
             borderRadius: "10%",
             padding: 1,
             position: "absolute",
-            top: "-15%",
+            top: "-10%",
             left: "50%",
-            transform: "translate(-50%, -15%)",
+            transform: "translate(-50%, -10%)",
             textAlign: "center",
             zIndex: 1,
           }}
@@ -115,8 +114,8 @@ const AboutSection = () => {
             src={imageSrc}
             alt="about"
             style={{
-              width: "100%",
-              height: "75%",
+              width: "80%",
+              height: "80%",
               margin: "0 auto",
               maxWidth: "80%",
             }}
@@ -129,6 +128,7 @@ const AboutSection = () => {
               fontWeight: "600",
               color: theme.palette.black,
               mt: 4,
+              textAlign: "center",
             }}
           >
             {title}
@@ -137,6 +137,7 @@ const AboutSection = () => {
             sx={{
               fontSize: "14px",
               color: theme.palette.secondary.main,
+              textAlign: "center",
             }}
           >
             {description}
@@ -147,7 +148,7 @@ const AboutSection = () => {
   );
 
   return (
-    <Box sx={{ py: {xs: 2, sm: 2, lg: 4 } }}>
+    <Box sx={{ py: { xs: 2, sm: 2, lg: 4 } }}>
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -169,7 +170,7 @@ const AboutSection = () => {
                   color: theme.palette.text.primary,
                 }}
               >
-                Experienced more than 5 Years in Web Development
+                Experienced more than 5 years in web development
               </Typography>
               <Typography
                 sx={{ fontSize: "14px", color: theme.palette.secondary.main }}
@@ -214,7 +215,7 @@ const AboutSection = () => {
               >
                 <Box
                   component="img"
-                  src={AboutImage}
+                  src="https://i.postimg.cc/pX5sgckR/Birthday-Post.png"
                   alt="aboutimage"
                   sx={{ width: "100%", display: "block" }}
                 />
@@ -223,7 +224,11 @@ const AboutSection = () => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={3} sx={{ py: { xs: 4, md: 8 },alignItems:"center" }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{ py: { xs: 4, md: 8 }, alignItems: "center" }}
+        >
           {renderGridItem(
             a1,
             "Over Vision",

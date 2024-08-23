@@ -11,8 +11,11 @@ function About() {
         description={`
         We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses.`}
       />
+      {/* About Section */}
       <Aboutsection />
+      {/* Best of Our Features */}
       <BestOfOurFeatures />
+      {/* Get in tTOuch */}
       <Getintouch />
     </>
   );

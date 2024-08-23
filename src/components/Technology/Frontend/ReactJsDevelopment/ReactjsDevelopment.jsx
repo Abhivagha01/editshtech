@@ -25,125 +25,124 @@ import RequestQuote from "../../../../global/RequestQuote";
 
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import TrutedProject from "../../../../global/TrutedProject";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 function ReactjsDevelopment() {
   const theme = useTheme();
   const services = [
     {
       icon: si1,
-      category: "ReactJS Customisation Services",
+      category: "ReactJS Customization Services",
       description:
-        "Get custom ReactJS solutions designed for you. Our developers build custom components, unique designs, and specialized functionalities to deliver a personalized user experience to meet your specific business requirements.",
+        "Receive tailored ReactJS solutions that align with your business needs. Our developers create custom components, unique designs, and specialized functionalities to deliver a personalized user experience that matches your specific requirements.",
     },
     {
       icon: si2,
       category: "ReactJS Front-End Development",
       description:
-        "Create the most interactive, and visually appealing applications with Editsh's ReactJS development service. Using reusable components and the virtual DOM, get access to solutions that have faster load times and smooth user experiences for superior performance.",
+        "Build interactive and visually striking applications with Editsh's ReactJS development services. Leveraging reusable components and the virtual DOM, we provide solutions that ensure faster load times and seamless user experiences for superior performance.",
     },
     {
       icon: si3,
       category: "ReactJS Integration",
       description:
-        "Upgrade your existing app with advanced tools and technology with Tagine Infotech. Our reactjs web development services, help you to optimize your system's functionality and scalability, leading to a seamless connection to your current infrastructure for improved performance.",
+        "Enhance your existing application with the latest tools and technologies through Editsh's ReactJS integration services. We help optimize your system's functionality and scalability, ensuring smooth integration with your current infrastructure for improved performance.",
     },
     {
       icon: si4,
-
       category: "Custom ReactJS Development",
       description:
-        "From extensive consultations to exceptional ReactJS development, we offer tailored solutions to meet the specific needs of your company. Improve your site's responsiveness, speed, and performance with our tailored virtual DOM and server-side rendering solutions.",
+        "From in-depth consultations to exceptional ReactJS development, we offer customized solutions to address your company's unique needs. Improve your site's responsiveness, speed, and performance with our tailored virtual DOM and server-side rendering techniques.",
     },
     {
       icon: si5,
-
       category: "ReactJS Migration",
       description:
-        "You can now seamlessly migrate your web solution to ReactJS with Editsh. With our migration service, improve security, and code reusability of your app along with multi-platform support, ensuring seamless integration with existing applications.",
+        "Seamlessly migrate your web solution to ReactJS with Editsh. Our migration services enhance security, improve code reusability, and provide multi-platform support, ensuring a smooth transition and seamless integration with your existing applications.",
     },
     {
       icon: si6,
-
       category: "ReactJS Consulting",
       description:
-        "Get effective strategies and insights to enhance your applications. Hire ReactJS developers to offer effective guidance for optimising project planning, boosts performance, and ensures scalability for more reliable React-based solutions.",
+        "Gain valuable strategies and insights to optimize your applications. Hire ReactJS experts from Editsh to receive effective guidance on project planning, performance enhancement, and scalability, ensuring reliable and robust React-based solutions.",
     },
     {
       icon: si7,
       category: "ReactJS UI/UX Development",
       description:
-        "Create a more engaging and intuitive web solution with Editsh's ReactJS UI/UX development services. Our designers create the most user-friendly interfaces for navigation and boost the overall performance of your application.",
+        "Enhance your web solution with engaging and intuitive designs through Editsh's ReactJS UI/UX development services. Our designers craft user-friendly interfaces that improve navigation and elevate the overall performance of your application.",
     },
     {
       icon: si8,
-
       category: "ReactJS Support And Maintenance",
       description:
-        "Get reliable support and maintenance with Editsh. Our experienced JS developers work proactively 24X7 to ensure your ReactJS app stays up-to-date, addressing issues swiftly to maintain optimal performance.",
+        "Rely on Editsh for dependable support and maintenance services. Our experienced ReactJS developers provide proactive 24/7 support, ensuring your app remains up-to-date and addressing any issues swiftly to maintain optimal performance.",
     },
     {
       icon: si9,
       category: "ReactJS Plugin & Widget Development",
       description:
-        "Boost functionality and streamline user interactions with custom ReactJS plugins and widgets from Editsh. Our solutions offer versatility and enhance the performance of your React-based applications.",
+        "Enhance functionality and streamline user interactions with custom ReactJS plugins and widgets from Editsh. Our solutions offer flexibility and improve the performance of your React-based applications.",
     },
   ];
+
   const TechnologyIcon = [
     {
-      title: "Full stack + MERN",
+      title: "Full Stack + MERN",
       description:
-        "To create a highly scalable app our developers use combinations of the MERN stack (MongoDB+Express+React+NodeJS). Along with our reactjs web development services, get a maintainable and adaptive app.",
+        "Our developers utilize the MERN stack (MongoDB, Express, React, NodeJS) to build scalable and maintainable applications. Combined with our ReactJS development services, we deliver adaptable and high-performance apps tailored to your business needs.",
       icons: [react, mern],
     },
     {
       title: "React + Firebase",
       description:
-        "Experience the power of serverless architecture with React and Firebase. Our developer crafts high-quality applications that offer seamless scalability, secure authentication, and real-time data capabilities.",
+        "Harness the power of serverless architecture with React and Firebase. Our developers create high-quality applications that ensure seamless scalability, robust security, and real-time data handling for an enhanced user experience.",
       icons: [react, firebase],
     },
     {
       title: "ReactJS + GraphQL",
       description:
-        "React developers of Editsh use ReactJS with GraphQL to empower the web solution to have lightning-fast data fetching, highly-responsive, real-time updates, and enhanced performance.",
+        "Editsh's React developers leverage ReactJS with GraphQL to create web solutions that offer lightning-fast data retrieval, highly responsive interfaces, and real-time updates, boosting overall performance.",
       icons: [react, graphql],
     },
     {
       title: "ReactJS + Django",
       description:
-        "To create modular web solutions with RESTful APIs, developers use ReactJS with Django. This fusion leads to feature-rich, well-performing apps along with improved UI/UX with animations and scalability from both technologies.",
+        "To build modular web solutions with RESTful APIs, our developers combine ReactJS with Django. This integration results in feature-rich, high-performing applications with enhanced UI/UX, animations, and scalability.",
       icons: [react, django],
     },
     {
       title: "ReactJS + FastAPI",
       description:
-        "At Editsh, Our developer specialises in harnessing the potential of ReactJS with FastAPI to create cutting-edge web applications with efficiency and scalability and seamless integration for modern digital solutions.",
+        "At Editsh, our developers specialize in combining ReactJS with FastAPI to create cutting-edge web applications. This approach ensures efficiency, scalability, and seamless integration for modern digital solutions.",
       icons: [react, fastapi],
     },
   ];
+
   const reactBenefits = [
     {
       title: "Agile Approach",
       description:
-        "React.js provides app developers with a flexible framework to meet changing needs. Developers using Create React App and React Router benefit from agile development and quick project migrations, resulting in faster project delivery.",
+        "React.js empowers developers with a flexible framework, enabling them to adapt to evolving project needs. Utilizing tools like Create React App and React Router, developers achieve agile workflows and seamless project migrations, leading to faster delivery times.",
     },
     {
-      title: "Speed + Performance",
+      title: "Speed & Performance",
       description:
-        "Simple syntax and reusable components speed up React development, reducing cost and time to market. Customer engagement increases as the virtual DOM improves performance and load times and improves visualisation.",
+        "With its straightforward syntax and reusable components, React accelerates development, cutting down costs and reducing time to market. The virtual DOM enhances performance and load times, boosting customer engagement and visual experience.",
     },
     {
-      title: "Improved User Experience",
+      title: "Enhanced User Experience",
       description:
-        "React.js' component-based architecture improves reuse and consistency. Development tools like Storybook help developers create a smooth and dynamic user experience of the app, increasing user satisfaction.",
+        "React.js' component-based architecture promotes reuse and consistency across the app. Tools like Storybook enable developers to craft a smooth, dynamic user experience, resulting in higher user satisfaction and engagement.",
     },
     {
-      title: "Integrity and Transparency",
+      title: "Integrity & Transparency",
       description:
-        "ReactJS is open-source, so developers can analyse and verify the codebase, improving stability and consistency. Comprehensive test coverage is possible with tools like Jest, which makes sure that apps are secure and robust.",
+        "As an open-source framework, ReactJS allows developers to thoroughly analyze and validate the codebase, ensuring greater stability and consistency. Tools like Jest provide comprehensive test coverage, ensuring that apps are both secure and robust.",
     },
     {
-      title: "Supreme Security",
+      title: "Advanced Security",
       description:
-        "React.js is preferred because of its high safety features. OWASP-ZAP and Snyk are tools that help developers to detect flaws and resolve them. This proactive strategy guards the system ensuring consistent performance of the app.",
+        "React.js is favored for its robust security features. Tools like OWASP-ZAP and Snyk assist developers in identifying and resolving vulnerabilities, adopting a proactive approach that safeguards the system and ensures consistent app performance.",
     },
   ];
 
@@ -196,11 +195,11 @@ function ReactjsDevelopment() {
                   lineHeight: "24px",
                 }}
               >
-                Editsh is leading ReactJS development company, With more than 6+
-                years of experience, Our experts ReactJS professionals
-                implements modern AI techniques along with ReactJS technologies
-                guarantee flawless coding, rapid project development, and the
-                creation of user-friendly apps to meet your project objectives.
+                Editsh is a leading ReactJS development company with over 6
+                years of experience. Our expert ReactJS professionals integrate
+                modern AI techniques with ReactJS technologies to ensure
+                flawless coding, rapid project development, and the creation of
+                user-friendly apps that meet your project objectives.
               </Typography>
               <Box
                 sx={{
@@ -211,22 +210,9 @@ function ReactjsDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -327,15 +313,14 @@ function ReactjsDevelopment() {
                   mt: 2,
                 }}
               >
-                At Editsh, we deliver scalable and innovative solutions that
-                will help your business to grow. Our experienced ReactJS
-                developers create high-quality, scalable ReactJS websites
-                tailored to your needs. With a customer-centric collaborative
-                approach, the team works closely with our customers to
-                understand the business goals. We offer you state-of-the-art
-                services because of our dedication towards continuous learning,
-                which keeps our professionals ahead of emerging tools and
-                technologies.
+                At Editsh, we deliver scalable and innovative solutions designed
+                to fuel your business growth. Our experienced ReactJS developers
+                craft high-quality, scalable ReactJS websites tailored to your
+                specific needs. With a customer-centric, collaborative approach,
+                our team works closely with clients to understand their business
+                goals. Our commitment to continuous learning keeps our
+                professionals at the forefront of emerging tools and
+                technologies, enabling us to offer state-of-the-art services.
               </Typography>
               <Typography
                 sx={{

@@ -1,6 +1,6 @@
 import React from "react";
 import Pagetitle from "../../../../global/Pagetitle";
-import { Box, Button, Grid, Typography, Container } from "@mui/material";
+import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 // Anguljs development services
@@ -18,6 +18,7 @@ import AngularPanel from "./AngularPanel";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectPricing from "../../../../global/ProjectPricing";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function AngularJsDeveloment() {
   const theme = useTheme();
@@ -26,85 +27,86 @@ function AngularJsDeveloment() {
       name: "Custom AngularJS Application Development",
       icon: As1,
       description:
-        "Get cost-efficient and fast development with custom Flutter app development services crafted to meet your specific needs, so your app accurately represents your brand and fulfills your business objectives.",
+        "Achieve cost-effective and rapid development with our bespoke AngularJS app development services, meticulously designed to reflect your brand and achieve your business goals.",
     },
     {
       name: "AngularJS Single Page Web Application Development (SPAs)",
       icon: As2,
       description:
-        "Our team of AngularJS developers creates single-page applications that are quick, responsive, and deliver seamless user experiences in addition to improved performance.",
+        "Our AngularJS developers craft single-page applications that are not only fast and responsive but also provide an uninterrupted and high-performance user experience.",
     },
     {
       name: "AngularJS Dynamic App Development",
       icon: As3,
-
       description:
-        "To guarantee user engagement and usefulness, we at Editsh build dynamic applications with interactive elements and real-time features.",
+        "At Editsh, we create dynamic applications with interactive features and real-time capabilities to ensure high user engagement and practical functionality.",
     },
     {
-      name: "Flutter app migration",
+      name: "AngularJS App Migration",
       icon: As4,
       description:
-        "Get strategic guidance and development plan with Editsh's developers to ensure optimal implementation of your AngularJS projects.",
+        "Receive expert guidance and a strategic development plan with our AngularJS migration services to guarantee successful implementation of your projects.",
     },
     {
-      name: "Flutter app testing",
+      name: "AngularJS App Testing",
       icon: As5,
       description:
-        "With Editsh’s Flutter app testing procedures, identifying and addressing any issues becomes seamless ensuring flawless performance and seamless user experience for your app.",
+        "Our AngularJS app testing processes make it easy to detect and resolve issues, ensuring flawless performance and a seamless user experience for your application.",
     },
     {
-      name: "Flutter upgrade services",
+      name: "AngularJS Upgrade Services",
       icon: As6,
       description:
-        "By upgrading your AngularJS applications to the most recent version, our team can enhance their security, introduce new features, and more.",
+        "Upgrade your AngularJS applications to the latest version with our team, enhancing security, adding new features, and more.",
     },
     {
       name: "AngularJS UX/UI Solutions",
       icon: As7,
       description:
-        "Our goal at Editsh is to guarantee exceptional user experiences by creating and executing user interfaces that are both engaging and intuitive.",
+        "We focus on delivering outstanding user experiences by designing and implementing interfaces that are both engaging and intuitive at Editsh.",
     },
     {
       name: "AngularJS Support and Maintenance",
       icon: As8,
       description:
-        "Get ongoing support and maintenance by experts helps you to keep your applications up-to-date and performing optimally.",
+        "Benefit from ongoing expert support and maintenance to ensure your AngularJS applications remain current and perform at their best.",
     },
     {
       name: "AngularJS QA and Testing",
       icon: As9,
       description:
-        "Your application will be dependable, effective, and free of errors if you take advantage of our complete quality assurance and testing services.",
+        "Leverage our comprehensive quality assurance and testing services to ensure your application is reliable, efficient, and free from errors.",
     },
   ];
+
   const AngularBenefits = [
     {
-      title: "Efficient Data Binding",
+      title: "Streamlined Data Binding",
       description:
-        "AngularJS automates data synchronization between the model and view, leading to seamless updates and improved user interaction.",
+        "AngularJS streamlines data synchronization between models and views, ensuring smooth updates and enhanced user interaction.",
     },
     {
-      title: "Optimum Architecture",
+      title: "Robust Architecture",
       description:
-        "With AngularJS, you can build applications that are scalable and easy to manage. This makes sure that your apps will work in the long term and be easy to keep up to date.",
+        "AngularJS enables the creation of scalable and manageable applications, ensuring long-term stability and ease of maintenance.",
     },
     {
-      title: "Reusable Components",
+      title: "Modular Components",
       description:
-        "Supports the usage of modular development approaches, which lead to improved code efficiency by letting developers build and reuse components across the application.",
+        "Facilitates modular development, enhancing code efficiency by allowing developers to build and reuse components throughout the application.",
     },
     {
-      title: "Lower Development & Maintenance Costs",
+      title: "Reduced Development & Maintenance Expenses",
       description:
-        " The development and maintenance costs of AngularJS are reduced by effective management of code and the support of the community.",
+        "AngularJS minimizes development and upkeep costs through efficient code management and strong community support.",
     },
     {
-      title: "Less Coding",
+      title: "Minimal Coding Requirements",
       description:
-        "With declarative templates and built-in functions, development tasks are simplified, resulting in less code required to achieve desired features.",
+        "Declarative templates and integrated functions simplify development tasks, leading to reduced code needed to implement desired features.",
     },
   ];
+
   return (
     <>
       <Pagetitle title="Angular Js Development" />
@@ -163,15 +165,17 @@ function AngularJsDeveloment() {
                   lineHeight: "24px",
                 }}
               >
-                As a leading AngularJS Development Company, we develop scalable,
-                robust, secure, and user-friendly applications. Our expert
-                developers create dynamic web applications, SPAs, and mobile
-                apps, offering cost-effective solutions. Benefit from two-way
-                data binding, dependency injection, and modular development. We
-                use tools like Firebase, JavaScript, HTML, CSS, Docker, Redux,
-                Fuse, and CoreUI to deliver fast-loading, real-time web
-                applications. Trust us for top-notch Angular development
-                tailored to your business needs.
+                As a premier AngularJS Development Company, we craft scalable,
+                robust, secure, and intuitive applications. Our seasoned
+                developers excel in building dynamic web applications,
+                single-page applications (SPAs), and mobile apps, providing
+                cost-effective solutions. Take advantage of features like
+                two-way data binding, dependency injection, and modular
+                development. Utilizing tools such as Firebase, JavaScript, HTML,
+                CSS, Docker, Redux, Fuse, and CoreUI, we deliver
+                high-performance, real-time web applications. Rely on us for
+                exceptional Angular development tailored to your business
+                requirements.
               </Typography>
               <Box
                 sx={{
@@ -182,22 +186,9 @@ function AngularJsDeveloment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -299,17 +290,16 @@ function AngularJsDeveloment() {
                   wordSpacing: "2px",
                 }}
               >
-                Discover the power of Editsh, where AngularJS development meets
-                innovation and expertise. Our experienced Hire Our AngularJS
-                developers provide custom solutions that generate noticeable
-                advantages in various industries, including agriculture, energy,
-                education, finance, healthcare, government, logistics, real
-                estate, manufacturing, and security. From innovative ideas to
-                successful deployment, we are dedicated to providing excellent,
-                client-centric solutions that redefine success. Experience the
-                next generation of web development by partnering with us and
-                witnessing as we take your company to unimaginable heights of
-                success.
+                Experience the transformative power of Editsh, where AngularJS
+                development meets cutting-edge innovation. Our skilled AngularJS
+                developers deliver tailored solutions that drive significant
+                benefits across a range of industries, including agriculture,
+                energy, education, finance, healthcare, government, logistics,
+                real estate, manufacturing, and security. From groundbreaking
+                concepts to seamless deployment, we are committed to offering
+                exceptional, client-focused solutions that redefine success.
+                Partner with us to elevate your company to new levels of
+                achievement and see the future of web development unfold.
               </Typography>
             </Grid>
           </Grid>

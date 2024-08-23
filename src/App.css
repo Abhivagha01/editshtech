@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 /*==============Home Page======================= */
 body {
@@ -53,9 +53,9 @@ body {
 a {
   color: #000;
 }
-li{
+/* li{
   list-style: none;
-}
+} */
 img {
   width: 100%;
 }
@@ -107,7 +107,12 @@ img {
   visibility: hidden;
   transform: translateY(100px); 
 }
-
+.service-icon {
+  background-color: #f1f1f1;
+  padding: 18px 15px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  display: inline-block;
+}
 .back-top.show {
   opacity: 1;
   visibility: visible;
@@ -201,4 +206,27 @@ img {
 }
 form{
   padding: 0  !important;
+}
+/* =======Maps========= */
+.map-iframe {
+  border: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .map-iframe {
+    height: 300px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .map-iframe {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .map-iframe {
+    height: 100%;
+  }
 }

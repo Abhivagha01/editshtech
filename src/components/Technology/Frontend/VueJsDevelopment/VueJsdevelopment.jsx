@@ -1,6 +1,6 @@
 import React from "react";
 import Pagetitle from "../../../../global/Pagetitle";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { Titleanimation } from "../../../../global/Titleanimation";
@@ -18,6 +18,7 @@ import VuuejsPanel from "./VuuejsPanel";
 import TrutedProject from "../../../../global/TrutedProject";
 import RequestQuote from "../../../../global/RequestQuote";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function VueJsdevelopment() {
   const theme = useTheme();
@@ -26,82 +27,83 @@ function VueJsdevelopment() {
       icon: Ser1,
       title: "Vue.js Consultation",
       description:
-        "Our expert team provides personalized Vue.js consultation, analyzing your project requirements and business objectives. Get the tailored strategy for seamless integration and optimal performance of the application.",
+        "Our skilled team offers customized Vue.js consultation, evaluating your project needs and business goals. Receive a bespoke strategy for seamless integration and peak application performance.",
     },
     {
       icon: Ser2,
       title: "Vue.js Storefront Development",
       description:
-        "Improve user engagement and increase sales. We, at Editsh, specialize in crafting visually captivating e-commerce storefronts using the latest Vue.js tools and technologies.",
+        "Boost user engagement and drive sales with our expertise in creating visually striking e-commerce storefronts using cutting-edge Vue.js technologies.",
     },
     {
       icon: Ser3,
       title: "Vue.js Component Development",
       description:
-        "Editsh focuses on efficiency and scalability. Our Vue.js component development services ensure the creation of reusable and modular components, resulting in faster development cycles and easier maintenance of the applications.",
+        "We prioritize efficiency and scalability at Editsh. Our Vue.js component development services focus on crafting reusable, modular components for quicker development and simpler maintenance.",
     },
     {
       icon: Ser4,
       title: "Vue.js Migration",
       description:
-        "With our Vue.js migration services transitioning from outdated frameworks to Vue.js is effortless. By leveraging best practices and advanced techniques to modernize your application infrastructure with minimal disruptions and downtime.",
+        "Transform your outdated frameworks effortlessly with our Vue.js migration services. We employ best practices and advanced techniques to modernize your application infrastructure with minimal disruption and downtime.",
     },
     {
       icon: Ser5,
       title: "Data-Analysis Tools",
       description:
-        "Empower your decisions making with Vue.js-powered analysis tools. With the unparalleled power of Vue.js, we develop robust data analysis tools that enable you to unlock valuable insights from your datasets, empowering data-driven decision-making and driving business growth.",
+        "Enhance your decision-making with Vue.js-powered analytics tools. Leveraging Vue.js, we build robust data analysis solutions that extract valuable insights from your data, driving data-informed decisions and business growth.",
     },
     {
       icon: Ser6,
       title: "Interactive Dashboards",
       description:
-        "Editsh specializes in creating the most dynamic Vue.js dashboards that provide real-time data visualization and user interaction, empowering your team to monitor key metrics, track performance, and make informed decisions with ease.",
+        "We specialize in developing dynamic Vue.js dashboards that offer real-time data visualization and user interaction, allowing your team to track key metrics, monitor performance, and make informed decisions effortlessly.",
     },
     {
       icon: Ser7,
       title: "Social and Interactive Apps",
       description:
-        "Engage and collaborate with interactive applications. From community forums to interactive gaming platforms, our Vue.js development expertise enables us to create engaging social and interactive applications that foster user engagement, collaboration, and user-generated content.",
+        "Create engaging social and interactive applications with our Vue.js development expertise. From community forums to interactive gaming platforms, we build apps that foster user interaction, collaboration, and user-generated content.",
     },
     {
       icon: Ser8,
       title: "Custom Web App Development",
       description:
-        "Our custom web app development solutions leverage Vue.js to address your unique business requirements, delivering tailor-made applications that are highly scalable, secure, and user-friendly, ensuring maximum ROI and customer satisfaction.",
+        "Our custom web app development services use Vue.js to meet your specific business needs, delivering tailored applications that are scalable, secure, and user-friendly, ensuring maximum ROI and client satisfaction.",
     },
     {
       icon: Ser9,
       title: "Vue.js App Support & Maintenance",
       description:
-        "With Tagline's dedicated Vue.js support and maintenance services, we ensure the ongoing health and performance of your applications, proactively addressing issues, implementing updates, and optimizing performance to keep your Vue.js apps running smoothly.",
+        "Our dedicated Vue.js support and maintenance services ensure your applications remain healthy and high-performing, with proactive issue resolution, updates, and performance optimization.",
     },
   ];
+
   const features = [
     {
-      title: "Low Development and Operational Cost",
+      title: "Cost-Effective Development and Operations",
       description:
-        "We have a team of experienced developers that uses different types of functionalities of the Vue.js framework to reduce the operational and development cost to deliver the best solutions for various types of businesses.",
+        "Our skilled team leverages various functionalities of the Vue.js framework to minimize both development and operational costs, providing optimal solutions for diverse business needs.",
     },
     {
-      title: "Flexible to Work According to Your Time-zone",
+      title: "Time-Zone Adaptability",
       description:
-        "Connect with our Vue developers who are flexible to work according to your time zone so that you can have a smarter web application to scale your business.",
+        "Work with our Vue developers who adjust to your time zone, ensuring the development of a smart web application tailored to enhance your business growth.",
     },
     {
-      title: "Access to Experienced Developers",
+      title: "Expert Developer Access",
       description:
-        "Get in touch with our Vue.js development company to access our most experienced developers as they have all the necessary skills to work on your desired project.",
+        "Connect with our Vue.js development firm to engage with highly experienced developers equipped with the expertise needed to handle your project efficiently.",
     },
     {
-      title: "Reduced Development Times",
+      title: "Accelerated Development Cycles",
       description:
-        "We follow different types of models to reduce the development time so that clients can have the best Vue.js web applications before the deadline.",
+        "Utilizing various development models, we expedite project timelines to deliver top-notch Vue.js web applications well before the deadline.",
     },
     {
-      title: "Assured Quality Services",
+      title: "Guaranteed Quality Assurance",
       description:
-        "Leverage our professional Vue development services to get post-deployment facilities for your web application. Our programmers provide high-quality services to deliver a fully-tested and bug-free web app.",
+        "Benefit from our professional Vue development services that include post-deployment support. Our programmers ensure high-quality, fully-tested, and error-free web applications.",
     },
   ];
 
@@ -164,19 +166,18 @@ function VueJsdevelopment() {
                   lineHeight: "24px",
                 }}
               >
-                At Editsh, we pride ourselves on being a top-tier Vue.js
-                development company, dedicated to crafting exceptional web
-                applications with unparalleled performance. Our experienced team
-                harnesses the power of Vue.js, a cutting-edge front-end
-                framework, to deliver cost-effective, lightweight, and highly
-                efficient solutions tailored to meet your business needs. Vue.js
-                is renowned for its versatility and ease of integration, making
-                it the perfect choice for dynamic and scalable applications. Our
-                skilled developers leverage Vue.js to build applications that
-                not only meet but exceed industry standards. Whether you need a
-                sophisticated single-page application, a seamless user
-                interface, or a robust web application, our team is equipped to
-                handle it all.
+                At Editsh, we take pride in being a premier Vue.js development
+                company, committed to creating outstanding web applications with
+                exceptional performance. Our expert team utilizes Vue.js, a
+                state-of-the-art front-end framework, to provide cost-effective,
+                streamlined, and highly performant solutions tailored to your
+                business requirements. Known for its flexibility and smooth
+                integration, Vue.js is ideal for developing dynamic and scalable
+                applications. Our proficient developers use Vue.js to craft
+                applications that not only meet but surpass industry
+                expectations. Whether you're seeking a sophisticated single-page
+                application, a fluid user interface, or a powerful web solution,
+                our team is prepared to deliver top-notch results.
               </Typography>
               <Box
                 sx={{
@@ -187,22 +188,9 @@ function VueJsdevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                       Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -286,11 +274,11 @@ function VueJsdevelopment() {
                   mt: 2,
                 }}
               >
-                We are one of the finest Vue.js Web Development Company that has
-                been building next-generation solutions. At Editsh, we have a
-                team of experts that uses the Vuejs framework to create various
-                powerful tools while building different types of interactive web
-                applications for businesses.
+                At Editsh, we stand out as a leading Vue.js web development
+                company, dedicated to crafting cutting-edge solutions for the
+                next generation. Our team of specialists expertly utilizes the
+                Vue.js framework to develop a range of robust tools and
+                interactive web applications tailored to various business needs.
               </Typography>
               <Typography
                 sx={{
@@ -299,13 +287,13 @@ function VueJsdevelopment() {
                   mt: 2,
                 }}
               >
-                Our Vue.js developers use their experience in Two-way data
-                binding and virtual DOM to deliver interactive user interfaces
-                and single-page applications. Get in touch with our Vue js
-                experts to create E-commerce stores and web applications for the
-                industries like education, health, finance, and many more. We
-                implement this progressive Vue.js framework to deliver
-                easy-to-scale web products.
+                Our Vue.js developers leverage their expertise in two-way data
+                binding and virtual DOM to create engaging user interfaces and
+                dynamic single-page applications. Connect with our Vue.js
+                professionals to build impactful e-commerce platforms and web
+                applications across industries such as education, healthcare,
+                finance, and more. We harness the power of the Vue.js framework
+                to deliver scalable and innovative web solutions.
               </Typography>
             </Grid>
           </Grid>

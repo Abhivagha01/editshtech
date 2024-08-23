@@ -231,7 +231,7 @@ export const DataBase = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {databases.map((item) => (
-        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={2} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,
@@ -283,7 +283,7 @@ export const Tools = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {tools.map((item) => (
-        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={2} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,
@@ -332,7 +332,7 @@ export const Platform = () => {
   return (
     <Grid container spacing={3} justifyContent={"center"}>
       {platforms.map((item) => (
-        <Grid item xs={6} sm={6} md={3} lg={3} key={item.id}>
+        <Grid item xs={6} sm={6} md={3} lg={2} key={item.id}>
           <Box
             sx={{
               boxShadow: 1,

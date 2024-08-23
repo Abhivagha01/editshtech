@@ -18,6 +18,7 @@ import TrutedProject from "../../../../global/TrutedProject";
 import ProjectIndustry from "../../../../global/ProjectIndustry";
 import RequestQuote from "../../../../global/RequestQuote";
 import PhythonPanel from "./PhythonPanel";
+import RIghtBtn from "../../../../global/Button/RIghtBtn";
 
 function PhythonDevelopment() {
   const theme = useTheme();
@@ -26,115 +27,120 @@ function PhythonDevelopment() {
     {
       title: "Python Web Development",
       description:
-        "Create robust and scalable web applications tailored to your business needs using versatile frameworks and libraries of Python for optimal performance and user experience.",
+        "Develop robust and scalable web applications tailored to your specific business needs using Python's versatile frameworks and libraries for superior performance and user experience.",
       icon: s1,
     },
     {
       title: "Python Mobile App Development",
       description:
-        "Build native, cross-platform mobile apps with top-notch user interfaces and flawless functioning by taking use of Python's versatility.",
+        "Leverage Python's versatility to create high-quality, cross-platform mobile apps with exceptional user interfaces and seamless functionality.",
       icon: s2,
     },
     {
       title: "Enterprise Software Solutions",
       description:
-        "With Python build the customised enterprise software solutions that boost efficiency, simplify processes, and achieve company goals.",
+        "Build customized enterprise software solutions with Python that enhance efficiency, streamline processes, and support your business objectives.",
       icon: s3,
     },
     {
       title: "Python CMS Development",
       description:
-        "Using Python, you can develop dynamic and feature-rich content management systems (CMS) that enable them to efficiently handle and publish content.",
+        "Develop dynamic and feature-rich content management systems (CMS) using Python, enabling efficient content handling and publishing capabilities.",
       icon: s4,
     },
     {
       title: "Python Data Analysis and Visualization",
       description:
-        "Make knowledgeable choices with Python's robust library, which includes Pandas and Matplotlib, which allow for persuasive visualisation and smart data analysis.",
+        "Leverage Python’s powerful libraries like Pandas and Matplotlib for in-depth data analysis and compelling visualizations, aiding in informed decision-making.",
       icon: s5,
     },
     {
       title: "AI/ML Solutions",
       description:
-        "Create AI/ML-powered apps and algorithms using Python, employing powerful libraries such as scikit-learn and TensorFlow for predictive analytics and machine learning models.",
+        "Harness Python’s robust libraries, including scikit-learn and TensorFlow, to develop advanced AI and ML applications for predictive analytics and intelligent machine learning models.",
       icon: s6,
     },
     {
       title: "Application Development",
       description:
-        "With Python's rich ecosystem of frameworks and tools, create scalable and effective applications that function across many domains while maintaining optimal performance and scalability.",
+        "Utilize Python’s extensive ecosystem of frameworks and tools to build scalable and efficient applications across various domains, ensuring optimal performance and growth potential.",
       icon: s7,
     },
     {
       title: "Python Consulting Services",
       description:
-        "Unlock the potential of your business potential with Editsh’s Python consulting services. With Python, our professionals help you improve operations and reach your goals.",
+        "Unlock new business opportunities with Editsh’s Python consulting services. Our experts provide strategic guidance to enhance operations and achieve your business goals using Python.",
       icon: s8,
     },
     {
       title: "Python Desktop GUI Development",
       description:
-        "Use our Python desktop GUI development to improve user experience. We create simple, powerful desktop apps that boost productivity and user experience.",
+        "Enhance user experience with our Python desktop GUI development services. We create intuitive, high-performance desktop applications designed to boost productivity and usability.",
       icon: s9,
     },
   ];
+
   const softwareDevelopmentDetails = [
     {
-      title: "6+ Years in Software Development",
+      title: "6+ Years of Expertise in Software Development",
       description:
-        "Expert software development solutions with 6+ years of industry experience.",
+        "Delivering top-notch software development solutions backed by over 6 years of industry expertise and innovation.",
     },
     {
-      title: "150+ Developers on Board",
+      title: "150+ Skilled Developers",
       description:
-        "Over 150 skilled Python developers ready to handle complex projects.",
+        "A team of over 150 highly skilled Python developers equipped to tackle complex and challenging projects.",
     },
     {
-      title: "Over 2000 Projects in Portfolio",
-      description: "Extensive portfolio with over 2000 successful projects.",
-    },
-    {
-      title: "Iterative Software Development Cycles",
+      title: "Portfolio of 2000+ Projects",
       description:
-        "Efficient software solutions using iterative cycles and scrum frameworks and automated testing framework.",
+        "A rich portfolio showcasing more than 2000 successful projects across diverse domains.",
     },
     {
-      title: "3 Years of Developing Complex Cloud Applications",
-      description: "Specialisation in scalable, secure cloud applications.",
-    },
-    {
-      title: "Certified Scrum Masters In-House",
+      title: "Agile and Iterative Development Cycles",
       description:
-        "Certified Scrum Masters for effective and timely project management.",
+        "Adopting agile methodologies and iterative development cycles, including scrum frameworks and automated testing for efficient solutions.",
+    },
+    {
+      title: "3 Years of Expertise in Cloud Application Development",
+      description:
+        "Specializing in developing scalable and secure cloud applications with over 3 years of dedicated experience.",
+    },
+    {
+      title: "In-House Certified Scrum Masters",
+      description:
+        "Certified Scrum Masters on our team ensure effective project management and timely delivery of projects.",
     },
   ];
+
   const contentArray = [
     {
-      title: "Experience Python programmers",
+      title: "Experienced Python Developers",
       description:
-        "Our Python developers are experts in Python language and have in-depth understanding to deliver customised solutions to meet your requirements, ensuring the success of your project.",
+        "Our Python experts bring extensive experience and deep knowledge to craft tailored solutions that meet your specific needs, ensuring project success and high performance.",
     },
     {
-      title: "Client Satisfaction",
+      title: "Commitment to Client Satisfaction",
       description:
-        "Get Python apps that are secure, reliable, and robust by partnering with Editsh. We follow quality standards throughout development stages ensuring smooth operation and user satisfaction.",
+        "Partner with Editsh to receive Python applications that are secure, reliable, and robust. We adhere to stringent quality standards at every development stage to ensure smooth operations and complete user satisfaction.",
     },
     {
-      title: "Agile Methodology",
+      title: "Agile Development Practices",
       description:
-        "For managing the project and adapting to project requirements, we use agile methodologies that also ensure timely delivery and flexibility throughout the development process.",
+        "We employ agile methodologies to manage projects efficiently, allowing for adaptability to evolving requirements and ensuring timely delivery with flexibility throughout the development process.",
     },
     {
-      title: "Cost efficient support",
+      title: "Cost-Effective Solutions",
       description:
-        "With flexible engagement options and affordable pricing models, we guarantee that your Python development expenditure will give you an excellent return along with quality.",
+        "Benefit from our flexible engagement models and competitive pricing, which provide excellent value and a high return on investment for your Python development needs while maintaining quality.",
     },
     {
-      title: "Long term partnership",
+      title: "Long-Term Client Relationships",
       description:
-        "To ensure long-term success and mutual progress, we emphasise on developing enduring relationships with our clients by providing continuous support and assistance.",
+        "We focus on building lasting partnerships with our clients by offering ongoing support and fostering mutual growth, ensuring sustained success and collaborative progress.",
     },
   ];
+
   return (
     <>
       <Pagetitle title="Phython development" />
@@ -194,14 +200,13 @@ function PhythonDevelopment() {
                   lineHeight: "24px",
                 }}
               >
-                Editsh, is the most-trusted Python development agency. We have a
-                team of highly professional Python developers who specialise in
-                various Python development services and have significant
-                expertise with frameworks such as Flask, Django and FastAPI. Our
-                developers provide cutting-edge AI/ML solutions powered by
-                insightful data and strong backend solutions for web-based
-                applications. Find the perfect Python developer in just a few
-                steps!
+                Editsh is your premier choice for Python development. Our team
+                of highly skilled Python developers excels in a wide range of
+                Python services, with deep expertise in frameworks like Flask,
+                Django, and FastAPI. We deliver innovative AI/ML solutions
+                driven by insightful data and robust backend infrastructure for
+                web applications. Discover the ideal Python developer for your
+                project in just a few easy steps!
               </Typography>
               <Box
                 sx={{
@@ -212,22 +217,9 @@ function PhythonDevelopment() {
                 }}
               >
                 <Box>
-                  <Button
-                    sx={{
-                      backgroundColor: theme.palette.secondary.main,
-                      color: theme.palette.white,
-                      mr: 4,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      style={{
-                        color: theme.palette.white,
-                      }}
-                    >
-                      Reaquest A Qoute
-                    </Link>
-                  </Button>
+                  <Link to="/contact">
+                    <RIghtBtn title={` Reaquest A Qoute`} />
+                  </Link>
                 </Box>
               </Box>
             </Grid>
@@ -320,14 +312,14 @@ function PhythonDevelopment() {
                   mt: 2,
                 }}
               >
-                Editsh is a top-notch Python development company that serves
-                clients worldwide. With 6+ years of experience in the
-                development of applications with exceptional performance and
-                minimal latency, we have a team of expert Python developers. We
-                offer Python developers who work for you as per your project
-                needs: full-time, part-time, or hourly. Our Editsh team works
-                dedicatedly to deliver the most exceptional Python development
-                services in the industry.
+                Editsh is a leading Python development firm serving clients
+                globally. With over 6 years of experience crafting
+                high-performance applications with minimal latency, our team of
+                expert Python developers is well-equipped to meet your needs. We
+                offer flexible engagement options—full-time, part-time, or
+                hourly—tailored to your project requirements. The Editsh team is
+                committed to delivering outstanding Python development services,
+                ensuring exceptional results in the industry.
               </Typography>
               <Typography
                 sx={{
@@ -336,15 +328,17 @@ function PhythonDevelopment() {
                   mt: 2,
                 }}
               >
-                Proficient in the latest Python version (3.11.2) and frameworks
-                like Flask, Django, and Web2py, we are the leading Python
-                development agency. Known for our 100% client satisfaction rate
-                and a 95% project success rate, our highly professional staff is
-                committed to providing high-quality solutions tailored to your
-                needs. We've successfully served 500+ companies across various
-                sectors and work with advanced tech concepts like ML, AI, AR/VR,
-                IoT and Blockchain. Experience the finest in Python software
-                development with Editsh, where excellence meets innovation.
+                As a leading Python development agency, we excel in utilizing
+                the latest Python version (3.11.2) and frameworks such as Flask,
+                Django, and Web2py. Renowned for our 100% client satisfaction
+                rate and a 95% project success rate, our team of seasoned
+                professionals is dedicated to delivering top-notch solutions
+                tailored to your specific needs. We have successfully
+                collaborated with over 500 companies across diverse industries
+                and work with cutting-edge technologies including ML, AI, AR/VR,
+                IoT, and Blockchain. Discover unparalleled Python software
+                development with Editsh, where excellence and innovation
+                converge.
               </Typography>
             </Grid>
           </Grid>
@@ -371,16 +365,18 @@ function PhythonDevelopment() {
               margin: "auto",
             }}
           >
-            Editsh, a premier Python development company, excels in delivering
-            bespoke Python development services with precision and expertise.
-            Our team of dedicated Python developers crafts user-friendly
-            applications with modern interfaces, specialising in AI & ML
-            development and Python-based IoT app solutions tailored to meet your
-            business goals and objectives.
+            Editsh, a leading Python development firm, specializes in providing
+            tailored Python development services with exceptional precision and
+            expertise. Our dedicated team of Python developers creates
+            intuitive, modern applications, focusing on AI & ML development and
+            Python-based IoT solutions designed to align with your business
+            goals and objectives.
           </Typography>
-          <Box sx={{
-            px:2
-          }}>
+          <Box
+            sx={{
+              px: 2,
+            }}
+          >
             <Grid
               container
               spacing={1}
@@ -726,7 +722,7 @@ function PhythonDevelopment() {
             to your business needs. Our top-notch solutions and unmatched Python
             expertise make us the trusted choice for cutting-edge Python
             development. Here are some of the reasons why choosing to build
-            Python applications is the best option:
+            Python applications is the best option
           </Typography>
           <PhythonPanel />
         </Container>
