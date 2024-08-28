@@ -5,8 +5,8 @@ import Whychooseus from "../components/Home/Whychooseus";
 import Ourservices from "../components/Home/Ourservices";
 import Counter from "../components/Home/Counter";
 import Getintouch from "../global/Getintouch";
-import Blogs from "../components/Home/Blogs";
 import OurClients from "../components/Client/OurClients";
+import Blogs from "../components/Blogs/Blogs";
 
 function Home() {
   const getInTouchRef = useRef(null);
@@ -20,7 +20,7 @@ function Home() {
       <Counter />
       <OurClients />
       <Getintouch ref={getInTouchRef} />
-      <Blogs />
+      <Blogs/>
     </>
   );
 }

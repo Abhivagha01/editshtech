@@ -30,6 +30,7 @@ import NodejsDevelopment from "./components/Technology/Database/NodejsDevelopmen
 import NetDevelopment from "./components/Technology/Database/NetDevelopment/NetDevelopment";
 import PhythonDevelopment from "./components/Technology/Database/PhythonDevelopment/PhythonDevelopment";
 import NoPageFound from "./global/NoPageFound";
+import GetATouch from "./pages/GetATouch";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -110,6 +111,7 @@ function App() {
 
           <Route path="/term" element={<Term />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/qoute" element={<GetATouch />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<NoPageFound />} />

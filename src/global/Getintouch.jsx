@@ -11,6 +11,7 @@ import {
   Select,
   TextField,
   Typography,
+  CircularProgress,
 } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -195,9 +196,11 @@ const Getintouch = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
+                  console.log(values);
+
                   try {
                     const response = await axios.post(
-                      "https://editsh-back.onrender.com/api/gettouch/add",
+                      "http://localhost:8000/api/gettouch/add",
                       values
                     );
                     toast.success(response.data.message);
@@ -210,7 +213,7 @@ const Getintouch = () => {
                   }
                 }}
               >
-                {({ handleChange, values }) => (
+                {({ handleChange, values, isSubmitting }) => (
                   <Form
                     noValidate
                     autoComplete="off"
@@ -337,20 +340,31 @@ const Getintouch = () => {
                             rows={4}
                             fullWidth
                             variant="filled"
+                            placeholder="Write your message"
                             InputLabelProps={{
                               style: { color: theme.palette.secondary.main },
                               shrink: true,
                             }}
                             InputProps={{
                               style: { color: theme.palette.secondary.main },
-                              placeholder: "Message",
+                              placeholder: "Write your message",
                             }}
                             helperText={<ErrorMessage name="message" />}
                             error={!!values.message}
                           />
                         </Grid>
                         <Grid item xs={12}>
-                          <LightBtn />
+                          <LightBtn
+                            type="submit"
+                            text={
+                              isSubmitting ? (
+                                <CircularProgress size={24} color="inherit" />
+                              ) : (
+                                "Submit"
+                              )
+                            }
+                            disabled={isSubmitting}
+                          />
                         </Grid>
                       </Grid>
                     </Box>

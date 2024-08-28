@@ -28,6 +28,12 @@ body {
   height: 100%;
   
 }
+a{
+  text-decoration: none;
+}
+strong{
+  color:#000!important;
+}
 .banner {
   position: relative;
   height: 100vh;

@@ -7,12 +7,23 @@ import {
   Typography,
   TextField,
   Button,
+  Divider,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import axios from "axios";
 import Pagetitle from "./Pagetitle";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+  WhatsappIcon,
+} from "react-share";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -24,6 +35,7 @@ function BlogsDetails() {
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
   const theme = useTheme();
+  const blogUrl = `https://editsh-back.onrender.com/blogs/${id}`;
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -149,13 +161,7 @@ function BlogsDetails() {
                 </Box>
               </Box>
 
-              <Box
-                sx={{
-                  borderRadius: 5,
-                  boxShadow: 2,
-                  p: 1,
-                }}
-              >
+              <Box>
                 <img
                   src={blog?.blogImage}
                   alt="blog"
@@ -167,6 +173,45 @@ function BlogsDetails() {
                 />
               </Box>
 
+              {/* Social Share Buttons */}
+              <Box sx={{ mt: 4 }}>
+                <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+                  <FacebookShareButton url={blogUrl} quote={blog?.blogTitle}>
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={blogUrl} title={blog?.blogTitle}>
+                    <TwitterIcon size={32} round />
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={blogUrl} title={blog?.blogTitle}>
+                    <LinkedinIcon size={32} round />
+                  </LinkedinShareButton>
+                  <WhatsappShareButton url={blogUrl} title={blog?.blogTitle}>
+                    <WhatsappIcon size={32} round />
+                  </WhatsappShareButton>
+                </Box>
+              </Box>
+              <Divider
+                sx={{
+                  my: 2,
+                }}
+              />
+
+              <Box>
+                <Typography variant="h6">
+                  Category:
+                  <Typography
+                    component="span"
+                    sx={{
+                      ml: 2,
+                      border: "1px dotted #404040",
+                      p: 1,
+                      borderRadius: "50px",
+                    }}
+                  >
+                    {blog?.technology}
+                  </Typography>
+                </Typography>
+              </Box>
               <Typography variant="body1" sx={{ mt: 2 }}>
                 {blog?.blogDescription}
               </Typography>
@@ -294,7 +339,10 @@ function BlogsDetails() {
                       </Grid>
                     ))
                   ) : (
-                    <Typography variant="body1">
+                    <Typography variant="body1" sx={{
+                      fontSize: "18px",
+                      fontWeight:600
+                    }}>
                       No comments were found
                     </Typography>
                   )}

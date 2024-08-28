@@ -1,4 +1,3 @@
-// Blogs.js
 import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
@@ -10,12 +9,14 @@ import { useBlogs } from "../../Context/BlogContext";
 function Blogs() {
   const theme = useTheme();
   const { blogs } = useBlogs();
-  console.log(blogs);
   const [openBlogId, setOpenBlogId] = React.useState(null);
 
   const handleReadMoreClick = (id) => {
     setOpenBlogId(openBlogId === id ? null : id);
   };
+
+  // Slice the blogs array to limit to 3 blogs
+  const displayedBlogs = blogs.slice(0, 3);
 
   return (
     <Box sx={{ py: { xs: 2, sm: 3, lg: 4 } }}>
@@ -42,7 +43,7 @@ function Blogs() {
             },
           }}
         >
-          {blogs.map((blog) => (
+          {displayedBlogs.map((blog) => (
             <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={blog.id}>
               <Box
                 sx={{
@@ -51,6 +52,8 @@ function Blogs() {
                   borderBottom: `2px solid ${theme.palette.secondary.main}`,
                   borderRadius: "5px",
                 }}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
               >
                 <Box>
                   <img
@@ -59,6 +62,8 @@ function Blogs() {
                     style={{
                       borderRadius: "5px",
                       height: "200px",
+                      width: "100%",
+                      objectFit: "cover",
                     }}
                   />
                 </Box>
@@ -71,14 +76,17 @@ function Blogs() {
                   }}
                 >
                   <Box>
-                    <Button
+                    <Box
                       sx={{
                         backgroundColor: theme.palette.secondary.main,
-                        color: theme.palette.main,
+                        color: theme.palette.white,
+                        p: "4px",
+                        borderRadius: "5px",
+                        fontSize: "14px",
                       }}
                     >
                       {blog.technology}
-                    </Button>
+                    </Box>
                   </Box>
                   <Box>
                     <Typography

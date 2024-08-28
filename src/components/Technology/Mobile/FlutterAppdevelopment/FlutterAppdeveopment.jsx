@@ -1,7 +1,7 @@
 import React from "react";
 import AboutImage from "../../../../../src/assets/Technoogy/Mobile/FlutterAppDevelopment/AboutImage.png";
 import Pagetitle from "../../../../global/Pagetitle";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import { Titleanimation } from "../../../../global/Titleanimation";

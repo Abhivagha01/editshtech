@@ -1,15 +1,10 @@
 import { useTheme } from "@emotion/react";
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Heroslider({ getInTouchRef }) {
   const theme = useTheme();
-
-  const handleClick = () => {
-    if (getInTouchRef.current) {
-      getInTouchRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
@@ -95,8 +90,9 @@ function Heroslider({ getInTouchRef }) {
             development, mobile app development, custom software development,
             and more to accelerate and empower business.
           </Typography>
-          <Box
-            sx={{
+          <Link
+            to="/qoute"
+            style={{
               display: "flex",
               justifyContent: "center",
               mt: 3,
@@ -105,8 +101,7 @@ function Heroslider({ getInTouchRef }) {
             data-aos-duration="3000"
             data-aos-easing="linear"
           >
-              <Button
-              onClick={handleClick}
+            <Button
               sx={{
                 backgroundColor: theme.palette.lightwhite,
                 color: theme.palette.primary.main,
@@ -116,7 +111,7 @@ function Heroslider({ getInTouchRef }) {
             >
               GET A QUOTE
             </Button>
-          </Box>
+          </Link>
         </Box>
       </Box>
     </>
