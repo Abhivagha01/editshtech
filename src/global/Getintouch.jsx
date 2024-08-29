@@ -110,7 +110,7 @@ const Getintouch = () => {
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/gettouch/add",
+        "https://editsh-back.onrender.com/api/gettouch/add",
         values
       );
       toast.success(response.data.message);

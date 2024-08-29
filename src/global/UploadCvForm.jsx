@@ -49,7 +49,7 @@ function UploadCvForm() {
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/resume/add",
+        "https://editsh-back.onrender.com/api/resume/add",
         values
       );
       if (response.status === 201) {
