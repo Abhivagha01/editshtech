@@ -99,15 +99,30 @@ function App() {
 
           {/*=================== Frontend ============*/}
           <Route path="/frontend" element={<Frontend />} />
-          <Route path="/frontend/angularJsDevelopment" element={<AngularJsDeveloment />} />
-          <Route path="/frontend/reactJsDevelopment" element={<ReactjsDevelopment />} />
-          <Route path="/frontend/vueJsDevelopment" element={<VueJsdevelopment />} />
+          <Route
+            path="/frontend/angularJsDevelopment"
+            element={<AngularJsDeveloment />}
+          />
+          <Route
+            path="/frontend/reactJsDevelopment"
+            element={<ReactjsDevelopment />}
+          />
+          <Route
+            path="/frontend/vueJsDevelopment"
+            element={<VueJsdevelopment />}
+          />
 
           {/*=================== Backend =================*/}
           <Route path="/backend" element={<Backend />} />
-          <Route path="backend/nodejsDevelopment" element={<NodejsDevelopment />} />
+          <Route
+            path="backend/nodejsDevelopment"
+            element={<NodejsDevelopment />}
+          />
           <Route path="backend/netDevelopment" element={<NetDevelopment />} />
-          <Route path="backend/pythonDevelopment" element={<PhythonDevelopment />} />
+          <Route
+            path="backend/pythonDevelopment"
+            element={<PhythonDevelopment />}
+          />
 
           <Route path="/term" element={<Term />} />
           <Route path="/policy" element={<Policy />} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {
@@ -6,52 +6,57 @@ import {
   Container,
   FormControl,
   Grid,
+  Button,
   InputLabel,
   MenuItem,
   Select,
   TextField,
   Typography,
+  FormHelperText,
   CircularProgress,
+  IconButton,
 } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
-import LightBtn from "./Button/LightBtn";
+import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import "../../src/assets/Css/contact.css";
-import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import "../../src/assets/Css/contact.css";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import axios from "axios";
 
 const Getintouch = () => {
   const theme = useTheme();
+  // eslint-disable-next-line
+  const [image, setImage] = useState(null);
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
+    fullName: Yup.string().required("Full Name is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
-    mobile: Yup.string().required("Phone number is required"),
-    message: Yup.string().required("Message is required"),
-    service: Yup.string().required("Service is required"),
+    mobile: Yup.string().required("Mobile number is required"),
+    projectDescription: Yup.string().required(
+      "Project Description is required"
+    ),
+    budget: Yup.string().required("Budget is required"),
+    resumeImage: Yup.string().url("Invalid URL"),
   });
 
   const contactInfo = [
     {
       icon: (
         <AddLocationAltIcon
-          sx={{
-            color: theme.palette.white,
-            width: "40px",
-          }}
+          sx={{ color: theme.palette.white, width: "40px" }}
         />
       ),
-      text: "414, Pavitraa Point, Opp BBC, Near Savaliya Circle, Yogichowk, Surat",
+      text: "414, Pavitra Point, Opp BBC, Near Savaliya Circle, Yogichowk, Surat",
     },
     {
       icon: <EmailIcon />,
@@ -78,23 +83,59 @@ const Getintouch = () => {
     },
   ];
 
+  const handleFileChange = (event, setFieldValue) => {
+    const file = event.target.files[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      axios
+        .post("https://editsh-back.onrender.com/api/upload-image", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((response) => {
+          setImage({
+            url: response.data.url,
+            public_id: response.data.public_id,
+          });
+          setFieldValue("resumeImage", response.data.url);
+        })
+        .catch((error) => {
+          console.error("Error uploading image:", error);
+          toast.error("Error uploading image");
+        });
+    }
+  };
+
+  const handleSubmit = async (values, { resetForm, setSubmitting }) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/gettouch/add",
+        values
+      );
+      toast.success(response.data.message);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Error submitting form!");
+    } finally {
+      setSubmitting(false);
+      resetForm();
+    }
+  };
+
   return (
     <>
       <ToastContainer />
       <Box
         sx={{
           my: 2,
-          py: {
-            xs: 1,
-            md: 2,
-            lg: 4,
-          },
+          py: { xs: 1, md: 2, lg: 4 },
           backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          "@media (maxWidth:600px)": {
+          "@media (max-width:600px)": {
             backgroundImage: `url("https://i.postimg.cc/x16rRyCz/129199.jpg")`,
           },
         }}
@@ -112,12 +153,7 @@ const Getintouch = () => {
               >
                 Let's get in touch
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  mb: 2,
-                }}
-              >
+              <Typography variant="body1" sx={{ mb: 2 }}>
                 Ready to start a project?
               </Typography>
               <Box className="info">
@@ -126,7 +162,6 @@ const Getintouch = () => {
                     key={index}
                     sx={{
                       display: "flex",
-                      justifyContent: "flex-start",
                       alignItems: "center",
                       mb: 2,
                     }}
@@ -148,7 +183,7 @@ const Getintouch = () => {
                     </Box>
                     <Box>
                       {info.link ? (
-                        <Link to={info.link} sx={{ fontSize: "14px" }}>
+                        <Link to={info.link} style={{ fontSize: "14px" }}>
                           {info.text}
                         </Link>
                       ) : (
@@ -161,12 +196,7 @@ const Getintouch = () => {
                 ))}
               </Box>
               <Box className="social-media">
-                <Typography
-                  sx={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                  }}
-                >
+                <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
                   Connect with Us
                 </Typography>
                 <Box className="social-icons">
@@ -183,190 +213,155 @@ const Getintouch = () => {
                 </Box>
               </Box>
             </Box>
-            <Box className="contact-form">
-              <Box className="circle one" />
-              <Box className="circle two" />
+            <Box className="contact-form" sx={{ p: 2 }}>
               <Formik
                 initialValues={{
-                  name: "",
+                  fullName: "",
                   email: "",
                   mobile: "",
-                  message: "",
-                  service: "",
+                  projectDescription: "",
+                  budget: "",
+                  resumeImage: "",
                 }}
                 validationSchema={validationSchema}
-                onSubmit={async (values, { setSubmitting, resetForm }) => {
-                  console.log(values);
-
-                  try {
-                    const response = await axios.post(
-                      "http://localhost:8000/api/gettouch/add",
-                      values
-                    );
-                    toast.success(response.data.message);
-                  } catch (error) {
-                    console.error("Error submitting form:", error);
-                    toast.error("Error submitting form!");
-                  } finally {
-                    setSubmitting(false);
-                    resetForm();
-                  }
-                }}
+                onSubmit={handleSubmit}
               >
-                {({ handleChange, values, isSubmitting }) => (
-                  <Form
-                    noValidate
-                    autoComplete="off"
-                    style={{
-                      "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: theme.palette.secondary.main,
-                        },
-                      "& .MuiInputLabel-root:hover": {
-                        color: theme.palette.secondary.main,
-                      },
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        p: 2,
-                      }}
+                {({ isSubmitting, setFieldValue, errors, touched }) => (
+                  <Form>
+                    <Field
+                      as={TextField}
+                      name="fullName"
+                      label="Full Name"
+                      variant="outlined"
+                      fullWidth
+                      size="small"
+                      margin="normal"
+                      helperText={<ErrorMessage name="fullName" />}
+                      error={touched.fullName && Boolean(errors.fullName)}
+                    />
+                    <Field
+                      as={TextField}
+                      name="email"
+                      label="Email"
+                      variant="outlined"
+                      fullWidth
+                      size="small"
+                      margin="normal"
+                      helperText={<ErrorMessage name="email" />}
+                      error={touched.email && Boolean(errors.email)}
+                    />
+                    <Field
+                      as={TextField}
+                      name="mobile"
+                      label="Mobile"
+                      variant="outlined"
+                      fullWidth
+                      size="small"
+                      margin="normal"
+                      helperText={<ErrorMessage name="mobile" />}
+                      error={touched.mobile && Boolean(errors.mobile)}
+                    />
+                    <Field
+                      as={TextField}
+                      name="projectDescription"
+                      label="Project Description"
+                      variant="outlined"
+                      fullWidth
+                      margin="normal"
+                      size="small"
+                      multiline
+                      rows={4}
+                      helperText={<ErrorMessage name="projectDescription" />}
+                      error={
+                        touched.projectDescription &&
+                        Boolean(errors.projectDescription)
+                      }
+                    />
+                    <FormControl
+                      fullWidth
+                      margin="normal"
+                      error={touched.budget && Boolean(errors.budget)}
                     >
-                      <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                          <Field
-                            as={TextField}
-                            label="Name"
-                            name="name"
-                            value={values.name}
-                            onChange={handleChange}
-                            placeholder="Name"
-                            fullWidth
-                            variant="filled"
-                            InputLabelProps={{
-                              style: { color: theme.palette.secondary.main },
-                              shrink: true,
+                      <InputLabel>Budget</InputLabel>
+                      <Field
+                        as={Select}
+                        name="budget"
+                        size="small"
+                        label="Budget"
+                        variant="outlined"
+                        fullWidth
+                      >
+                        <MenuItem value="" disabled>
+                          Select Budget
+                        </MenuItem>
+                        <MenuItem value="Less than $5000">
+                          Less than $5000
+                        </MenuItem>
+                        <MenuItem value="$5000 - $10,000">
+                          $5000 - $10,000
+                        </MenuItem>
+                        <MenuItem value="$10,000 - $50,000">
+                          $10,000 - $50,000
+                        </MenuItem>
+                        <MenuItem value="$50,000 - $100,000">
+                          $50,000 - $100,000
+                        </MenuItem>
+                        <MenuItem value="$100,000+">$100,000+</MenuItem>
+                      </Field>
+                      <FormHelperText>
+                        <ErrorMessage name="budget" />
+                      </FormHelperText>
+                    </FormControl>
+                    <Box>
+                      <Grid container justifyContent="center">
+                        <input
+                          id="file-input"
+                          type="file"
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          style={{ display: "none" }}
+                          onChange={(event) =>
+                            handleFileChange(event, setFieldValue)
+                          }
+                        />
+                        <IconButton
+                          onClick={() =>
+                            document.getElementById("file-input").click()
+                          }
+                          style={{ display: "flex", justifyContent: "center" }}
+                        >
+                          <CloudUploadIcon
+                            sx={{
+                              color: theme.palette.secondary.main,
+                              fontSize: "80px",
                             }}
-                            InputProps={{
-                              style: { color: theme.palette.secondary.main },
-                              placeholder: "Name",
-                            }}
-                            helperText={<ErrorMessage name="name" />}
-                            error={!!values.name}
                           />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Field
-                            as={TextField}
-                            label="Email"
-                            name="email"
-                            value={values.email}
-                            onChange={handleChange}
-                            fullWidth
-                            placeholder="Email"
-                            variant="filled"
-                            InputLabelProps={{
-                              style: { color: theme.palette.secondary.main },
-                              shrink: true,
-                            }}
-                            InputProps={{
-                              style: { color: theme.palette.secondary.main },
-                              placeholder: "Email",
-                            }}
-                            helperText={<ErrorMessage name="email" />}
-                            error={!!values.email}
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Field
-                            as={TextField}
-                            label="Mobile"
-                            name="mobile"
-                            value={values.mobile}
-                            onChange={handleChange}
-                            fullWidth
-                            placeholder="+91 0000 00000"
-                            variant="filled"
-                            InputLabelProps={{
-                              style: { color: theme.palette.secondary.main },
-                              shrink: true,
-                            }}
-                            InputProps={{
-                              style: { color: theme.palette.secondary.main },
-                              placeholder: "+91 0000 00000",
-                            }}
-                            helperText={<ErrorMessage name="mobile" />}
-                            error={!!values.mobile}
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <FormControl fullWidth variant="filled">
-                            <InputLabel
-                              style={{ color: theme.palette.secondary.main }}
-                              shrink
-                            >
-                              Service
-                            </InputLabel>
-                            <Field
-                              as={Select}
-                              name="service"
-                              value={values.service}
-                              onChange={handleChange}
-                              displayEmpty
-                              style={{ color: theme.palette.secondary.main }}
-                              inputProps={{ "aria-label": "Without label" }}
-                            >
-                              <MenuItem value="" disabled>
-                                Select a service
-                              </MenuItem>
-                              <MenuItem value="Mobile App Development">
-                                Mobile App Development
-                              </MenuItem>
-                              <MenuItem value="Web Development">
-                                Web Development
-                              </MenuItem>
-                            </Field>
-                            <ErrorMessage name="service" />
-                          </FormControl>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Field
-                            as={TextField}
-                            label="Message"
-                            name="message"
-                            value={values.message}
-                            onChange={handleChange}
-                            multiline
-                            rows={4}
-                            fullWidth
-                            variant="filled"
-                            placeholder="Write your message"
-                            InputLabelProps={{
-                              style: { color: theme.palette.secondary.main },
-                              shrink: true,
-                            }}
-                            InputProps={{
-                              style: { color: theme.palette.secondary.main },
-                              placeholder: "Write your message",
-                            }}
-                            helperText={<ErrorMessage name="message" />}
-                            error={!!values.message}
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <LightBtn
-                            type="submit"
-                            text={
-                              isSubmitting ? (
-                                <CircularProgress size={24} color="inherit" />
-                              ) : (
-                                "Submit"
-                              )
-                            }
-                            disabled={isSubmitting}
-                          />
-                        </Grid>
+                        </IconButton>
                       </Grid>
+                    </Box>
+                    <Box sx={{ mt: 2 }}>
+                      
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        disabled={isSubmitting}
+                        sx={{ position: "relative" }}
+                      >
+                        {isSubmitting && (
+                          <CircularProgress
+                            size={24}
+                            sx={{
+                              position: "absolute",
+                              top: "50%",
+                              left: "50%",
+                              marginTop: "-12px",
+                              marginLeft: "-12px",
+                            }}
+                          />
+                        )}
+                        {isSubmitting ? "Submitting..." : "Submit"}
+                      </Button>
                     </Box>
                   </Form>
                 )}

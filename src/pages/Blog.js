@@ -1,6 +1,14 @@
 import React from "react";
 import Pagetitle from "../global/Pagetitle";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Select,
+  MenuItem,
+  FormControl,
+} from "@mui/material";
 import { useBlogs } from "../Context/BlogContext";
 import { useTheme } from "@emotion/react";
 import { Link } from "react-router-dom";
@@ -9,6 +17,13 @@ function Blog() {
   const { blogs } = useBlogs();
   const theme = useTheme();
   const [openBlogId, setOpenBlogId] = React.useState(null);
+  const [selectedTechnology, setSelectedTechnology] = React.useState("");
+
+  const uniqueTechnologies = [...new Set(blogs.map((item) => item.technology))];
+
+  const filteredBlogs = selectedTechnology
+    ? blogs.filter((blog) => blog.technology === selectedTechnology)
+    : blogs;
 
   const handleReadMoreClick = (id) => {
     setOpenBlogId(openBlogId === id ? null : id);
@@ -22,18 +37,91 @@ function Blog() {
         We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses.`}
       />
       <Container>
+        {/* Dropdown Filter */}
+
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            py: {
+              xs: 2,
+              md: 4,
+            },
+            justifyContent: {
+              xs: "center",
+              sm: "center",
+              md: "end",
+            },
+          }}
+        >
+          <Grid item xs={12} sm={6} md={2} lg={3}>
+            <FormControl fullWidth variant="outlined">
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  gap: 2,
+                }}
+              >
+                <Box>
+                  <Typography variant="body2">Blog Category</Typography>
+                </Box>
+                <Box>
+                  <Select
+                    labelId="technology-select-label"
+                    id="technology"
+                    name="technology"
+                    value={selectedTechnology}
+                    size="small"
+                    onChange={(e) => setSelectedTechnology(e.target.value)}
+                    displayEmpty
+                    MenuProps={{
+                      PaperProps: {
+                        style: {
+                          maxHeight: 120,
+                          overflowY: "auto",
+                          padding: 0,
+                        },
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: { color: theme.palette.secondary.main },
+                    }}
+                    sx={{
+                      width: "150px",
+                    }}
+                  >
+                    <MenuItem value="">
+                      <em>All</em>
+                    </MenuItem>
+                    {uniqueTechnologies.map((tech) => (
+                      <MenuItem
+                        key={tech}
+                        value={tech}
+                        style={{ fontSize: "0.875rem", padding: "8px 16px" }}
+                      >
+                        {tech}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </Box>
+              </Box>
+            </FormControl>
+          </Grid>
+        </Grid>
         <Grid
           container
           spacing={3}
           sx={{
             py: {
-              sm: 4,
-              md: 8,
-              lg: 10,
+              sm: 3,
+              md: 3,
+              lg: 5,
             },
           }}
         >
-          {blogs.map((blog) => (
+          {filteredBlogs.map((blog) => (
             <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={blog.id}>
               <Box
                 sx={{
@@ -120,7 +208,7 @@ function Blog() {
                       >
                         {blog.blogTitle}
                       </Typography>
-                      {openBlogId === blog.id && (
+                      {openBlogId === blog._id && (
                         <Typography
                           sx={{
                             color: theme.palette.secondary.main,

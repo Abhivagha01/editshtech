@@ -92,7 +92,7 @@ function BlogsDetails() {
         description="We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses."
       />
       <Container>
-        <Grid container sx={{ py: { sm: 5, lg: 6 } }}>
+        <Grid container sx={{ py: { xs: 3, sm: 5, lg: 6 } }}>
           <Grid item xs={12}>
             <Box>
               <Typography
@@ -100,7 +100,7 @@ function BlogsDetails() {
                 sx={{
                   mb: 2,
                   color: theme.palette.lightwhite,
-                  fontWeight: 600,
+                  fontWeight: 700,
                   fontSize: "20px",
                 }}
               >
@@ -112,18 +112,18 @@ function BlogsDetails() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  py: { sm: 2, lg: 4 },
+                  py: { xs: 3, sm: 3, lg: 4 },
                 }}
               >
                 <Typography
                   sx={{
                     fontSize: "16px",
                     fontWeight: 500,
-                    backgroundColor: theme.palette.black,
+                    backgroundColor: theme.palette.secondary.main,
                     color: theme.palette.white,
                     display: "inline-block",
                     lineHeight: "24px",
-                    p: 1,
+                    padding: "6px",
                     borderRadius: "5px",
                   }}
                 >
@@ -339,10 +339,13 @@ function BlogsDetails() {
                       </Grid>
                     ))
                   ) : (
-                    <Typography variant="body1" sx={{
-                      fontSize: "18px",
-                      fontWeight:600
-                    }}>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: "18px",
+                        fontWeight: 600,
+                      }}
+                    >
                       No comments were found
                     </Typography>
                   )}

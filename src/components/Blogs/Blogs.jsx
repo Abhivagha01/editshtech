@@ -1,7 +1,6 @@
 import React from "react";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Titleanimation } from "../../global/Titleanimation";
 import { Link } from "react-router-dom";
 import { useBlogs } from "../../Context/BlogContext";
@@ -15,8 +14,11 @@ function Blogs() {
     setOpenBlogId(openBlogId === id ? null : id);
   };
 
-  // Slice the blogs array to limit to 3 blogs
-  const displayedBlogs = blogs.slice(0, 3);
+  const uniqueTechnologies = [...new Set(blogs.map((item) => item.technology))];
+
+  const filterBlogsByTechnology = (tech) => {
+    return blogs.find((blog) => blog.technology === tech);
+  };
 
   return (
     <Box sx={{ py: { xs: 2, sm: 3, lg: 4 } }}>
@@ -43,111 +45,114 @@ function Blogs() {
             },
           }}
         >
-          {displayedBlogs.map((blog) => (
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={blog.id}>
-              <Box
-                sx={{
-                  boxShadow: 1,
-                  p: 2,
-                  borderBottom: `2px solid ${theme.palette.secondary.main}`,
-                  borderRadius: "5px",
-                }}
-                data-aos="zoom-in"
-                data-aos-duration="3000"
-              >
-                <Box>
-                  <img
-                    src={blog.blogImage}
-                    alt="blog-image"
-                    style={{
-                      borderRadius: "5px",
-                      height: "200px",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    py: 2,
-                  }}
-                >
-                  <Box>
-                    <Box
-                      sx={{
-                        backgroundColor: theme.palette.secondary.main,
-                        color: theme.palette.white,
-                        p: "4px",
-                        borderRadius: "5px",
-                        fontSize: "14px",
-                      }}
-                    >
-                      {blog.technology}
-                    </Box>
-                  </Box>
-                  <Box>
-                    <Typography
-                      sx={{
-                        color: theme.palette.secondary.main,
-                        fontSize: "14px",
-                      }}
-                    >
-                      {new Date(blog.date).toLocaleDateString()}
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  <Typography
+          {uniqueTechnologies.slice(0, 3).map((tech) => {
+            const blog = filterBlogsByTechnology(tech);
+            return (
+              blog && (
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={4} key={blog._id}>
+                  <Box
                     sx={{
-                      color: theme.palette.lightwhite,
-                      fontSize: "16px",
-                      fontWeight: "600",
-                      py: 1,
+                      boxShadow: 3,
+                      p: 2,
+                      borderBottom: `5px solid ${theme.palette.secondary.main}`,
+                      borderRadius: "5px",
+                      width: "100%",
+                      height: "auto",
+                      maxWidth: "100%",
+                      marginBottom: 2,
                     }}
+                    data-aos="zoom-in"
+                    data-aos-duration="3000"
                   >
-                    {blog.blogTitle}
-                  </Typography>
-                  {openBlogId === blog.id && (
-                    <Typography
-                      sx={{
-                        color: theme.palette.secondary.main,
-                        fontSize: "13px",
-                        fontWeight: "400",
-                        py: 1,
-                      }}
-                    >
-                      {blog.blogDescription}
-                    </Typography>
-                  )}
-                </Box>
-                <Box>
-                  <Link to={`/blogs/${blog._id}`}>
-                    <Button
-                      endIcon={
-                        <ArrowForwardIcon
+                    <Link to={`/blogs/${blog._id}`}>
+                      <Box
+                        onClick={() => handleReadMoreClick(blog._id)}
+                        sx={{
+                          color: theme.palette.black,
+                          "&:hover": {
+                            backgroundColor: theme.palette.white,
+                          },
+                          height: "100%",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <Box sx={{ flex: 1 }}>
+                          <img
+                            src={blog.blogImage}
+                            alt="blog-image"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: "5px",
+                            }}
+                          />
+                        </Box>
+                        <Box
                           sx={{
-                            color: theme.palette.secondary.main,
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            py: 2,
                           }}
-                        />
-                      }
-                      onClick={() => handleReadMoreClick(blog._id)}
-                      sx={{
-                        color: theme.palette.black,
-                        "&:hover": {
-                          backgroundColor: theme.palette.white,
-                        },
-                      }}
-                    >
-                      {openBlogId === blog._id ? "Show Less" : "Read More"}
-                    </Button>
-                  </Link>
-                </Box>
-              </Box>
-            </Grid>
-          ))}
+                        >
+                          <Box
+                            sx={{
+                              backgroundColor: theme.palette.secondary.main,
+                              color: theme.palette.white,
+                              p: "4px",
+                              borderRadius: "5px",
+                              fontSize: "14px",
+                            }}
+                          >
+                            {blog.technology}
+                          </Box>
+                          <Box>
+                            <Typography
+                              sx={{
+                                color: theme.palette.secondary.main,
+                                fontSize: "14px",
+                              }}
+                            >
+                              {new Date(blog.date).toLocaleDateString("en-GB", {
+                                day: "numeric",
+                                month: "short",
+                              })}
+                            </Typography>
+                          </Box>
+                        </Box>
+                        <Box>
+                          <Typography
+                            sx={{
+                              color: theme.palette.lightwhite,
+                              fontSize: "14px",
+                              py: 1,
+                              fontWeight: "600",
+                            }}
+                          >
+                            {blog.blogTitle}
+                          </Typography>
+                          {openBlogId === blog._id && (
+                            <Typography
+                              sx={{
+                                color: theme.palette.secondary.main,
+                                fontSize: "14px",
+                                fontWeight: "400",
+                                py: 1,
+                              }}
+                            >
+                              {blog.blogDescription}
+                            </Typography>
+                          )}
+                        </Box>
+                      </Box>
+                    </Link>
+                  </Box>
+                </Grid>
+              )
+            );
+          })}
         </Grid>
       </Container>
     </Box>
