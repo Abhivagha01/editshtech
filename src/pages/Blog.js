@@ -65,7 +65,9 @@ function Blog() {
                 }}
               >
                 <Box>
-                  <Typography variant="body2">Blog Category</Typography>
+                  <Typography variant="body2" sx={{
+                    fontWeight:700
+                  }}>Blog Category:</Typography>
                 </Box>
                 <Box>
                   <Select

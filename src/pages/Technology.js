@@ -37,7 +37,6 @@ const technologyItems = [
       "Great importance to backend is essential for a successful software and our expertise in Java, NodeJS, .NET, PHP, Python, etc. help you achieve it.",
     link: "/backend",
   },
-
 ];
 
 function Technology() {
@@ -70,7 +69,8 @@ function Technology() {
                         flexDirection: "column",
                         justifyContent: "space-between",
                         height: "100%",
-                        border: "1px dotted #404040",
+                        border: `5px solid ${theme.palette.lightwhite}`,
+
                         p: 4,
                       }}
                     >

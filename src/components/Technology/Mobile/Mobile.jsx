@@ -73,7 +73,7 @@ function Mobile() {
                   <Link to={item.link} style={{ textDecoration: "none" }}>
                     <Box
                       sx={{
-                        border: "1px dotted #404040",
+                        border: `5px solid ${theme.palette.lightwhite}`,
                         p: 2,
                         display: "flex",
                         flexDirection: "column",

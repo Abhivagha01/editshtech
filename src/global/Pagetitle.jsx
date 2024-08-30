@@ -58,7 +58,8 @@ function Pagetitle({ title, description }) {
             <Box>
               <Breadcrumbs
                 sx={{
-                  border: "1px dotted #404040",
+                  border: `1px dotted ${theme.palette.secondary.main
+                  }`,
                   display: "inline-block",
                   p: 1,
                   borderRadius: 8,

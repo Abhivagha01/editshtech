@@ -16,37 +16,38 @@ export const Titleanimation = ({ title }) => {
         <Box
           sx={{
             fontSize: {
-              xs: "18px",
-              lg: "30px",
+              xs: "25px",
+              md: "28px",
+              lg: "32px",
+              fontFamily: theme.typography.fontFamily,
             },
-            fontWeight: "600",
+            mb: 1,
+            fontWeight: "700",
           }}
         >
           {title}
         </Box>
-        <Box sx={{ marginTop: "10px" }}>
-          <Box
+        <Box
+          sx={{
+            height: "3px",
+            width: "100px",
+            backgroundColor: theme.palette.secondary.main,
+            position: "relative",
+          }}
+        >
+          <Typography
             sx={{
-              height: "3px",
-              width: "100px",
-              backgroundColor: theme.palette.secondary.main,
-              position: "relative",
+              height: "4px",
+              width: "15px",
+              borderRadius: "4px",
+              position: "absolute",
+              top: "50%",
+              left: "0%",
+              transform: "translateY(-50%)",
+              bgcolor: theme.palette.lightwhite,
+              animation: `${runAnimation} 2s infinite linear alternate-reverse`,
             }}
-          >
-            <Typography
-              sx={{
-                height: "13px",
-                width: "13px",
-                borderRadius: "50%",
-                position: "absolute",
-                top: "50%",
-                left: "0%",
-                transform: "translateY(-50%)",
-                bgcolor: theme.palette.lightwhite,
-                animation: `${runAnimation} 2s infinite linear alternate-reverse`,
-              }}
-            ></Typography>
-          </Box>
+          ></Typography>
         </Box>
       </Box>
     </>

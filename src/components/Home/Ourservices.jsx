@@ -26,10 +26,15 @@ function Ourservices() {
         <Titleanimation title="Our Services" />
       </Box>
       <Grid container spacing={3} sx={{ py: { sm: 2, md: 6, lg: 8 } }}>
-        <Grid item xs={12} sm={6} md={6} lg={4}
-         data-aos="zoom-in"
-         data-aos-duration="3000"
-         >
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          lg={4}
+          data-aos="zoom-in"
+          data-aos-duration="3000"
+        >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
               variant="h4"
@@ -88,9 +93,15 @@ function Ourservices() {
                         of your company. Our team creates the most logical digital infrastructure to improve the efficiency of your business.`,
           },
         ].map((service, index) => (
-          <Grid item xs={12} sm={6} md={6} lg={4} key={index}
-          data-aos="zoom-in"
-          data-aos-duration="3000"
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={6}
+            lg={4}
+            key={index}
+            data-aos="zoom-in"
+            data-aos-duration="3000"
           >
             <Box
               sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -136,8 +147,13 @@ function Ourservices() {
           </Grid>
         ))}
 
-        <Grid item xs={12} sm={6} md={6} lg={4}
-         data-aos="zoom-in"
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          lg={4}
+          data-aos="zoom-in"
           data-aos-duration="3000"
         >
           <Box
@@ -166,26 +182,41 @@ function Ourservices() {
                 zIndex: -1,
               }}
             />
-            <Typography variant="h5">
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: "600",
+                color: theme.palette.primary.main,
+                fontSize: "22px",
+                mr: 1,
+              }}
+            >
               Don't know what to choose?
               <Typography
                 component="span"
-                sx={{ fontWeight: "600", fontSize: "22px" }}
+                sx={{
+                  fontWeight: "600",
+                  color: theme.palette.primary.main,
+                  fontSize: "22px",
+                  mr: 1,
+                }}
               >
                 Drop us a line.
               </Typography>
             </Typography>
             <Link
-            to="/contact"
+              to="/contact"
               style={{
-                backgroundColor: theme.palette.lightwhite,
                 display: "inline-block",
-                color:theme.palette.white,
-                padding: "10px 20px",
+                backgroundColor: theme.palette.lightwhite,
+                color: theme.palette.white,
+                padding: "6px",
+                textAlign: "center",
                 textDecoration: "none",
                 borderRadius: "10px",
-                width: "150px",
-                mt:4
+                border: `1px solid ${theme.palette.white}`,
+                width: "120px",
+                mt: 4,
               }}
             >
               Contact Us

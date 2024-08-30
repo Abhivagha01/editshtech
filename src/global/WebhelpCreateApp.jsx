@@ -44,7 +44,7 @@ function WebhelpCreateApp() {
                 <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
                   <Box
                     sx={{
-                      border: "1px dotted #8c8c8c",
+                      border: `5px solid ${theme.palette.secondary.main}`,
                       p: 4,
                       height: "100%",
                       display: "flex",

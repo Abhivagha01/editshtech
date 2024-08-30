@@ -14,7 +14,6 @@ import {
   Typography,
   FormHelperText,
   CircularProgress,
-  IconButton,
 } from "@mui/material";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -28,7 +27,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "react-toastify/dist/ReactToastify.css";
 import "../../src/assets/Css/contact.css";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import axios from "axios";
 
 const Getintouch = () => {
@@ -157,7 +155,7 @@ const Getintouch = () => {
                 Ready to start a project?
               </Typography>
               <Box className="info">
-                {contactInfo.map((info, index) => (
+                {contactInfo?.map((info, index) => (
                   <Box
                     key={index}
                     sx={{
@@ -232,9 +230,14 @@ const Getintouch = () => {
                       as={TextField}
                       name="fullName"
                       label="Full Name"
-                      variant="outlined"
+                      variant="filled"
                       fullWidth
                       size="small"
+                      InputLabelProps={{
+                        sx: {
+                          color: theme.palette.common.white,
+                        },
+                      }}
                       margin="normal"
                       helperText={<ErrorMessage name="fullName" />}
                       error={touched.fullName && Boolean(errors.fullName)}
@@ -243,7 +246,12 @@ const Getintouch = () => {
                       as={TextField}
                       name="email"
                       label="Email"
-                      variant="outlined"
+                      variant="filled"
+                      InputLabelProps={{
+                        sx: {
+                          color: theme.palette.common.white,
+                        },
+                      }}
                       fullWidth
                       size="small"
                       margin="normal"
@@ -254,7 +262,12 @@ const Getintouch = () => {
                       as={TextField}
                       name="mobile"
                       label="Mobile"
-                      variant="outlined"
+                      variant="filled"
+                      InputLabelProps={{
+                        sx: {
+                          color: theme.palette.common.white,
+                        },
+                      }}
                       fullWidth
                       size="small"
                       margin="normal"
@@ -265,7 +278,12 @@ const Getintouch = () => {
                       as={TextField}
                       name="projectDescription"
                       label="Project Description"
-                      variant="outlined"
+                      variant="filled"
+                      InputLabelProps={{
+                        sx: {
+                          color: theme.palette.common.white,
+                        },
+                      }}
                       fullWidth
                       margin="normal"
                       size="small"
@@ -282,13 +300,19 @@ const Getintouch = () => {
                       margin="normal"
                       error={touched.budget && Boolean(errors.budget)}
                     >
-                      <InputLabel>Budget</InputLabel>
+                      <InputLabel
+                        sx={{
+                          color: theme.palette.primary.main,
+                        }}
+                      >
+                        Budget
+                      </InputLabel>
                       <Field
                         as={Select}
                         name="budget"
                         size="small"
                         label="Budget"
-                        variant="outlined"
+                        variant="filled"
                         fullWidth
                       >
                         <MenuItem value="" disabled>
@@ -312,54 +336,96 @@ const Getintouch = () => {
                         <ErrorMessage name="budget" />
                       </FormHelperText>
                     </FormControl>
+
                     <Box>
-                      <Grid container justifyContent="center">
-                        <input
-                          id="file-input"
-                          type="file"
-                          accept=".pdf,.jpg,.jpeg,.png"
-                          style={{ display: "none" }}
-                          onChange={(event) =>
-                            handleFileChange(event, setFieldValue)
-                          }
-                        />
-                        <IconButton
+                      <Grid item xs={12}>
+                        <Grid
+                          container
+                          justifyContent="center"
+                          direction="column"
+                          alignItems="center"
+                          InputLabelProps={{
+                            sx: {
+                              color: theme.palette.common.white,
+                            },
+                          }}
+                          sx={{
+                            border: `1px dotted ${theme.palette.secondary.main}`,
+                            borderRadius: 3,
+                            p: 1,
+                            cursor: "pointer",
+                          }}
                           onClick={() =>
                             document.getElementById("file-input").click()
                           }
-                          style={{ display: "flex", justifyContent: "center" }}
                         >
-                          <CloudUploadIcon
-                            sx={{
-                              color: theme.palette.secondary.main,
-                              fontSize: "80px",
-                            }}
+                          <input
+                            id="file-input"
+                            type="file"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            style={{ display: "none" }}
+                            onChange={(event) =>
+                              handleFileChange(event, setFieldValue)
+                            }
                           />
-                        </IconButton>
+                          <Box
+                            sx={{
+                              width: 50,
+                              height: 50,
+                              borderRadius: 3,
+                            }}
+                          >
+                            <img
+                              src="https://i.postimg.cc/X7yqh8mw/png-transparent-cloud-upload-folder-cloud-folder-upload-folder-cloud-computing-cloud-data-folder-3d.png"
+                              alt="file-upload"
+                              width={50}
+                              height={50}
+                            />
+                          </Box>
+                          <Typography
+                            sx={{
+                              fontSize: "14px",
+                              color: theme.palette.white,
+                            }}
+                          >
+                            Click to Upload
+                          </Typography>
+                          <Typography
+                            sx={{
+                              textAlign: "center",
+                              fontSize: "14px",
+                              color: theme.palette.white,
+                            }}
+                          >
+                            Upload only .png, .jpg, .jpeg files
+                          </Typography>
+                        </Grid>
                       </Grid>
                     </Box>
-                    <Box sx={{ mt: 2 }}>
-                      
+                    <Box
+                      sx={{
+                        mt: 2,
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
                       <Button
                         type="submit"
                         variant="contained"
                         color="primary"
-                        fullWidth
+                        sx={{
+                          width: "150px",
+                          borderRadius: 5,
+                          border: `1px dotted ${theme.palette.lightwhite}`,
+                          color: theme.palette.grey[500],
+                          "&:hover": {
+                            backgroundColor: theme.palette.secondary.main,
+                            color: theme.palette.common.white,
+                          },
+                        }}
                         disabled={isSubmitting}
-                        sx={{ position: "relative" }}
                       >
-                        {isSubmitting && (
-                          <CircularProgress
-                            size={24}
-                            sx={{
-                              position: "absolute",
-                              top: "50%",
-                              left: "50%",
-                              marginTop: "-12px",
-                              marginLeft: "-12px",
-                            }}
-                          />
-                        )}
+                        {isSubmitting && <CircularProgress />}
                         {isSubmitting ? "Submitting..." : "Submit"}
                       </Button>
                     </Box>

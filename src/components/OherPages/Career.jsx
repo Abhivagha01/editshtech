@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Pagetitle from "../../global/Pagetitle";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Button, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import ci1 from "../../assets/Career/ci1.svg";
 import ci2 from "../../assets/Career/ci2.svg";
@@ -8,9 +8,6 @@ import ci3 from "../../assets/Career/ci3.svg";
 import ci4 from "../../assets/Career/ci4.svg";
 import ci5 from "../../assets/Career/ci5.svg";
 import ci6 from "../../assets/Career/ci6.svg";
-import careerImage from "../../assets/Career/careerImage.jpg";
-import jobApply from "../../assets/Career/jobapply.webp";
-import { Link } from "react-router-dom";
 import { Titleanimation } from "../../global/Titleanimation";
 import UploadCvForm from "../../global/UploadCvForm";
 import axios from "axios";
@@ -31,31 +28,48 @@ const hiringSteps = [
   {
     id: 2,
     title: "Write a job description",
-    description: `To join our group, we are searching for a serious programming engineer. You will work with cross-utilitarian groups to deliver top-notch arrangements while being accountable for creating, making, and changing programming applications. Solid programming abilities, critical thinking abilities, and a longing to stay aware of industry changes are characteristics that characterize ideal candidates.`,
+    description: `To join our group, we are searching for a serious programming engineer.
+     You will work with cross-utilitarian groups to deliver top-notch arrangements while being 
+     accountable for creating, making, and changing programming applications. Solid programming
+      abilities, critical thinking abilities, and a longing to stay aware of industry changes are 
+      characteristics that characterize ideal candidates.`,
     icon: ci2,
   },
   {
     id: 3,
     title: "Source candidates",
-    description: `Track down the top possibilities by decisively joining organizing, web channels, and industry suggestions. Make sets of responsibilities, collaborate with candidates, and complete thorough assessments to match abilities and culture. Use proactive enlistment methods to captivate the best people, guaranteeing major areas of strength for a business extension.`,
+    description: `Track down the top possibilities by decisively joining organizing, web channels, 
+    and industry suggestions. Make sets of responsibilities, collaborate with candidates, and complete
+     thorough assessments to match abilities and culture. Use proactive enlistment methods to captivate 
+     the best people, guaranteeing major areas of strength for a business extension.`,
     icon: ci3,
   },
   {
     id: 4,
     title: "Screen candidates",
-    description: `Specialized tests, coding difficulties, and social meetings ought to be generally used to assess candidates for programming work. Assessment of coding information, collaboration and critical thinking skills. To guarantee a durable and proficient group, pick individuals who show major areas of strength for programming improvement, effective correspondence, and excitement for development.`,
+    description: `Specialized tests, coding difficulties, and social meetings ought to be generally
+     used to assess candidates for programming work. Assessment of coding information, collaboration 
+     and critical thinking skills. To guarantee a durable and proficient group, pick individuals who 
+     show major areas of strength for programming improvement, effective correspondence, and excitement 
+     for development.`,
     icon: ci4,
   },
   {
     id: 5,
     title: " Interview candidates",
-    description: `Split down the gathering of new kids in town completely. Investigate your particular power, your definitive ability to think, and your social fit. Get some data about related commitments to study adaptability and collaboration. Find contenders who are sensible with our affiliation's convictions and can focus on our improvement endeavours from beginning to end.`,
+    description: `Split down the gathering of new kids in town completely. Investigate your particular
+     power, your definitive ability to think, and your social fit. Get some data about related commitments 
+     to study adaptability and collaboration. Find contenders who are sensible with our affiliation's 
+     convictions and can focus on our improvement endeavours from beginning to end.`,
     icon: ci5,
   },
   {
     id: 6,
     title: "Make an offer",
-    description: `Get accomplished with our exceptional arrangements! Experience particular arrangements that are expertly created to propel your organization. Our group's skill guarantees imaginative results, and the bother-free mix gives a smooth change. Acknowledge its significance now to encounter the change for yourself. With us, your example of overcoming adversity starts.`,
+    description: `Get accomplished with our exceptional arrangements! Experience particular arrangements
+     that are expertly created to propel your organization. Our group's skill guarantees imaginative results,
+      and the bother-free mix gives a smooth change. Acknowledge its significance now to encounter the change 
+      for yourself. With us, your example of overcoming adversity starts.`,
     icon: ci6,
   },
 ];
@@ -63,7 +77,7 @@ const hiringSteps = [
 function Career() {
   const [technology, setTechnology] = useState([]);
   const theme = useTheme();
-
+  const uploadCvRef = useRef(null);
   const fetchTechnology = async () => {
     try {
       const response = await axios.get(
@@ -78,6 +92,10 @@ function Career() {
   useEffect(() => {
     fetchTechnology();
   }, []);
+
+  const scrollToUploadCvForm = () => {
+    uploadCvRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -97,7 +115,6 @@ function Career() {
         }}
       >
         <Titleanimation title="Our Hiring Process" />
-
         <Grid
           container
           rowSpacing={1}
@@ -117,7 +134,9 @@ function Career() {
               md={6}
               lg={4}
               key={step.id}
-              sx={{ border: "1px solid #f4f4f4" }}
+              sx={{ border: `1px dotted ${theme.palette.secondary.main}` }}
+              data-aos="zoom-in"
+              data-aos-duration="3000"
             >
               <Box sx={{ p: 3 }}>
                 <Box
@@ -178,7 +197,7 @@ function Career() {
             xs: 4,
             sm: 4,
             lg: 10,
-            backgroundColor: theme.palette.black,
+            backgroundColor: theme.palette.primary.main,
           },
         }}
       >
@@ -186,87 +205,127 @@ function Career() {
           <Grid
             container
             row
-            spacing={1}
+            spacing={3}
             sx={{
               py: {
                 xs: 4,
-                lg: 10,
+                lg: 6,
               },
             }}
           >
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-              <img src={careerImage} alt="CareerImage" />
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              data-aos="fade-right"
+              data-aos-duration="3000"
+            >
+              <img
+                src="https://i.postimg.cc/tg6hWTZW/Happy-Janmastami-1.png"
+                alt="CareerImage"
+              />
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Box>
                 <Box
                   sx={{
                     display: "flex",
-                    py: 4,
+                    alignItems: "center",
                   }}
-                  data-aos="fade-left"
-                  data-aos-duration="3000"
                 >
                   <Typography
-                    sx={{
-                      fontSize: "45px",
-                      color: theme.palette.white,
-                      mr: 2,
-                      fontWeight: "600",
-                      textTransform: "uppercase",
-                    }}
+                    sx={{ fontSize: "30px", color: theme.palette.black }}
                   >
-                    Growthat
+                    &#9672;
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: "45px",
+                      fontSize: "16px",
                       color: theme.palette.secondary.main,
-                      letterSpacing: "1px",
-                      fontWeight: "600",
+                      fontWeight: "700",
+                      lineHeight: "34px",
+                      ml: 1,
                       textTransform: "uppercase",
                     }}
                   >
-                    Editsh
+                    Why Join Our Team?
                   </Typography>
                 </Box>
                 <Typography
                   sx={{
-                    fontSize: "16px",
-                    color: theme.palette.white,
-                    py: 2,
+                    fontSize: "26px",
+                    color: theme.palette.black,
+                    fontFamily: theme.typography.fontFamily,
                     letterSpacing: "1px",
+                    fontWeight: "700",
+                    py: 2,
                     lineHeight: "34px",
                   }}
                   data-aos="fade-left"
                   data-aos-duration="3000"
                 >
-                  Are you a developer, Web Developer, or passionate about
-                  providing solutions? If yes, then Scalelot is the right place
-                  for your career growth. We are welcoming talented
-                  professionals from across the globe to work with us.
+                  There are many reasons why you might want to join the Settings
+                  Infotech team. Here are a few
                 </Typography>
-
-                <Box
-                  sx={{
-                    mt: 4,
-                  }}
-                  data-aos="fade-left"
-                  data-aos-duration="3000"
-                >
-                  <Link
-                    to="/about"
-                    style={{
-                      border: "2px solid #8c8c8c",
-                      padding: "10px 20px",
-                      borderRadius: "50px",
-                      color: theme.palette.white,
-                      dispaly: "block",
-                      fontWeight: "bold",
+                <Box data-aos="fade-left" data-aos-duration="3000">
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      pb: 2,
+                      color: theme.palette.lightwhite,
                     }}
                   >
-                    Check Current Openings
-                  </Link>
+                    We are a fast-paced and dynamic company. We are always
+                    looking for new ways to improve our products and services,
+                    and we need talented individuals who are up for the
+                    challenge.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      pb: 2,
+                      color: theme.palette.lightwhite,
+                    }}
+                  >
+                    We offer competitive salaries and benefits. We want to make
+                    sure that our team members are happy and well-compensated
+                    for their work.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      pb: 2,
+                      color: theme.palette.lightwhite,
+                    }}
+                  >
+                    We have a great culture. We believe that a positive and
+                    supportive work environment is essential to success.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      pb: 2,
+                      color: theme.palette.lightwhite,
+                    }}
+                  >
+                    We are always learning and growing. We offer opportunities
+                    for our team members to learn new skills and grow their
+                    careers.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      pb: 2,
+                      color: theme.palette.lightwhite,
+                    }}
+                  >
+                    If you are looking for a challenging and rewarding career in
+                    software development, then Settings Infotech is the perfect
+                    place for you. We encourage you to apply today!
+                  </Typography>
                 </Box>
               </Box>
             </Grid>
@@ -278,8 +337,6 @@ function Career() {
         sx={{
           py: {
             xs: 4,
-            sm: 4,
-            lg: 10,
           },
         }}
       >
@@ -287,9 +344,9 @@ function Career() {
         <Box
           sx={{
             py: {
-              sm: 4,
-              xs: 3,
-              lg: 8,
+              sm: 2,
+              xs: 4,
+              lg: 6,
             },
           }}
         >
@@ -302,31 +359,28 @@ function Career() {
               }}
             >
               {technology.map((tech) => (
-                <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={6}
-                  lg={4}
-                  xl={3}
-                  key={tech.id}
-                  sx={{
-                    border: "1px solid #f1f1f1",
-                    borderRadius: 2,
-                    p: 4,
-                    transition: "box-shadow 0.3s ease-in-out",
-                    "&:hover": {
-                      boxShadow: "rgba(0, 0, 0, 0.3) 0px 10px 20px",
-                    },
-                  }}
-                >
-                  <Box>
+                <Grid item xs={12} sm={12} md={6} lg={4} xl={3} key={tech.id}>
+                  <Box
+                    sx={{
+                      border: "1px solid #f1f1f1",
+                      borderRadius: 2,
+                      p: 2,
+                      transition: "box-shadow 0.3s ease-in-out",
+                      "&:hover": {
+                        boxShadow: "rgba(0, 0, 0, 0.3) 0px 10px 20px",
+                        cursor: "pointer",
+                      },
+                    }}
+                    data-aos="zoom-in"
+                    data-aos-duration="3000"
+                  >
                     <Box
                       sx={{
-                        width: "100px",
-                        height: "100px",
+                        width: "60px",
+                        height: "60px",
                         margin: "auto",
                         borderRadius: "50%",
+                        p: 1,
                         boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
                         display: "flex",
                         justifyContent: "center",
@@ -337,9 +391,9 @@ function Career() {
                         src={tech.LanguagesLogo}
                         alt="language_logo"
                         style={{
-                          width: "100%",
+                          width: "60px",
                           height: "60px",
-                          margin: "14px",
+                          padding: "14px",
                         }}
                       />
                     </Box>
@@ -355,7 +409,6 @@ function Career() {
                         {tech.LanguagesName}
                       </Typography>
                     </Box>
-
                     <Box>
                       <Box
                         sx={{
@@ -419,32 +472,26 @@ function Career() {
                       </Box>
                       <Box
                         sx={{
-                          mt: 2,
+                          mt: 4,
+                          justifyContent: "center",
                           display: "flex",
-                          justifyItems: "center",
                         }}
                       >
-                        <Link
-                          href={tech.applyLink}
-                          style={{
-                            textDecoration: "none",
+                        <Button
+                          onClick={scrollToUploadCvForm}
+                          sx={{
+                            border: `1px dotted ${theme.palette.secondary.main}`,
+                            padding: "6px 10px",
+                            borderRadius: "50px",
                             color: theme.palette.secondary.main,
-                            fontSize: "14px",
-                            fontWeight: "600",
-                            border: "1px solid #8c8c8c",
-                            textTransform: "uppercase",
-                            padding: "6px",
-                            margin: "auto",
-                            textAlign: "center",
-                            maxWidth: "150px",
-                            width: "100%",
-                            display: "inline-block",
-                            borderRadius: "4px",
+                            fontWeight: "bold",
+                            textDecoration: "none",
+                            fontSize: "13px",
+                            display: "block",
                           }}
-                          to="apply"
                         >
-                          Apply Now
-                        </Link>
+                          Apply now
+                        </Button>
                       </Box>
                     </Box>
                   </Box>
@@ -453,29 +500,35 @@ function Career() {
             </Grid>
           </Container>
         </Box>
+      </Box>
 
-        <Box
-          sx={{
-            py: {
-              xs: 4,
-              sm: 4,
-              lg: 10,
-            },
-            backgroundImage: `url(${jobApply})`,
-            backgroundAttachment: "fixed",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            "@media (maxWidth:600px)": {
-              backgroundImage: `url(${jobApply})`,
-            },
-          }}
-        >
-          <Container>
+      <Box
+        sx={{
+          py: {
+            xs: 4,
+            sm: 4,
+            lg: 6,
+
+            backgroundColor: theme.palette.primary.main,
+          },
+        }}
+      >
+        <Container>
+          <Titleanimation title="Apply For Job" />
+          <Box
+            ref={uploadCvRef}
+            sx={{
+              py: {
+                xs: 2,
+                sm: 4,
+              },
+            }}
+          >
             <Grid
               container
               row
               justifyContent="center"
+              alignItems="center"
               sx={{
                 borderRadius: "14px",
               }}
@@ -485,16 +538,32 @@ function Career() {
                 xs={12}
                 sm={12}
                 md={6}
-                lg={9}
-                sx={{
-                  backgroundColor: theme.palette.white,
-                }}
+                lg={6}
+                data-aos="fade-right"
+                data-aos-duration="3000"
+              >
+                <Box>
+                  <img
+                    src="https://i.postimg.cc/CxDpWdhP/Happy-Janmastami.png"
+                    alt="job_images"
+                  />
+                </Box>
+              </Grid>
+
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                data-aos="zoom-in"
+                data-aos-duration="3000"
               >
                 <UploadCvForm />
               </Grid>
             </Grid>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Box>
     </>
   );

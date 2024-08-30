@@ -203,7 +203,7 @@ function BlogsDetails() {
                     component="span"
                     sx={{
                       ml: 2,
-                      border: "1px dotted #404040",
+                      border: `5px solid ${theme.palette.lightwhite}`,
                       p: 1,
                       borderRadius: "50px",
                     }}

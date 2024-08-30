@@ -1,30 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@emotion/react";
 import {
   Box,
   Button,
   Grid,
+  FormControl,
+  InputLabel,
+  Select,
   TextField,
-  IconButton,
   MenuItem,
   Typography,
-  CircularProgress
+  CircularProgress,
 } from "@mui/material";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { ToastContainer, toast } from "react-toastify";
 import "../../src/assets/Css/contact.css";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 
 function UploadCvForm() {
+  const [technology, setTechnology] = useState([]);
+  const [selectedTechnology, setSelectedTechnology] = useState("");
   const theme = useTheme();
   // eslint-disable-next-line
   const [image, setImage] = useState(null);
+  //Fetch Technology
+  const fetchTechnology = async () => {
+    try {
+      const response = await axios.get(
+        "https://editsh-back.onrender.com/api/technology/view"
+      );
 
+      setTechnology(response?.data?.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchTechnology();
+  }, []);
+  const handleChange = (event) => {
+    setSelectedTechnology(event.target.value);
+  };
   const handleFileChange = (event, setFieldValue) => {
     const file = event.target.files[0];
+
     if (file) {
       const formData = new FormData();
       formData.append("image", file);
@@ -46,14 +68,19 @@ function UploadCvForm() {
         });
     }
   };
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    const formData = {
+      ...values,
+      applyForPosition: selectedTechnology,
+    };
     try {
       const response = await axios.post(
         "https://editsh-back.onrender.com/api/resume/add",
-        values
+        formData
       );
       if (response.status === 201) {
         toast.success(response.data.message);
+        resetForm();
       }
     } catch (error) {
       toast.error(error.response.data.message);
@@ -73,14 +100,6 @@ function UploadCvForm() {
       .email("Invalid email format")
       .required("Email is required"),
     mobile: Yup.string().required("Mobile number is required"),
-    address: Yup.string().required("Address is required"),
-    currentCompanyName: Yup.string().required(
-      "Current company name is required"
-    ),
-    year: Yup.string().required("Year is required"),
-    month: Yup.string().required("Month is required"),
-    currentSalary: Yup.string().required("Current salary is required"),
-    expectedSalary: Yup.string().required("Expected salary is required"),
   });
 
   return (
@@ -95,6 +114,7 @@ function UploadCvForm() {
             mobile: "",
             address: "",
             currentCompanyName: "",
+            applyForPosition: "",
             year: "",
             month: "",
             currentSalary: "",
@@ -158,7 +178,7 @@ function UploadCvForm() {
                       fullWidth
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={12}>
                     <Field
                       name="address"
                       as={TextField}
@@ -168,9 +188,12 @@ function UploadCvForm() {
                       error={touched.address && Boolean(errors.address)}
                       helperText={touched.address && errors.address}
                       fullWidth
+                      multiline
+                      rows={4}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+
+                  <Grid item xs={12} sm={12}>
                     <Field
                       name="currentCompanyName"
                       as={TextField}
@@ -186,6 +209,25 @@ function UploadCvForm() {
                       }
                       fullWidth
                     />
+                  </Grid>
+                  <Grid item xs={12} sm={12}>
+                    <FormControl variant="filled" fullWidth>
+                      <InputLabel id="technology-select-label">
+                        Technology
+                      </InputLabel>
+                      <Select
+                        labelId="technology-select-label"
+                        id="technology-select"
+                        value={selectedTechnology}
+                        onChange={handleChange}
+                      >
+                        {technology?.map((tech) => (
+                          <MenuItem key={tech._id} value={tech.LanguagesName}>
+                            {tech.LanguagesName}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Field
@@ -254,7 +296,21 @@ function UploadCvForm() {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <Grid container justifyContent="center">
+                    <Grid
+                      container
+                      justifyContent="center"
+                      direction="column"
+                      alignItems="center"
+                      sx={{
+                        border: `1px dotted ${theme.palette.secondary.main}`,
+                        borderRadius: 3,
+                        p: 1,
+                        cursor: "pointer",
+                      }}
+                      onClick={() =>
+                        document.getElementById("file-input").click()
+                      }
+                    >
                       <input
                         id="file-input"
                         type="file"
@@ -264,51 +320,66 @@ function UploadCvForm() {
                           handleFileChange(event, setFieldValue)
                         }
                       />
-                      <IconButton
-                        onClick={() =>
-                          document.getElementById("file-input").click()
-                        }
-                        style={{ display: "flex", justifyContent: "center" }}
+                      <Box
+                        sx={{
+                          width: 50,
+                          height: 50,
+                          borderRadius: 3,
+                        }}
                       >
-                        <CloudUploadIcon
-                          sx={{
-                            color: theme.palette.secondary.main,
-                            fontSize: "80px",
-                          }}
+                        <img
+                          src="https://i.postimg.cc/X7yqh8mw/png-transparent-cloud-upload-folder-cloud-folder-upload-folder-cloud-computing-cloud-data-folder-3d.png"
+                          alt="file-upload"
+                          width={50}
+                          height={50}
                         />
-                      </IconButton>
+                      </Box>
+                      <Typography
+                        sx={{
+                          fontSize: "14px",
+                          color: theme.palette.secondary.main,
+                        }}
+                      >
+                        Click to Upload
+                      </Typography>
+                      <Typography
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "14px",
+                          color: theme.palette.secondary.main,
+                        }}
+                      >
+                        Upload only .png, .jpg, .jpeg files
+                      </Typography>
                     </Grid>
-                    <Typography
-                      sx={{
-                        textAlign: "center",
-                      }}
-                    >
-                      Upload only .png or .jpg files
-                    </Typography>
                   </Grid>
                 </Grid>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                  disabled={isSubmitting}
-                  sx={{ position: "relative" }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
                 >
-                  {isSubmitting && (
-                    <CircularProgress
-                      size={24}
-                      sx={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        marginTop: "-12px",
-                        marginLeft: "-12px",
-                      }}
-                    />
-                  )}
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </Button>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                      width: "150px",
+                      borderRadius: 5,
+                      border: `1px dotted ${theme.palette.lightwhite}`,
+                      color: theme.palette.grey[500],
+                      "&:hover": {
+                        backgroundColor: theme.palette.secondary.main,
+                        color: theme.palette.common.white,
+                      },
+                    }}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting && <CircularProgress />}
+                    {isSubmitting ? "Submitting..." : "Submit"}
+                  </Button>
+                </Box>
               </Box>
             </Form>
           )}

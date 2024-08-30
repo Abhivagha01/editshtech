@@ -3,7 +3,22 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function Heroslider({ getInTouchRef }) {
+function splitText(text) {
+  return text.split('').map((letter, index) => (
+    <span
+      key={index}
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-easing="linear"
+      data-aos-delay={index * 100} 
+      style={{ display: 'inline-block' }}
+    >
+      {letter}
+    </span>
+  ));
+}
+
+function Heroslider() {
   const theme = useTheme();
 
   return (
@@ -12,7 +27,7 @@ function Heroslider({ getInTouchRef }) {
         <div className="background-image">
           <img
             src="https://i.postimg.cc/xd5WPpfb/modern-education-Skillstork.jpg"
-            alt="images"
+            alt="background"
           />
         </div>
 
@@ -56,9 +71,6 @@ function Heroslider({ getInTouchRef }) {
                 lg: "70px",
               },
             }}
-            data-aos-duration="3000"
-            data-aos="fade-down"
-            data-aos-easing="linear"
           >
             <Typography
               variant="span"
@@ -71,20 +83,23 @@ function Heroslider({ getInTouchRef }) {
                   lg: "70px",
                 },
               }}
+              component="span"
+              style={{ display: 'inline-block' }}
             >
-              Editsh
+              {splitText('Editsh ')}
             </Typography>
-            Technology
+            {splitText('Technology')}
           </Typography>
           <Typography
             sx={{
               color: theme.palette.primary.main,
               textAlign: "center",
-              fontSize: "14px",
+              fontSize: "16px",
             }}
-            data-aos="zoom-in"
-            data-aos-duration="3000"
+            data-aos="fade-down"
+            data-aos-duration="5000"
             data-aos-easing="linear"
+            data-aos-delay="1000"
           >
             Delivering IT services including feature-rich web design and
             development, mobile app development, custom software development,
@@ -95,17 +110,19 @@ function Heroslider({ getInTouchRef }) {
             style={{
               display: "flex",
               justifyContent: "center",
-              mt: 3,
+              marginTop: "15px",
             }}
-            data-aos="zoom-in"
+            data-aos="fade-down"
             data-aos-duration="3000"
             data-aos-easing="linear"
+            data-aos-delay="1500"
           >
             <Button
               sx={{
-                backgroundColor: theme.palette.lightwhite,
                 color: theme.palette.primary.main,
                 zIndex: 3,
+                borderRadius: 3,
+                border: `1px solid ${theme.palette.white}`,
                 width: "auto",
               }}
             >
@@ -119,6 +136,3 @@ function Heroslider({ getInTouchRef }) {
 }
 
 export default Heroslider;
-
-
-

@@ -13,7 +13,6 @@ import {
   ListItem,
   ListItemText,
   Collapse,
-  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -88,6 +87,7 @@ const Header = () => {
     { label: "About", to: "/about" },
     {
       label: "Technology",
+      to:"/technology",
       subItems: [
         {
           category: "App Development",
@@ -373,7 +373,6 @@ const Header = () => {
                                     >
                                       {subItem.category}
                                     </Typography>
-                                    {/* Plus and Minus icons for mobile only */}
                                     {isMobile && (
                                       <IconButton
                                         onClick={() =>
@@ -444,7 +443,6 @@ const Header = () => {
               }
             })}
           </List>
-          <Divider />
         </Box>
       </Drawer>
     </>
