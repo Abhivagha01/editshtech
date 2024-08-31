@@ -1,5 +1,4 @@
 import React from "react";
-import faqImage from "../../assets/Faq.jpg";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Pagetitle from "../../global/Pagetitle";
 import { useTheme } from "@emotion/react";
@@ -91,7 +90,7 @@ export default function Faq() {
           <Grid container row spacing={3}>
             <Grid item xs={3} md={12} lg={6} xl={6}>
               <img
-                src={faqImage}
+                src="https://i.postimg.cc/qRN4dptw/Faq.jpg"
                 alt="faq"
                 data-aos-duration="3000"
                 data-aos="fade-right"
