@@ -159,7 +159,7 @@ function Blog() {
                         alt="blog-image"
                         style={{
                           width: "100%",
-                          height: "auto",
+                          height: "200px",
                           borderRadius: "5px",
                         }}
                       />

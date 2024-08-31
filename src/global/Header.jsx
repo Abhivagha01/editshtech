@@ -131,6 +131,7 @@ const Header = () => {
         },
       ],
     },
+    { label: "Portfolio", to: "/portfolio" },
     { label: "Client", to: "/client" },
     { label: "Career", to: "/career" },
     { label: "Blog", to: "/blogs" },

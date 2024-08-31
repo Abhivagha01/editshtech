@@ -35,7 +35,7 @@ function BlogsDetails() {
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
   const theme = useTheme();
-  const blogUrl = `https://editsh-back.onrender.com/blogs/${id}`;
+  const blogUrl = `http://localhost:3002/blogs/${id}`;
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -203,8 +203,8 @@ function BlogsDetails() {
                     component="span"
                     sx={{
                       ml: 2,
-                      border: `5px solid ${theme.palette.lightwhite}`,
-                      p: 1,
+                      border:`1px dotted ${theme.palette.lightwhite}`,
+                      p: "5px 10px",
                       borderRadius: "50px",
                     }}
                   >

@@ -6,6 +6,7 @@ import { styled } from "@mui/system";
 
 const MainContainer = styled(Box)(({ theme }) => ({
   display: "flex",
+  justifyContent:"center", 
   "--s": "130px",
   "--m": "4px",
   "--f": "calc(1.732 * var(--s) + 4 * var(--m) - 1px)",

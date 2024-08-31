@@ -31,6 +31,7 @@ import NetDevelopment from "./components/Technology/Database/NetDevelopment/NetD
 import PhythonDevelopment from "./components/Technology/Database/PhythonDevelopment/PhythonDevelopment";
 import NoPageFound from "./global/NoPageFound";
 import GetATouch from "./pages/GetATouch";
+import Portifolio from "./pages/Portfolio";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -74,6 +75,10 @@ function App() {
           {/* Blogs */}
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:id" element={<BlogsDetails />} />
+
+
+          {/* Portfolio*/}
+          <Route path="/portfolio" element={<Portifolio />} />
 
           {/* Technology */}
           <Route path="/technology" element={<Technology />} />
