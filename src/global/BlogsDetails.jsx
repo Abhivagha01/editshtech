@@ -35,7 +35,7 @@ function BlogsDetails() {
   const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
   const theme = useTheme();
-  const blogUrl = `http://localhost:3002/blogs/${id}`;
+  const blogUrl = `https://editshtech.vercel.app/blogs/${id}`;
 
   useEffect(() => {
     const fetchBlog = async () => {
