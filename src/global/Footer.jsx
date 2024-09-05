@@ -115,7 +115,7 @@ const Footer = () => {
                     style={{
                       width: "100%",
                       maxWidth: "60%",
-                      height: "45px",
+                      height: "40px",
                     }}
                   />
                 </Link>
