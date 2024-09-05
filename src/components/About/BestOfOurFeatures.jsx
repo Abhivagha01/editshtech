@@ -167,7 +167,7 @@ function BestOfOurFeatures() {
           md={6}
           lg={8}
           data-aos="zoom-in"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           <Box sx={{ p: 4 }}>
             <Grid container spacing={3}>

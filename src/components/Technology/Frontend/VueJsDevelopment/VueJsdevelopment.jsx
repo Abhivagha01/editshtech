@@ -135,7 +135,7 @@ function VueJsdevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -200,7 +200,7 @@ function VueJsdevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/wMzNyFKp/vue-banner.png"
@@ -232,7 +232,7 @@ function VueJsdevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/FzxF073L/javascript-frameworks-concept-illustration-114360-743.avif"
@@ -252,7 +252,7 @@ function VueJsdevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box>
                 <Typography
@@ -352,7 +352,7 @@ function VueJsdevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -482,7 +482,7 @@ function VueJsdevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

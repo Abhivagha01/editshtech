@@ -174,7 +174,7 @@ function NodejsDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -238,7 +238,7 @@ function NodejsDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/50RK4X9j/NodeJS.png"
@@ -288,7 +288,7 @@ function NodejsDevelopment() {
                 md: 1,
               }}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/mDPKKt0Z/parts-of-nodejs.avif"
@@ -313,7 +313,7 @@ function NodejsDevelopment() {
                 md: 2,
               }}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box
                 sx={{
@@ -440,7 +440,7 @@ function NodejsDevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -567,7 +567,7 @@ function NodejsDevelopment() {
                 lg={6}
                 xl={6}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box>
                   <Typography
@@ -716,7 +716,7 @@ function NodejsDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

@@ -10,9 +10,7 @@ function Contact() {
         title={`Contact Us`}
         description={`We are Surat-based IT Solution Providers committed to providing the best services for the growth of our valuable clients and their varied businesses.`}
       />
-      {/* Our Location */}
       <Ourlocation />
-      {/* Contact us Form  */}
       <ContactForm />
     </>
   );

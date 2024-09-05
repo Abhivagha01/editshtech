@@ -169,7 +169,7 @@ function PhythonDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -229,7 +229,7 @@ function PhythonDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/8zqJNhJj/What-is-Python-Why-Does-it-Matter-in-Software-Development-removebg-preview.png"
@@ -263,7 +263,7 @@ function PhythonDevelopment() {
               lg={7}
               order={{ xs: 2, lg: 1 }}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/w38pvcJj/9656459687-removebg-preview.png"
@@ -279,7 +279,7 @@ function PhythonDevelopment() {
               lg={5}
               order={{ xs: 1, lg: 2 }}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
                 <Typography
@@ -399,7 +399,7 @@ function PhythonDevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -513,7 +513,7 @@ function PhythonDevelopment() {
                 lg={6}
                 xl={6}
                 data-aos="fade-right"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box>
                   <Typography
@@ -572,7 +572,7 @@ function PhythonDevelopment() {
                   pr: 2,
                 }}
                 data-aos="fade-left"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 {softwareDevelopmentDetails.map((content, index) => (
                   <Box
@@ -657,7 +657,7 @@ function PhythonDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

@@ -73,7 +73,7 @@ function TrutedProject() {
               lg={4}
               key={index}
               data-aos="zoom-in"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box
                 sx={{

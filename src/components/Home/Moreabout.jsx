@@ -10,7 +10,7 @@ function Moreabout() {
         <Grid container row alignItems="center">
           <Grid item xs={12} sm={12} md={6}
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           >
             <Box sx={{ my: 10 }}>
               <Typography
@@ -82,7 +82,7 @@ function Moreabout() {
           </Grid>
           <Grid item xs={12} sm={12} md={6}
           data-aos="fade-left"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           >
             <Box sx={{p:0}}>
               <img src="https://i.postimg.cc/q7QywtcZ/Cream-Pastel-Minimalist-6-Steps-Marketing-Plan-Graph.jpg" alt="More About" />

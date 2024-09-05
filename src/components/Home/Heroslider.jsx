@@ -113,7 +113,7 @@ function Heroslider() {
               marginTop: "15px",
             }}
             data-aos="fade-down"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
             data-aos-easing="linear"
             data-aos-delay="1500"
           >
