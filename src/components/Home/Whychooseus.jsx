@@ -89,7 +89,7 @@ const whyChoooseBox = ({ theme, imgSrc, title, description }) => (
     md={4}
     lg={4}
     data-aos="zoom-in-down"
-    data-aos-duration="3000"
+    data-aos-duration="2000"
   >
     <Box
       sx={{

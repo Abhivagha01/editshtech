@@ -73,8 +73,8 @@ function Ourlocation() {
             {
               icon: CallIcon,
               title: "Phone",
-              link: "tel:+91 98790 27562",
-              linkText: "+91 98790 27562",
+              link: "tel:+91 96011 75985",
+              linkText: "+91 96011 75985",
             },
             {
               icon: MarkEmailUnreadIcon,
@@ -92,7 +92,7 @@ function Ourlocation() {
             {
               icon: QueryBuilderIcon,
               title: "Office Hour",
-              linkText: "Mon - Fri 09:30 AM - 06:30 PM",
+              linkText: "Mon - Fri 10:00 AM - 07:00 PM",
             },
           ].map((item, index) => (
             <Grid item xs={12} sm={6} md={6} lg={3} key={index}>

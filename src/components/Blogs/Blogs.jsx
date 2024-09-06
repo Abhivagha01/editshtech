@@ -62,7 +62,7 @@ function Blogs() {
                       marginBottom: 2,
                     }}
                     data-aos="zoom-in"
-                    data-aos-duration="3000"
+                    data-aos-duration="2000"
                   >
                     <Link to={`/blogs/${blog._id}`}>
                       <Box

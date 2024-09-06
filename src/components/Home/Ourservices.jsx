@@ -33,7 +33,7 @@ function Ourservices() {
           md={6}
           lg={4}
           data-aos="zoom-in"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
@@ -101,7 +101,7 @@ function Ourservices() {
             lg={4}
             key={index}
             data-aos="zoom-in"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Box
               sx={{ height: "100%", display: "flex", flexDirection: "column" }}
@@ -154,7 +154,7 @@ function Ourservices() {
           md={6}
           lg={4}
           data-aos="zoom-in"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           <Box
             sx={{

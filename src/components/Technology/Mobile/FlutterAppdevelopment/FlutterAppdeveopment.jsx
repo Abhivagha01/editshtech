@@ -284,7 +284,7 @@ const Section = ({ title, items }) => {
             backgroundColor: theme.palette.primary.main,
           }}
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           <Typography
             sx={{
@@ -305,7 +305,7 @@ const Section = ({ title, items }) => {
           lg={10}
           xl={10}
           data-aos="fade-right"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
         >
           <Grid container spacing={2}>
             {items.map((item, index) => (
@@ -371,7 +371,7 @@ function FlutterAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -423,7 +423,7 @@ function FlutterAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={AboutImage}
@@ -491,7 +491,7 @@ function FlutterAppDevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -581,7 +581,7 @@ function FlutterAppDevelopment() {
               },
             }}
             data-aos="zoom-in"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Section title="Frameworks" items={frameworks} />
             <Section title="Tools" items={tools} />
@@ -640,7 +640,7 @@ function FlutterAppDevelopment() {
                   lg={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{

@@ -121,7 +121,7 @@ function ProjectIndustry() {
             {IosIndustry.map((item) => (
               <Grid item xs={6} sm={3} md={3} lg={2} key={item.id}
                data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

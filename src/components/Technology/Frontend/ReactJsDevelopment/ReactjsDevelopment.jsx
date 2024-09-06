@@ -173,7 +173,7 @@ function ReactjsDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -222,7 +222,7 @@ function ReactjsDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/j2Y1h2vR/react-service.webp"
@@ -255,7 +255,7 @@ function ReactjsDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/FzxF073L/javascript-frameworks-concept-illustration-114360-743.avif"
@@ -275,7 +275,7 @@ function ReactjsDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box
                 sx={{
@@ -395,7 +395,7 @@ function ReactjsDevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -495,7 +495,7 @@ function ReactjsDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{
@@ -608,7 +608,7 @@ function ReactjsDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

@@ -31,7 +31,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-right"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <img
               src={port1}
@@ -44,7 +44,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-left"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Box>
               <Typography
@@ -118,7 +118,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-right"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Box>
               <Typography
@@ -173,7 +173,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-left"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <img
               src="https://i.postimg.cc/Bv0S3d9F/Peach-and-Orange-Minimal-Opt-in-Lead-Magnet-Phone-Screen-Mockup-Blog-Banner.png"
@@ -207,7 +207,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-right"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <img
               src="https://i.postimg.cc/85zkWrb4/Peach-and-Orange-Minimal-Opt-in-Lead-Magnet-Phone-Screen-Mockup-Blog-Banner.jpg"
@@ -220,7 +220,7 @@ function Portfolio() {
             xs={12}
             lg={6}
             data-aos="fade-left"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Box>
               <Typography

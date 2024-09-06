@@ -169,7 +169,7 @@ function AndroidAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -257,7 +257,7 @@ function AndroidAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/cCXP7c2H/ios1.png"
@@ -290,7 +290,7 @@ function AndroidAppDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={whychooseus}
@@ -310,7 +310,7 @@ function AndroidAppDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -418,7 +418,7 @@ function AndroidAppDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

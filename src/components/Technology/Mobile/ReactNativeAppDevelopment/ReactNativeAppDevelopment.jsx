@@ -130,7 +130,7 @@ function ReactNativeAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -182,7 +182,7 @@ function ReactNativeAppDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={AboutImage}
@@ -216,7 +216,7 @@ function ReactNativeAppDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={whychooseus}
@@ -236,7 +236,7 @@ function ReactNativeAppDevelopment() {
               xs={12}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -347,7 +347,7 @@ function ReactNativeAppDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{
@@ -431,7 +431,7 @@ function ReactNativeAppDevelopment() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

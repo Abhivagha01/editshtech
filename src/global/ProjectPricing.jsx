@@ -71,7 +71,7 @@ function ProjectPricing() {
               sm={tier.title === "Hourly Base" ? 12 : 6}
               md={4}
               data-aos="zoom-in"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Card
                 sx={{

@@ -136,7 +136,7 @@ function Career() {
               key={step.id}
               sx={{ border: `1px dotted ${theme.palette.secondary.main}` }}
               data-aos="zoom-in"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Box sx={{ p: 3 }}>
                 <Box
@@ -221,7 +221,7 @@ function Career() {
               lg={6}
               xl={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/tg6hWTZW/Happy-Janmastami-1.png"
@@ -265,12 +265,12 @@ function Career() {
                     lineHeight: "34px",
                   }}
                   data-aos="fade-left"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   There are many reasons why you might want to join the Settings
                   Infotech team. Here are a few
                 </Typography>
-                <Box data-aos="fade-left" data-aos-duration="3000">
+                <Box data-aos="fade-left" data-aos-duration="2000">
                   <Typography
                     sx={{
                       fontSize: "14px",
@@ -372,7 +372,7 @@ function Career() {
                       },
                     }}
                     data-aos="zoom-in"
-                    data-aos-duration="3000"
+                    data-aos-duration="2000"
                   >
                     <Box
                       sx={{
@@ -540,7 +540,7 @@ function Career() {
                 md={6}
                 lg={6}
                 data-aos="fade-right"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box>
                   <img
@@ -557,7 +557,7 @@ function Career() {
                 md={6}
                 lg={6}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <UploadCvForm />
               </Grid>

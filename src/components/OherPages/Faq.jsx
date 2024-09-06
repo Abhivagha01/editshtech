@@ -92,7 +92,7 @@ export default function Faq() {
               <img
                 src="https://i.postimg.cc/qRN4dptw/Faq.jpg"
                 alt="faq"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
                 data-aos="fade-right"
               />
             </Grid>
@@ -102,7 +102,7 @@ export default function Faq() {
               md={12}
               lg={6}
               xl={6}
-              data-aos-duration="3000"
+              data-aos-duration="2000"
               data-aos="fade-left"
             >
               <Box sx={{ width: "100%" }}>

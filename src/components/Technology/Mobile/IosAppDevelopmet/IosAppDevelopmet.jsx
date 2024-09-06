@@ -158,7 +158,7 @@ function IosAppDevelopmet() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -246,7 +246,7 @@ function IosAppDevelopmet() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={ios}
@@ -280,7 +280,7 @@ function IosAppDevelopmet() {
               xs={12}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src={whychooseus}
@@ -300,7 +300,7 @@ function IosAppDevelopmet() {
               xs={12}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -419,7 +419,7 @@ function IosAppDevelopmet() {
                 lg={4}
                 key={index}
                 data-aos="zoom-in"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box
                   sx={{

@@ -115,7 +115,7 @@ const Footer = () => {
                     style={{
                       width: "100%",
                       maxWidth: "60%",
-                      height: "45px",
+                      height: "40px",
                     }}
                   />
                 </Link>
@@ -331,7 +331,7 @@ const Footer = () => {
 
                   <Box sx={{ fontSize: "13px" }}>
                     <Link
-                      to="tel:+919601175985"
+                      to="tel:+91 96011 75985"
                       style={{
                         color: theme.palette.black,
                         fontFamily: theme.typography.fontFamily,

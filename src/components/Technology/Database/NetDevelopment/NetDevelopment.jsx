@@ -173,7 +173,7 @@ function NetDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <Typography
                 sx={{
@@ -223,7 +223,7 @@ function NetDevelopment() {
               md={6}
               lg={6}
               data-aos="fade-left"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <img
                 src="https://i.postimg.cc/fbffg145/microsoft-integration-services.jpg"
@@ -265,7 +265,7 @@ function NetDevelopment() {
                 display: "flex",
               }}
               data-aos="fade-right"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             />
           </Grid>
           <Grid
@@ -273,7 +273,7 @@ function NetDevelopment() {
             xs={12}
             lg={6}
             data-aos="fade-LEFT"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Box
               sx={{
@@ -386,7 +386,7 @@ function NetDevelopment() {
                   xl={4}
                   key={index}
                   data-aos="zoom-in"
-                  data-aos-duration="3000"
+                  data-aos-duration="2000"
                 >
                   <Box
                     sx={{
@@ -473,7 +473,7 @@ function NetDevelopment() {
                 lg={6}
                 xl={6}
                 data-aos="fade-right"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 <Box>
                   <Typography
@@ -534,7 +534,7 @@ function NetDevelopment() {
                   pr: 2,
                 }}
                 data-aos="fade-left"
-                data-aos-duration="3000"
+                data-aos-duration="2000"
               >
                 {rightSideContent.map((content, index) => (
                   <Box
@@ -629,7 +629,7 @@ function NetDevelopment() {
               },
             }}
             data-aos="zoom-in"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             {project.map((service, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>

@@ -61,7 +61,7 @@ const Header = () => {
       mobileExpandedCategory === category ? null : category
     );
   };
-//eslint-disable-next-line
+  //eslint-disable-next-line
   const toggleSubCategoryExpand = (category, subCategory) => {
     setExpandedSubCategories((prev) => ({
       ...prev,
@@ -82,12 +82,13 @@ const Header = () => {
     }));
   };
 
+
   const menuItems = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
     {
       label: "Technology",
-      to:"/technology",
+      to: "/technology",
       subItems: [
         {
           category: "App Development",
@@ -210,6 +211,7 @@ const Header = () => {
                     return (
                       <Box key={index}>
                         <Typography
+                          onMouseEnter={(e) => handleSubMenuOpen(e, index)}
                           onClick={(e) => handleSubMenuOpen(e, index)}
                           sx={{
                             mx: 1.5,

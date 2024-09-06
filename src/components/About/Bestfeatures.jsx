@@ -1,13 +1,10 @@
 import React from "react";
 import Pagetitle from "../../global/Pagetitle";
 
-function Bestfeatures({title,subtitle}) {
+function Bestfeatures({ title, subtitle }) {
   return (
     <>
-      <Pagetitle
-        title={title}
-        subtitle={subtitle}
-      />
+      <Pagetitle title={title} subtitle={subtitle} />
     </>
   );
 }
