@@ -5,8 +5,10 @@ import Whychooseus from "../components/Home/Whychooseus";
 import Ourservices from "../components/Home/Ourservices";
 import Counter from "../components/Home/Counter";
 import Getintouch from "../global/Getintouch";
-import OurClients from "../components/Client/OurClients";
+// import OurClients from "../components/Client/OurClients";
 import Blogs from "../components/Blogs/Blogs";
+import Horizontal from "../components/Home/Horizontal";
+import ClientsTestimonil from "../components/Client/ClientsTestimonil";
 
 function Home() {
   const getInTouchRef = useRef(null);
@@ -18,7 +20,10 @@ function Home() {
       <Whychooseus />
       <Ourservices />
       <Counter />
-      <OurClients />
+      <Horizontal/>
+      <ClientsTestimonil/>
+
+      {/* <OurClients /> */}
       <Getintouch ref={getInTouchRef} />
       <Blogs/>
     </>

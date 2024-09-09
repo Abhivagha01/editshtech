@@ -75,7 +75,7 @@ function OurClients() {
             spacing={2}
             justifyContent="center"
             sx={{
-              py: {
+              pb: {
                 sm: 6,
                 md: 4,
                 lg: 6,

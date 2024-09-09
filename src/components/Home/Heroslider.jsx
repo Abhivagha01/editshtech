@@ -26,7 +26,7 @@ function Heroslider() {
       <Box className="banner">
         <div className="background-image">
           <img
-            src="https://i.postimg.cc/xd5WPpfb/modern-education-Skillstork.jpg"
+            src="https://i.postimg.cc/rFmrFjM2/2024-07-04.jpg"
             alt="background"
           />
         </div>
